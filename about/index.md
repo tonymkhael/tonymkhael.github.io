@@ -19,7 +19,7 @@ You can reach me out on a variety of websites where my username is either tmkhae
 
 ## The boring details
 
-I currently work at [Murex SAS](www.murex.com) where reconciling finance with technology is a never ending battle since joining Murex's Paris office back in 2010. Earlier, I worked in the [Dermandar](www.dermandar.com) startup trying to make panoramas friendlier to the general public.
+I currently work at [Murex SAS](http://www.murex.com) where reconciling finance with technology is a never ending battle since joining Murex's Paris office back in 2010. Earlier, I worked in the [Dermandar](http://www.dermandar.com) startup trying to make panoramas friendlier to the general public.
 
 I'm passionate about AI and VR technologies, as well as the gaming industry , but mostly about how all three fit together to make amazing products.
 

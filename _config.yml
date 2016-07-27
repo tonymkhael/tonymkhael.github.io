@@ -8,10 +8,14 @@
 # Site settings
 title: Tony Mkhael
 email: tony.mkhael@gmail.com
-description:  
+description:
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "tonymkhael.github.io" # the base hostname & protocol for your site
-twitter_username: tonymkhael
+author:
+    name: Tony Mkhael
+    email: tony.mkhael@gmail.com
+    github: tonymkhael
+    twitter: tonymkhael
 github_username:  tonymkhael
 
 # Build settings
