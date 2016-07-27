@@ -2,7 +2,7 @@ language: ruby
 script: "./build.sh"
 branches:
   only:
-  - jekyll
+  - gh-pages
 rvm:
 - 2.1.2
 env:
