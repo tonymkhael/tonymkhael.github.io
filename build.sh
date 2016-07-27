@@ -10,7 +10,7 @@ fi
 set -e
 
 # build site with jekyll, by default to `_site' folder
-jekyll build
+bundle exec jekyll build
 
 # cleanup
 rm -rf ../tonymkhael.github.io.master
@@ -28,4 +28,4 @@ git config user.email "tony.mkhael@gmail.com"
 git config user.name "Tony Mkhael"
 git add -A .
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-git push --quiet origin master > /dev/null 2>&1 
+git push --quiet origin master > /dev/null 2>&1
