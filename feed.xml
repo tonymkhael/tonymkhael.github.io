@@ -5,35 +5,24 @@
     <description></description>
     <link>tonymkhael.github.io/</link>
     <atom:link href="tonymkhael.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Jul 2016 01:29:32 +0000</pubDate>
-    <lastBuildDate>Thu, 28 Jul 2016 01:29:32 +0000</lastBuildDate>
+    <pubDate>Thu, 28 Jul 2016 21:20:30 +0000</pubDate>
+    <lastBuildDate>Thu, 28 Jul 2016 21:20:30 +0000</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Semantic versioning</title>
-        <description>&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
-&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
-&lt;ul class=&quot;sectlevel1&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_what-is-this-about&quot;&gt;1. What is this about?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_detailed-guide&quot;&gt;2. Detailed guide&lt;/a&gt;
-&lt;ul class=&quot;sectlevel2&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_setting-up-your-project&quot;&gt;2.1. Setting up your project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_building-the-project&quot;&gt;2.2. Building the project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_adding-javadoc-and-source-jars&quot;&gt;2.3. Adding javadoc and source jars&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_adding-some-cool-documentation&quot;&gt;2.4. Adding some cool documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_publishing-the-artifacts&quot;&gt;2.5. Publishing the artifacts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_semantic-versioning&quot;&gt;2.6. Semantic versioning&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_the-ci-part&quot;&gt;2.7. The CI part&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_putting-it-all-together&quot;&gt;3. Putting it all together&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_what-is-this-about&quot;&gt;1. What is this about?&lt;/h2&gt;
+        <description>&lt;div id=&quot;preamble&quot;&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;if you&amp;#8217;re unfamiliar with semantic versioning, please start reading &lt;a href=&quot;http://semver.org/&quot;&gt;Here&lt;/a&gt;.
+&lt;p&gt;{{ page.document | tocify_asciidoc: 3 }}&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_what_is_this_about&quot;&gt;1. What is this about?&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;if you&amp;#8217;re unfamiliar with semantic versioning, please start reading &lt;a href=&quot;http://semver.org/&quot;&gt;here&lt;/a&gt;.
 The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.
 It will guide you in detail through all the steps needed to&lt;/p&gt;
 &lt;/div&gt;
@@ -49,21 +38,21 @@ It will guide you in detail through all the steps needed to&lt;/p&gt;
 &lt;p&gt;Documenting using javadoc and asciidoctor&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Publishing to a nexus repository&lt;/p&gt;
+&lt;p&gt;Publishing to a maven repository&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Handling versioning using nebula&lt;/p&gt;
+&lt;p&gt;Handling project versioning&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order
-to have a OSS compliant project. It contains useful snippets you will/should probably use variants of in your OSS project.&lt;/p&gt;
+&lt;p&gt;This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.
+It contains useful snippets you can use (as is, or variants of them) in your OSS project.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_detailed-guide&quot;&gt;2. Detailed guide&lt;/h2&gt;
+&lt;h2 id=&quot;_detailed_guide&quot;&gt;2. Detailed guide&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;In this tutorial, we will interact with the below tools/libraries.
@@ -89,12 +78,12 @@ Although no specific knowledge is required, it is always better to have a quick 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_setting-up-your-project&quot;&gt;2.1. Setting up your project&lt;/h3&gt;
+&lt;h3 id=&quot;_setting_up_your_project&quot;&gt;2.1. Setting up your project&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;First, let&amp;#8217;s start by setting up the gradle project. For this you would need the following structure.&lt;/p&gt;
+&lt;p&gt;First, let&amp;#8217;s start by setting up the gradle project. For this you would need the following directory structure.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
-&lt;div class=&quot;title&quot;&gt;Project structure&lt;/div&gt;
+&lt;div class=&quot;title&quot;&gt;Directory structure&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
 &lt;pre&gt;&amp;gt;&amp;gt; build.gradle &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 &amp;gt;&amp;gt; gradle
@@ -128,7 +117,7 @@ Although no specific knowledge is required, it is always better to have a quick 
 &lt;i class=&quot;fa icon-tip&quot; title=&quot;Tip&quot;&gt;&lt;/i&gt;
 &lt;/td&gt;
 &lt;td class=&quot;content&quot;&gt;
-Except for the build.gradle, you can use the exact copy of all files &lt;a href=&quot;http://www.github.com/tonymkhael/semantic-versioning&quot;&gt;in this public repository&lt;/a&gt;, as those files do not change much and they only exist to bootstrap your gradle setup.
+Besides the build.gradle, you can use the exact copy of all files &lt;a href=&quot;http://www.github.com/tonymkhael/semantic-versioning&quot;&gt;in this public repository&lt;/a&gt;, as those files do not change much and they only exist to bootstrap your gradle setup.
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -141,8 +130,8 @@ Except for the build.gradle, you can use the exact copy of all files &lt;a href=
 &lt;/td&gt;
 &lt;td class=&quot;content&quot;&gt;
 It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you&amp;#8217;re behind a proxy
-You will not find this file in this repo, since it is supposed to be injected by the build environment (CI/Dev environment..)
-However, here is a sample content that you should adapt in case you want to try out with this repo..
+You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)
+However, here is a sample content that you could adapt in case you want to try it out.
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
@@ -150,51 +139,51 @@ However, here is a sample content that you should adapt in case you want to try 
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;gradle.properties&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;#control daemon mode
-org.gradle.daemon=true
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;properties&quot;&gt;&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;#control daemon mode&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;org.gradle.daemon&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;true&lt;/span&gt;
 
-#used for gradle JVM
-systemProp.https.proxyHost=proxy
-systemProp.https.proxyPort=3128
-systemProp.http.proxyHost=proxy
-systemProp.http.proxyPort=3128
-systemProp.http.nonProxyHosts=*.domain.com|localhost
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;#used for gradle JVM&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;systemProp.https.proxyHost&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;proxy&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;systemProp.https.proxyPort&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;3128&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;systemProp.http.proxyHost&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;proxy&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;systemProp.http.proxyPort&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;3128&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;systemProp.http.nonProxyHosts&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;*.domain.com|localhost&lt;/span&gt;
 
-#use that specific JDK
-org.gradle.java.home=C:\\myfavoritejdk\\
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;#use that specific JDK&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;org.gradle.java.home&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;C:\\myfavoritejdk\\&lt;/span&gt;
 
-#used for the publishing
-nexusGroup=com.acme
-nexusHost=nexus-dev
-nexusRepo=myrepo
-nexusUser=user
-nexusPassword=password&lt;/code&gt;&lt;/pre&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;#used for the publishing&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;nexusGroup&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;com.acme&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;nexusHost&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;nexus-dev&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;nexusRepo&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;myrepo&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;nexusUser&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;user&lt;/span&gt;
+&lt;span style=&quot;color: #7D9029&quot;&gt;nexusPassword&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;password&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Now let&amp;#8217;s make this a java project. we&amp;#8217;ll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java&lt;/p&gt;
+&lt;p&gt;Now let&amp;#8217;s make this a java project. We&amp;#8217;ll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;package com.acme.example;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;package&lt;/span&gt; com&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;acme&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;example&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;;&lt;/span&gt;
 
-public final class SemanticVersioning {
+&lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;final&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold&quot;&gt;SemanticVersioning&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
 
-  //tag::anchor[]
+  &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::anchor[]&lt;/span&gt;
 
-  /**
-   * A sample for the javadoc
-   *
-   * @param args Tha arguments to this magnificient application
-   * @since 0.0.1
-   */
-  public static void main(String[] args) {
-    System.out.println(&quot;Hello Semantic versioning&quot;);
-  }
+  &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;/**&lt;/span&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;   * A sample for the javadoc&lt;/span&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;   *&lt;/span&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;   * @param args Tha arguments to this magnificient application&lt;/span&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;   * @since 0.0.1&lt;/span&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;   */&lt;/span&gt;
+  &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;static&lt;/span&gt; &lt;span style=&quot;color: #B00040&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #0000FF&quot;&gt;main&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;String&lt;span style=&quot;color: #666666&quot;&gt;[]&lt;/span&gt; args&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    System&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;out&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;println&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;Hello Semantic versioning&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;);&lt;/span&gt;
+  &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-  //end::anchor[]
+  &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::anchor[]&lt;/span&gt;
 
-}&lt;/code&gt;&lt;/pre&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -203,14 +192,14 @@ public final class SemanticVersioning {
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;build.gradle&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;project.group = nexusGroup &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-project.description = &#39;Semantic versioning&#39;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;groovy&quot;&gt;project&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;group&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; nexusGroup &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+project&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;description&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;Semantic versioning&amp;#39;&lt;/span&gt;
 
-apply plugin: &#39;java&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;java&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
 
-repositories { &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-    jcenter()
-}&lt;/code&gt;&lt;/pre&gt;
+repositories &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+    jcenter&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -231,31 +220,31 @@ repositories { &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_building-the-project&quot;&gt;2.2. Building the project&lt;/h3&gt;
+&lt;h3 id=&quot;_building_the_project&quot;&gt;2.2. Building the project&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;To build the project, all we need to done is invoke the gradle build task using&lt;/p&gt;
+&lt;p&gt;To build the project, you have to invoke the gradle &lt;strong&gt;build&lt;/strong&gt; task using&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;Building the project&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;+&amp;gt; gradlew build
-Starting a new Gradle Daemon for this build (subsequent builds will be faster).
-Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT
-:compileJava
-:processResources UP-TO-DATE
-:classes
-:jar
-:assemble
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:check UP-TO-DATE
-:build
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; gradlew build&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Starting a new Gradle Daemon for this build (subsequent builds will be faster).&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:compileJava&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:processResources UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:classes&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:jar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:assemble&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:compileTestJava UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:processTestResources UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:testClasses UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:test UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:check UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:build&lt;/span&gt;
 
-BUILD SUCCESSFUL
+&lt;span style=&quot;color: #888888&quot;&gt;BUILD SUCCESSFUL&lt;/span&gt;
 
-Total time: 11.917 secs&lt;/code&gt;&lt;/pre&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Total time: 11.917 secs&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -268,116 +257,116 @@ Total time: 11.917 secs&lt;/code&gt;&lt;/pre&gt;
 &lt;i class=&quot;fa icon-tip&quot; title=&quot;Tip&quot;&gt;&lt;/i&gt;
 &lt;/td&gt;
 &lt;td class=&quot;content&quot;&gt;
-Instead of trying to build your .gitignore from scratch, you can use &lt;a href=&quot;https://github.com/Netflix/gradle-template/blob/master/.gitignore&quot;&gt;Netflix&amp;#8217;s template&lt;/a&gt; which covers pretty much everything
+Instead of trying to build your .gitignore from scratch, you can use &lt;a href=&quot;https://github.com/Netflix/gradle-template/blob/master/.gitignore&quot;&gt;Netflix&amp;#8217;s template&lt;/a&gt; which covers pretty much everything for a standard java project.
 &lt;/td&gt;
 &lt;/tr&gt;
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;If you need, at any time to look at the available tasks on your project you can use the tasks task.
+&lt;p&gt;If you need to look at the available tasks on your project you can use the &lt;strong&gt;tasks&lt;/strong&gt; task.
 Here&amp;#8217;s a sample usage with the output.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;List gradle tasks&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;+&amp;gt; gradlew tasks
-Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT
-:tasks
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; gradlew tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:tasks&lt;/span&gt;
 
-------------------------------------------------------------
-All tasks runnable from root project - Semantic versioning
-------------------------------------------------------------
+&lt;span style=&quot;color: #888888&quot;&gt;------------------------------------------------------------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;All tasks runnable from root project - Semantic versioning&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;------------------------------------------------------------&lt;/span&gt;
 
-Build tasks
------------
-assemble - Assembles the outputs of this project.
-build - Assembles and tests this project.
-buildDependents - Assembles and tests this project and all projects that depend on it.
-buildNeeded - Assembles and tests this project and all projects it depends on.
-classes - Assembles classes &#39;main&#39;.
-clean - Deletes the build directory.
-jar - Assembles a jar archive containing the main classes.
-testClasses - Assembles classes &#39;test&#39;.
+&lt;span style=&quot;color: #888888&quot;&gt;Build tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;-----------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;assemble - Assembles the outputs of this project.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;build - Assembles and tests this project.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;buildDependents - Assembles and tests this project and all projects that depend on it.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;buildNeeded - Assembles and tests this project and all projects it depends on.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;classes - Assembles classes &amp;#39;main&amp;#39;.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;clean - Deletes the build directory.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;jar - Assembles a jar archive containing the main classes.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;testClasses - Assembles classes &amp;#39;test&amp;#39;.&lt;/span&gt;
 
-Build Setup tasks
------------------
-init - Initializes a new Gradle build. [incubating]
+&lt;span style=&quot;color: #888888&quot;&gt;Build Setup tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;-----------------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;init - Initializes a new Gradle build. [incubating]&lt;/span&gt;
 
-Documentation tasks
--------------------
-asciidoctor - Converts AsciiDoc files and copies the output files and related resources to the build directory.
-javadoc - Generates Javadoc API documentation for the main source code.
+&lt;span style=&quot;color: #888888&quot;&gt;Documentation tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;-------------------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;asciidoctor - Converts AsciiDoc files and copies the output files and related resources to the build directory.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;javadoc - Generates Javadoc API documentation for the main source code.&lt;/span&gt;
 
-Help tasks
-----------
-components - Displays the components produced by root project &#39;semantic-versioning&#39;. [incubating]
-dependencies - Displays all dependencies declared in root project &#39;semantic-versioning&#39;.
-dependencyInsight - Displays the insight into a specific dependency in root project &#39;semantic-versioning&#39;.
-help - Displays a help message.
-model - Displays the configuration model of root project &#39;semantic-versioning&#39;. [incubating]
-projects - Displays the sub-projects of root project &#39;semantic-versioning&#39;.
-properties - Displays the properties of root project &#39;semantic-versioning&#39;.
-tasks - Displays the tasks runnable from root project &#39;semantic-versioning&#39;.
+&lt;span style=&quot;color: #888888&quot;&gt;Help tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;----------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;components - Displays the components produced by root project &amp;#39;semantic-versioning&amp;#39;. [incubating]&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;dependencies - Displays all dependencies declared in root project &amp;#39;semantic-versioning&amp;#39;.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;dependencyInsight - Displays the insight into a specific dependency in root project &amp;#39;semantic-versioning&amp;#39;.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;help - Displays a help message.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;model - Displays the configuration model of root project &amp;#39;semantic-versioning&amp;#39;. [incubating]&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;projects - Displays the sub-projects of root project &amp;#39;semantic-versioning&amp;#39;.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;properties - Displays the properties of root project &amp;#39;semantic-versioning&amp;#39;.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;tasks - Displays the tasks runnable from root project &amp;#39;semantic-versioning&amp;#39;.&lt;/span&gt;
 
-JRuby tasks
------------
-jrubyGenerateGradleRb - Generate a gradle.rb stub for executing Ruby binstubs
-jrubyPrepare - Pre-cache and prepare all dependencies (jars and gems)
-jrubyPrepareGems - Prepare the gems from the `gem` dependencies, extracts into jruby.installGemDir
-jrubyPrepareJars - Prepare the jar dependencies from the `gem` dependencies, collect them into
+&lt;span style=&quot;color: #888888&quot;&gt;JRuby tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;-----------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;jrubyGenerateGradleRb - Generate a gradle.rb stub for executing Ruby binstubs&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;jrubyPrepare - Pre-cache and prepare all dependencies (jars and gems)&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;jrubyPrepareGems - Prepare the gems from the `gem` dependencies, extracts into jruby.installGemDir&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;jrubyPrepareJars - Prepare the jar dependencies from the `gem` dependencies, collect them into&lt;/span&gt;
 
-Nebula Release tasks
---------------------
-candidate
-devSnapshot
-final
-releaseCheck
-snapshot
+&lt;span style=&quot;color: #888888&quot;&gt;Nebula Release tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;--------------------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;candidate&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;devSnapshot&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;final&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;releaseCheck&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;snapshot&lt;/span&gt;
 
-Upload tasks
-------------
-uploadArchives - Uploads all artifacts belonging to configuration &#39;:archives&#39;
+&lt;span style=&quot;color: #888888&quot;&gt;Upload tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;------------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;uploadArchives - Uploads all artifacts belonging to configuration &amp;#39;:archives&amp;#39;&lt;/span&gt;
 
-Verification tasks
-------------------
-check - Runs all checks.
-test - Runs the unit tests.
+&lt;span style=&quot;color: #888888&quot;&gt;Verification tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;------------------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;check - Runs all checks.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;test - Runs the unit tests.&lt;/span&gt;
 
-Other tasks
------------
-generateHtml5
-install - Installs the &#39;archives&#39; artifacts into the local Maven repository.
-release - Releases this project.
-wrapper
+&lt;span style=&quot;color: #888888&quot;&gt;Other tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;-----------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;generateHtml5&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;install - Installs the &amp;#39;archives&amp;#39; artifacts into the local Maven repository.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;release - Releases this project.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;wrapper&lt;/span&gt;
 
-Rules
------
-Pattern: clean&amp;lt;TaskName&amp;gt;: Cleans the output files of a task.
-Pattern: build&amp;lt;ConfigurationName&amp;gt;: Assembles the artifacts of a configuration.
-Pattern: upload&amp;lt;ConfigurationName&amp;gt;: Assembles and uploads the artifacts belonging to a configuration.
+&lt;span style=&quot;color: #888888&quot;&gt;Rules&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;-----&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Pattern: clean&amp;lt;TaskName&amp;gt;: Cleans the output files of a task.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Pattern: build&amp;lt;ConfigurationName&amp;gt;: Assembles the artifacts of a configuration.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Pattern: upload&amp;lt;ConfigurationName&amp;gt;: Assembles and uploads the artifacts belonging to a configuration.&lt;/span&gt;
 
-To see all tasks and more detail, run gradlew tasks --all
+&lt;span style=&quot;color: #888888&quot;&gt;To see all tasks and more detail, run gradlew tasks --all&lt;/span&gt;
 
-To see more detail about a task, run gradlew help --task &amp;lt;task&amp;gt;
+&lt;span style=&quot;color: #888888&quot;&gt;To see more detail about a task, run gradlew help --task &amp;lt;task&amp;gt;&lt;/span&gt;
 
-BUILD SUCCESSFUL&lt;/code&gt;&lt;/pre&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;BUILD SUCCESSFUL&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_adding-javadoc-and-source-jars&quot;&gt;2.3. Adding javadoc and source jars&lt;/h3&gt;
+&lt;h3 id=&quot;_adding_javadoc_and_source_jars&quot;&gt;2.3. Adding javadoc and source jars&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;There is nothing simpler than that when using Nebula tools (provided by NetFlix).
-Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow their standard approach&lt;/p&gt;
+Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow this approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;build.gradle&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;plugins {
-    id &#39;nebula.project&#39; version &#39;3.2.1&#39; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-}
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;groovy&quot;&gt;plugins &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.project&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;3.2.1&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-apply plugin: &#39;nebula.project&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.project&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -417,18 +406,18 @@ apply plugin: &#39;nebula.project&#39; &lt;i class=&quot;conum&quot; data-value=
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;Newly added tasks&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;Build tasks
------------
-assemble - Assembles the outputs of this project.
-build - Assembles and tests this project.
-buildDependents - Assembles and tests this project and all projects that depend on it.
-buildNeeded - Assembles and tests this project and all projects it depends on.
-classes - Assembles classes &#39;main&#39;.
-clean - Deletes the build directory.
-jar - Assembles a jar archive containing the main classes.
-javadocJar &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-sourceJar &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-testClasses - Assembles classes &#39;test&#39;.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;Build tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;-----------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;assemble - Assembles the outputs of this project.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;build - Assembles and tests this project.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;buildDependents - Assembles and tests this project and all projects that depend on it.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;buildNeeded - Assembles and tests this project and all projects it depends on.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;classes - Assembles classes &amp;#39;main&amp;#39;.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;clean - Deletes the build directory.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;jar - Assembles a jar archive containing the main classes.&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;javadocJar &lt;/span&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;sourceJar &lt;/span&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;testClasses - Assembles classes &amp;#39;test&amp;#39;.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -448,7 +437,7 @@ testClasses - Assembles classes &#39;test&#39;.&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_adding-some-cool-documentation&quot;&gt;2.4. Adding some cool documentation&lt;/h3&gt;
+&lt;h3 id=&quot;_adding_some_cool_documentation&quot;&gt;2.4. Adding some cool documentation&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Asciidoctor is a really useful tool when it comes to technical documentation in all its forms: Tutorials, User guides, HowTos, FAQs etc..
 It is yet another markdown format, enriched by many plugins that you are encouraged to explore, such as diagrams, math equations, tree view etc..
@@ -461,60 +450,60 @@ Here&amp;#8217;s a snippet on how to use it..&lt;/p&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;build.gradle&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;plugins {
-    id &#39;org.asciidoctor.convert&#39; version &#39;1.5.2&#39; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-    id &#39;com.github.jruby-gradle.base&#39; version &#39;0.3.0&#39;
-}
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;groovy&quot;&gt;plugins &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;org.asciidoctor.convert&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;1.5.2&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;com.github.jruby-gradle.base&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;0.3.0&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-dependencies {
-    gems &#39;rubygems:asciidoctor-diagram:1.3.0&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-    asciidoctor &#39;com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1&#39;
-    asciidoctor &#39;org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8&#39;
-}
+dependencies &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    gems &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;rubygems:asciidoctor-diagram:1.3.0&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    asciidoctor &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1&amp;#39;&lt;/span&gt;
+    asciidoctor &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-apply plugin: &#39;com.github.jruby-gradle.base&#39; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-apply plugin: &#39;org.asciidoctor.convert&#39;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;com.github.jruby-gradle.base&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;org.asciidoctor.convert&amp;#39;&lt;/span&gt;
 
-class AsciiDoctorDefault extends org.asciidoctor.gradle.AsciidoctorTask { &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+&lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold&quot;&gt;AsciiDoctorDefault&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;extends&lt;/span&gt; org&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;asciidoctor&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;gradle&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;AsciidoctorTask&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
 
-    AsciiDoctorDefault() {
+    AsciiDoctorDefault&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
 
-        resources {
-            from(sourceDir) {
-                include &#39;css/**&#39;
-                include &#39;images/**&#39;
-            }
-        }
+        resources &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+            from&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;sourceDir&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+                include &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;css/**&amp;#39;&lt;/span&gt;
+                include &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;images/**&amp;#39;&lt;/span&gt;
+            &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+        &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-        requires &#39;asciidoctor-diagram&#39;
+        requires &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;asciidoctor-diagram&amp;#39;&lt;/span&gt;
 
-        attributes &#39;build-gradle&#39;: new File(&#39;build.gradle&#39;),
-                &#39;source-highlighter&#39;: &#39;highlightjs&#39;,
-                &#39;highlightjs-theme&#39;: &#39;github&#39;,
-                &#39;sourceDir&#39;: &#39;../../main/java&#39;,
-                &#39;rootDir&#39;: &#39;../../../&#39;,
-                &#39;imagesdir&#39;: &#39;images&#39;,
-                &#39;imagesoutdir&#39;: &#39;images&#39;,
-                &#39;setanchors&#39;: &#39;true&#39;,
-                &#39;idprefix&#39;: &#39;&#39;,
-                &#39;idseparator&#39;: &#39;-&#39;,
-                &#39;docinfo1&#39;: &#39;true&#39;,
-                &#39;docVersion&#39;: project.version.toString()
-    }
+        attributes &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;build-gradle&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;new&lt;/span&gt; File&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;build.gradle&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;),&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;source-highlighter&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;highlightjs&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;highlightjs-theme&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;github&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;sourceDir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;../../main/java&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;rootDir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;../../../&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;imagesdir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;imagesoutdir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;setanchors&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;idprefix&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;idseparator&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;docinfo1&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;docVersion&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; project&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;version&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;toString&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt;
+    &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-}
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-task(generateHtml5, type: AsciiDoctorDefault) { &lt;i class=&quot;conum&quot; data-value=&quot;5&quot;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
+task&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;generateHtml5&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;type:&lt;/span&gt; AsciiDoctorDefault&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;5&quot;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends &#39;html5&#39;
-}
+    gemPath jrubyPrepareGems&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;outputDir&lt;/span&gt;
+    backends &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;html5&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-task(generatePdf, type: AsciiDoctorDefault) { &lt;i class=&quot;conum&quot; data-value=&quot;6&quot;&gt;&lt;/i&gt;&lt;b&gt;(6)&lt;/b&gt;
+task&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;generatePdf&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;type:&lt;/span&gt; AsciiDoctorDefault&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;6&quot;&gt;&lt;/i&gt;&lt;b&gt;(6)&lt;/b&gt;
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends &#39;pdf&#39;
-}&lt;/code&gt;&lt;/pre&gt;
+    gemPath jrubyPrepareGems&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;outputDir&lt;/span&gt;
+    backends &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;pdf&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -547,27 +536,27 @@ task(generatePdf, type: AsciiDoctorDefault) { &lt;i class=&quot;conum&quot; data
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_publishing-the-artifacts&quot;&gt;2.5. Publishing the artifacts&lt;/h3&gt;
+&lt;h3 id=&quot;_publishing_the_artifacts&quot;&gt;2.5. Publishing the artifacts&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;One of the useful things nebula project plugin does, is add publishing support to maven repositories.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;build.gradle&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;publishing { &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;groovy&quot;&gt;publishing &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 
-    repositories { &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-        maven {
-            url &quot;http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith(&#39;-SNAPSHOT&#39;) ? &#39;snapshots&#39; : &#39;releases&#39;}&quot;
+    repositories &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+        maven &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+            url &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith(&amp;#39;-SNAPSHOT&amp;#39;) ? &amp;#39;snapshots&amp;#39; : &amp;#39;releases&amp;#39;}&amp;quot;&lt;/span&gt;
             &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-            credentials {
-                username &quot;${nexusUser}&quot;
-                password &quot;${nexusPassword}&quot;
-            }
-        }
-        mavenLocal()
-    }
-}&lt;/code&gt;&lt;/pre&gt;
+            credentials &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+                username &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;${nexusUser}&amp;quot;&lt;/span&gt;
+                password &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;${nexusPassword}&amp;quot;&lt;/span&gt;
+            &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+        &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+        mavenLocal&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt;
+    &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -588,7 +577,7 @@ task(generatePdf, type: AsciiDoctorDefault) { &lt;i class=&quot;conum&quot; data
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_semantic-versioning&quot;&gt;2.6. Semantic versioning&lt;/h3&gt;
+&lt;h3 id=&quot;_semantic_versioning&quot;&gt;2.6. Semantic versioning&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Now comes the real question on how to version our project, and how to define its release cycle.
 Again nebula comes to the rescue by providing the Netflix biased way via the nebula release plugin, which should be enough for whatever needs you have.&lt;/p&gt;
@@ -607,18 +596,18 @@ With this in mind, a release is simply a tag on a specific commit that marks the
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;build.gradle&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;plugins {
-    id &#39;nebula.nebula-release&#39; version &#39;4.0.1&#39; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-}
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;groovy&quot;&gt;plugins &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.nebula-release&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;4.0.1&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-apply plugin: &#39;nebula.nebula-release&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.nebula-release&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
 
-release { &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula&#39;s devSnapshot
-    defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
-}
+release &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+    &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;// Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula&amp;#39;s devSnapshot&lt;/span&gt;
+    defaultVersionStrategy &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; org&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;ajoberstar&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;gradle&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;git&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;release&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;opinion&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;Strategies&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;SNAPSHOT&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-tasks.release.finalizedBy tasks.publish &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+tasks&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;release&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;finalizedBy&lt;/span&gt; tasks&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;publish&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -647,14 +636,14 @@ tasks.release.finalizedBy tasks.publish &lt;i class=&quot;conum&quot; data-value
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;View nebula release tasks&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;+&amp;gt; gradlew tasks
-Nebula Release tasks
---------------------
-candidate &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-devSnapshot
-final &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-releaseCheck
-snapshot &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; gradlew tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Nebula Release tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;--------------------&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;candidate &lt;/span&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;devSnapshot&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;final &lt;/span&gt;&lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;releaseCheck&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;snapshot &lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -682,7 +671,7 @@ candidate and final tasks are a bit different, where they require no uncommited 
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;git tag &quot;v.0.0.1&quot; // tags the current branch tip to have the 0.0.1 version.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;git tag &amp;quot;v.0.0.1&amp;quot; // tags the current branch tip to have the 0.0.1 version.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -694,9 +683,9 @@ candidate and final tasks are a bit different, where they require no uncommited 
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;Sample flow: Making some changes&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;+&amp;gt; touch bla
-+&amp;gt; git add bla
-+&amp;gt; git commit -m &quot;my bla change&quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; touch bla&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; git add bla&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; git commit -m &amp;quot;my bla change&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -705,35 +694,35 @@ candidate and final tasks are a bit different, where they require no uncommited 
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;Sample flow: The release candidate&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;+&amp;gt; gradlew candidate
-Inferred project: semantic-versioning, version: 0.1.0-rc.1
-Unable to determine the host name on this Windows instance
-:releaseCheck
-:candidate
-:prepare
-:compileJava
-:processResources UP-TO-DATE
-:classes
-:writeManifestProperties
-:jar
-:assemble
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:check UP-TO-DATE
-:build
-:release
-Tagging repository as v0.1.0-rc.1
-Pushing changes in [refs/heads/master, v0.1.0-rc.1] to origin
-:generatePomFileForNebulaPublication
-:javadoc
-:javadocJar
-:sourceJar
-:publishNebulaPublicationToMavenLocalRepository
-:publishNebulaPublicationToMavenRepository
-Upload http://myserver/content/repositories/myrepo-releases/com/acme/example/semantic-versioning/0.1.0-rc.1/semantic-versioning-0.1.0-rc.1.jar
-...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; gradlew candidate&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Inferred project: semantic-versioning, version: 0.1.0-rc.1&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Unable to determine the host name on this Windows instance&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:releaseCheck&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:candidate&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:prepare&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:compileJava&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:processResources UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:classes&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:writeManifestProperties&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:jar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:assemble&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:compileTestJava UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:processTestResources UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:testClasses UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:test UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:check UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:build&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:release&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Tagging repository as v0.1.0-rc.1&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Pushing changes in [refs/heads/master, v0.1.0-rc.1] to origin&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:generatePomFileForNebulaPublication&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:javadoc&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:javadocJar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:sourceJar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:publishNebulaPublicationToMavenLocalRepository&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:publishNebulaPublicationToMavenRepository&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Upload http://myserver/content/repositories/myrepo-releases/com/acme/example/semantic-versioning/0.1.0-rc.1/semantic-versioning-0.1.0-rc.1.jar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -758,45 +747,45 @@ Upload http://myserver/content/repositories/myrepo-releases/com/acme/example/sem
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;Sample flow: The official release&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;+&amp;gt; gradlew final
-Inferred project: semantic-versioning, version: 0.1.0
-Unable to determine the host name on this Windows instance
-:releaseCheck
-:final
-:prepare
-:compileJava UP-TO-DATE
-:processResources UP-TO-DATE
-:classes UP-TO-DATE
-:writeManifestProperties
-:jar
-:assemble
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:check UP-TO-DATE
-:build
-:release
-Tagging repository as v0.1.0
-Pushing changes in [refs/heads/master, v0.1.0] to origin
-:generatePomFileForNebulaPublication
-:javadoc
-:javadocJar
-:sourceJar
-:publishNebulaPublicationToMavenLocalRepository
-:publishNebulaPublicationToMavenRepository
-...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; gradlew final&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Inferred project: semantic-versioning, version: 0.1.0&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Unable to determine the host name on this Windows instance&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:releaseCheck&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:final&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:prepare&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:compileJava UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:processResources UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:classes UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:writeManifestProperties&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:jar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:assemble&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:compileTestJava UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:processTestResources UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:testClasses UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:test UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:check UP-TO-DATE&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:build&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:release&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Tagging repository as v0.1.0&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Pushing changes in [refs/heads/master, v0.1.0] to origin&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:generatePomFileForNebulaPublication&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:javadoc&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:javadocJar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:sourceJar&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:publishNebulaPublicationToMavenLocalRepository&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;:publishNebulaPublicationToMavenRepository&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts
+&lt;p&gt;Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.
 The next development version will be 0.1.1-SNAPSHOT&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;Viewing the next dev version&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;+&amp;gt; gradlew tasks
-Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;+&amp;gt; gradlew tasks&lt;/span&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -804,8 +793,8 @@ Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT&lt;/code&gt;&lt;/
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;gradlew &amp;lt;snapshot|devSnapshot|candidate|final&amp;gt; -Prelease.scope=&amp;lt;major|minor|patch&amp;gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-gradlew &amp;lt;candidate|final&amp;gt; -Prelease.version=1.2.3 &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;console&quot;&gt;&lt;span style=&quot;color: #888888&quot;&gt;gradlew &amp;lt;snapshot|devSnapshot|candidate|final&amp;gt; -Prelease.scope=&amp;lt;major|minor|patch&amp;gt; &lt;/span&gt;&lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #888888&quot;&gt;gradlew &amp;lt;candidate|final&amp;gt; -Prelease.version=1.2.3 &lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -822,10 +811,10 @@ gradlew &amp;lt;candidate|final&amp;gt; -Prelease.version=1.2.3 &lt;i class=&quo
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_the-ci-part&quot;&gt;2.7. The CI part&lt;/h3&gt;
+&lt;h3 id=&quot;_the_ci_part&quot;&gt;2.7. The CI part&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Here we assume you have a jenkins server running somewhere, with the &quot;new&quot; pipelines scripts.
-We will be creating 2 jobs, 1 for building the project, another to handle the release part.&lt;/p&gt;
+In general, you will need 2 jobs, one for building the project and another to handle the release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile
@@ -834,28 +823,28 @@ Here&amp;#8217;s the content&lt;/p&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;Jenkinsfile&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;node(&#39;master&#39;) { &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;groovy&quot;&gt;node&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;master&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 
-   // Mark the code checkout &#39;stage&#39;....
-   stage &#39;Checkout&#39;
+   &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;// Mark the code checkout &amp;#39;stage&amp;#39;....&lt;/span&gt;
+   stage &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;Checkout&amp;#39;&lt;/span&gt;
 
-   // Get the code from the Stash repository
+   &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;// Get the code from the Stash repository&lt;/span&gt;
    checkout scm &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
 
-   // Mark the code build &#39;stage&#39;....
-   stage &#39;Build&#39;
+   &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;// Mark the code build &amp;#39;stage&amp;#39;....&lt;/span&gt;
+   stage &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;Build&amp;#39;&lt;/span&gt;
 
-   // Make sure script is runnable
-   sh &quot;chmod a+x ./gradlew&quot;
+   &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;// Make sure script is runnable&lt;/span&gt;
+   sh &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;chmod a+x ./gradlew&amp;quot;&lt;/span&gt;
 
-   // Run gradle build and deploy &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-   wrap([$class: &#39;ConfigFileBuildWrapper&#39;, managedFiles: [[fileId: &#39;org.jenkinsci.plugins.configfiles.custom.CustomConfig1453803770046&#39;, replaceTokens: false, targetLocation: &#39;gradle.properties&#39;, variable: &#39;&#39;]]]) {
-    sh &quot;./gradlew snapshot generateHtml5 generatePdf --stacktrace&quot;
-   }
+   &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;// Run gradle build and deploy &lt;/span&gt;&lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+   wrap&lt;span style=&quot;color: #666666&quot;&gt;([&lt;/span&gt;$class&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;ConfigFileBuildWrapper&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;managedFiles:&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;[[&lt;/span&gt;&lt;span style=&quot;color: #A0A000&quot;&gt;fileId:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;org.jenkinsci.plugins.configfiles.custom.CustomConfig1453803770046&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;replaceTokens:&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;false&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;targetLocation:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;gradle.properties&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;variable:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;]]])&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    sh &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;./gradlew snapshot generateHtml5 generatePdf --stacktrace&amp;quot;&lt;/span&gt;
+   &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-   publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: &#39;build/asciidoc/html5&#39;, reportFiles: &#39;semantic-versioning.html&#39;, reportName: &#39;Documentation&#39;]) &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+   publishHTML&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #A0A000&quot;&gt;target:&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color: #A0A000&quot;&gt;allowMissing:&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;false&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;alwaysLinkToLastBuild:&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;false&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;keepAll:&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;false&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;reportDir:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;build/asciidoc/html5&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;reportFiles:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;semantic-versioning.html&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;reportName:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;Documentation&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;])&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
 
-}&lt;/code&gt;&lt;/pre&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;colist arabic&quot;&gt;
@@ -882,7 +871,7 @@ Here&amp;#8217;s the content&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_putting-it-all-together&quot;&gt;3. Putting it all together&lt;/h2&gt;
+&lt;h2 id=&quot;_putting_it_all_together&quot;&gt;3. Putting it all together&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;At this point, we have done the following:&lt;/p&gt;
@@ -929,143 +918,143 @@ This tutorial focused on the technical aspects, but there are more to it:&lt;/p&
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;title&quot;&gt;build.gradle&lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;highlightjs highlight&quot;&gt;&lt;code&gt;//tag::nebula-release[]
-plugins {
-    id &#39;nebula.nebula-release&#39; version &#39;4.0.1&#39; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-}
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;groovy&quot;&gt;&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::nebula-release[]&lt;/span&gt;
+plugins &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.nebula-release&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;4.0.1&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-//end::nebula-release[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::nebula-release[]&lt;/span&gt;
 
-//tag::asciidoctor[]
-plugins {
-    id &#39;org.asciidoctor.convert&#39; version &#39;1.5.2&#39; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-    id &#39;com.github.jruby-gradle.base&#39; version &#39;0.3.0&#39;
-}
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::asciidoctor[]&lt;/span&gt;
+plugins &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;org.asciidoctor.convert&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;1.5.2&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;com.github.jruby-gradle.base&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;0.3.0&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-//end::asciidoctor[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::asciidoctor[]&lt;/span&gt;
 
-//tag::nebula-project[]
-plugins {
-    id &#39;nebula.project&#39; version &#39;3.2.1&#39; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-}
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::nebula-project[]&lt;/span&gt;
+plugins &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    id &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.project&amp;#39;&lt;/span&gt; version &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;3.2.1&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-//end::nebula-project[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::nebula-project[]&lt;/span&gt;
 
-//tag::java[]
-project.group = nexusGroup &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
-project.description = &#39;Semantic versioning&#39;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::java[]&lt;/span&gt;
+project&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;group&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; nexusGroup &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+project&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;description&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;Semantic versioning&amp;#39;&lt;/span&gt;
 
-//end::java[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::java[]&lt;/span&gt;
 
-//tag::asciidoctor[]
-dependencies {
-    gems &#39;rubygems:asciidoctor-diagram:1.3.0&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-    asciidoctor &#39;com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1&#39;
-    asciidoctor &#39;org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8&#39;
-}
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::asciidoctor[]&lt;/span&gt;
+dependencies &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    gems &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;rubygems:asciidoctor-diagram:1.3.0&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+    asciidoctor &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1&amp;#39;&lt;/span&gt;
+    asciidoctor &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-//end::asciidoctor[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::asciidoctor[]&lt;/span&gt;
 
-//tag::java[]
-apply plugin: &#39;java&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::java[]&lt;/span&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;java&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
 
-//end::java[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::java[]&lt;/span&gt;
 
-//tag::nebula-project[]
-apply plugin: &#39;nebula.project&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::nebula-project[]&lt;/span&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.project&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
 
-//end::nebula-project[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::nebula-project[]&lt;/span&gt;
 
-//tag::asciidoctor[]
-apply plugin: &#39;com.github.jruby-gradle.base&#39; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-apply plugin: &#39;org.asciidoctor.convert&#39;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::asciidoctor[]&lt;/span&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;com.github.jruby-gradle.base&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;org.asciidoctor.convert&amp;#39;&lt;/span&gt;
 
-//end::asciidoctor[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::asciidoctor[]&lt;/span&gt;
 
-//tag::java[]
-repositories { &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-    jcenter()
-}
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::java[]&lt;/span&gt;
+repositories &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+    jcenter&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-//end::java[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::java[]&lt;/span&gt;
 
-//tag::publishing[]
-publishing { &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::publishing[]&lt;/span&gt;
+publishing &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;1&quot;&gt;&lt;/i&gt;&lt;b&gt;(1)&lt;/b&gt;
 
-    repositories { &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
-        maven {
-            url &quot;http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith(&#39;-SNAPSHOT&#39;) ? &#39;snapshots&#39; : &#39;releases&#39;}&quot;
+    repositories &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+        maven &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+            url &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith(&amp;#39;-SNAPSHOT&amp;#39;) ? &amp;#39;snapshots&amp;#39; : &amp;#39;releases&amp;#39;}&amp;quot;&lt;/span&gt;
             &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-            credentials {
-                username &quot;${nexusUser}&quot;
-                password &quot;${nexusPassword}&quot;
-            }
-        }
-        mavenLocal()
-    }
-}
+            credentials &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+                username &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;${nexusUser}&amp;quot;&lt;/span&gt;
+                password &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;quot;${nexusPassword}&amp;quot;&lt;/span&gt;
+            &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+        &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+        mavenLocal&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt;
+    &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-//end::publishing[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::publishing[]&lt;/span&gt;
 
-//tag::nebula-release[]
-apply plugin: &#39;nebula.nebula-release&#39; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::nebula-release[]&lt;/span&gt;
+apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;nebula.nebula-release&amp;#39;&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;2&quot;&gt;&lt;/i&gt;&lt;b&gt;(2)&lt;/b&gt;
 
-release { &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
-    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula&#39;s devSnapshot
-    defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
-}
+release &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;3&quot;&gt;&lt;/i&gt;&lt;b&gt;(3)&lt;/b&gt;
+    &lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;// Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula&amp;#39;s devSnapshot&lt;/span&gt;
+    defaultVersionStrategy &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; org&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;ajoberstar&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;gradle&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;git&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;release&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;opinion&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;Strategies&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;SNAPSHOT&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-tasks.release.finalizedBy tasks.publish &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+tasks&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;release&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;finalizedBy&lt;/span&gt; tasks&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;publish&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
 
-//end::nebula-release[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::nebula-release[]&lt;/span&gt;
 
-//tag::asciidoctor[]
-class AsciiDoctorDefault extends org.asciidoctor.gradle.AsciidoctorTask { &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//tag::asciidoctor[]&lt;/span&gt;
+&lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold&quot;&gt;AsciiDoctorDefault&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;extends&lt;/span&gt; org&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;asciidoctor&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;gradle&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;AsciidoctorTask&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;4&quot;&gt;&lt;/i&gt;&lt;b&gt;(4)&lt;/b&gt;
 
-    AsciiDoctorDefault() {
+    AsciiDoctorDefault&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
 
-        resources {
-            from(sourceDir) {
-                include &#39;css/**&#39;
-                include &#39;images/**&#39;
-            }
-        }
+        resources &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+            from&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;sourceDir&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+                include &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;css/**&amp;#39;&lt;/span&gt;
+                include &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;images/**&amp;#39;&lt;/span&gt;
+            &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
+        &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-        requires &#39;asciidoctor-diagram&#39;
+        requires &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;asciidoctor-diagram&amp;#39;&lt;/span&gt;
 
-        attributes &#39;build-gradle&#39;: new File(&#39;build.gradle&#39;),
-                &#39;source-highlighter&#39;: &#39;highlightjs&#39;,
-                &#39;highlightjs-theme&#39;: &#39;github&#39;,
-                &#39;sourceDir&#39;: &#39;../../main/java&#39;,
-                &#39;rootDir&#39;: &#39;../../../&#39;,
-                &#39;imagesdir&#39;: &#39;images&#39;,
-                &#39;imagesoutdir&#39;: &#39;images&#39;,
-                &#39;setanchors&#39;: &#39;true&#39;,
-                &#39;idprefix&#39;: &#39;&#39;,
-                &#39;idseparator&#39;: &#39;-&#39;,
-                &#39;docinfo1&#39;: &#39;true&#39;,
-                &#39;docVersion&#39;: project.version.toString()
-    }
+        attributes &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;build-gradle&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;new&lt;/span&gt; File&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;build.gradle&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;),&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;source-highlighter&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;highlightjs&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;highlightjs-theme&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;github&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;sourceDir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;../../main/java&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;rootDir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;../../../&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;imagesdir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;imagesoutdir&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;setanchors&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;idprefix&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;idseparator&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;docinfo1&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;true&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt;
+                &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;docVersion&amp;#39;&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;:&lt;/span&gt; project&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;version&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;toString&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;()&lt;/span&gt;
+    &lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-}
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-task(generateHtml5, type: AsciiDoctorDefault) { &lt;i class=&quot;conum&quot; data-value=&quot;5&quot;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
+task&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;generateHtml5&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;type:&lt;/span&gt; AsciiDoctorDefault&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;5&quot;&gt;&lt;/i&gt;&lt;b&gt;(5)&lt;/b&gt;
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends &#39;html5&#39;
-}
+    gemPath jrubyPrepareGems&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;outputDir&lt;/span&gt;
+    backends &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;html5&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-task(generatePdf, type: AsciiDoctorDefault) { &lt;i class=&quot;conum&quot; data-value=&quot;6&quot;&gt;&lt;/i&gt;&lt;b&gt;(6)&lt;/b&gt;
+task&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;generatePdf&lt;span style=&quot;color: #666666&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #A0A000&quot;&gt;type:&lt;/span&gt; AsciiDoctorDefault&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i class=&quot;conum&quot; data-value=&quot;6&quot;&gt;&lt;/i&gt;&lt;b&gt;(6)&lt;/b&gt;
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends &#39;pdf&#39;
-}
+    gemPath jrubyPrepareGems&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;outputDir&lt;/span&gt;
+    backends &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;pdf&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;
 
-//end::asciidoctor[]
+&lt;span style=&quot;color: #408080; font-style: italic&quot;&gt;//end::asciidoctor[]&lt;/span&gt;
 
-task wrapper(type: Wrapper) {
-    gradleVersion = &#39;2.6&#39;
-}&lt;/code&gt;&lt;/pre&gt;
+task &lt;span style=&quot;color: #0000FF&quot;&gt;wrapper&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #A0A000&quot;&gt;type:&lt;/span&gt; Wrapper&lt;span style=&quot;color: #666666&quot;&gt;)&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
+    gradleVersion &lt;span style=&quot;color: #666666&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #BA2121&quot;&gt;&amp;#39;2.6&amp;#39;&lt;/span&gt;
+&lt;span style=&quot;color: #666666&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;

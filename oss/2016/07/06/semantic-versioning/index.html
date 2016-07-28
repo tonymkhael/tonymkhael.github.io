@@ -33,6 +33,9 @@
 MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });
   </script>
   
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
 </head>
 
 
@@ -51,35 +54,38 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
           <img src="http://www.gravatar.com/avatar/14d15a4a8d6f362e0a13ab8ca06e6e02?s=350" title="View on Gravatar" alt="View on Gravatar" />
         </a>
       </div>
-      <div class="sidebar-personal-info-section">
-        <p>&copy; Tony Mkhael</p>
-      </div>
       
       
       
-      <div class="sidebar-personal-info-section">
-        <p> Follow me:
+      <div class="sidebar-personal-info-section" style="font-size:1rem; text-align:center">
+        <p>
+        
+
+          <a href="http://feeds.feedburner.com/tonymkhael" rel="alternate" title="Tony Mkhael" type="application/atom+xml">
+            <i class="fa fa-rss-square" aria-hidden="true"></i>
+          </a> |
         
         
         
-        <a href="tony.mkhael@gmail.com">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
+        
+        <a href="mailto:tony.mkhael@gmail.com">
+          <i class="fa fa-envelope" aria-hidden="true" style="font-size:1rem"></i>
         </a>
         
         |
         
         
         
-        <a href="tonymkhael">
-          <i class="fa fa-github" aria-hidden="true"></i>
+        <a href="https://www.github.com/tonymkhael">
+          <i class="fa fa-github" aria-hidden="true" style="font-size:1rem"></i>
         </a>
         
         |
         
         
         
-        <a href="tonymkhael">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
+        <a href="https://www.twitter.com/tonymkhael">
+          <i class="fa fa-twitter" aria-hidden="true" style="font-size:1rem"></i>
         </a>
         
         |
@@ -87,7 +93,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
         
         
         <a href="https://www.linkedin.com/in/tonymkhael">
-          <i class="fa fa-linkedin" aria-hidden="true"></i>
+          <i class="fa fa-linkedin" aria-hidden="true" style="font-size:1rem"></i>
         </a>
         
         
@@ -168,15 +174,11 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="sidebar-item">
     <p>
-    &copy; 2016 Tony Mkhael</a>
-    </p>
-  </div>
-
-  <div class="sidebar-item">
-    <p>
+    &copy; 2016 Tony Mkhael<br/>
     Powered by <a href="http://jekyllrb.com">jekyll</a> and <a href="http://lanyon.getpoole.com/">lanyon</a>
     </p>
   </div>
+
 </div>
 
 
@@ -186,10 +188,14 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home" title="Tony Mkhael">
+            <a href="/" title="Home" title="Tony Mkhael" style="float:left;margin-right:20px">
               <img class="masthead-logo" src="http://www.gravatar.com/avatar/14d15a4a8d6f362e0a13ab8ca06e6e02?s=350" title="Logo" alt="Logo">
             </a>
-            <span>Tony Mkhael</span>
+            <div style="float:left">
+              <small style='color: #000000'>Tony Mkhael</small><br/>
+              <small>Simplicity is the ultimate form of sophistication</small>
+            </div>
+            <div style="clear:both"/>
           </h3>
         </div>
       </div>
@@ -214,29 +220,18 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   
   
   <article>
-    <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_what-is-this-about">1. What is this about?</a></li>
-<li><a href="#_detailed-guide">2. Detailed guide</a>
-<ul class="sectlevel2">
-<li><a href="#_setting-up-your-project">2.1. Setting up your project</a></li>
-<li><a href="#_building-the-project">2.2. Building the project</a></li>
-<li><a href="#_adding-javadoc-and-source-jars">2.3. Adding javadoc and source jars</a></li>
-<li><a href="#_adding-some-cool-documentation">2.4. Adding some cool documentation</a></li>
-<li><a href="#_publishing-the-artifacts">2.5. Publishing the artifacts</a></li>
-<li><a href="#_semantic-versioning">2.6. Semantic versioning</a></li>
-<li><a href="#_the-ci-part">2.7. The CI part</a></li>
-</ul>
-</li>
-<li><a href="#_putting-it-all-together">3. Putting it all together</a></li>
-</ul>
-</div>
-<div class="sect1">
-<h2 id="_what-is-this-about">1. What is this about?</h2>
+    <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>if you&#8217;re unfamiliar with semantic versioning, please start reading <a href="http://semver.org/">Here</a>.
+<p>{{ page.document | tocify_asciidoc: 3 }}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_this_about">1. What is this about?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>if you&#8217;re unfamiliar with semantic versioning, please start reading <a href="http://semver.org/">here</a>.
 The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.
 It will guide you in detail through all the steps needed to</p>
 </div>
@@ -252,21 +247,21 @@ It will guide you in detail through all the steps needed to</p>
 <p>Documenting using javadoc and asciidoctor</p>
 </li>
 <li>
-<p>Publishing to a nexus repository</p>
+<p>Publishing to a maven repository</p>
 </li>
 <li>
-<p>Handling versioning using nebula</p>
+<p>Handling project versioning</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order
-to have a OSS compliant project. It contains useful snippets you will/should probably use variants of in your OSS project.</p>
+<p>This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.
+It contains useful snippets you can use (as is, or variants of them) in your OSS project.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_detailed-guide">2. Detailed guide</h2>
+<h2 id="_detailed_guide">2. Detailed guide</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In this tutorial, we will interact with the below tools/libraries.
@@ -292,12 +287,12 @@ Although no specific knowledge is required, it is always better to have a quick 
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_setting-up-your-project">2.1. Setting up your project</h3>
+<h3 id="_setting_up_your_project">2.1. Setting up your project</h3>
 <div class="paragraph">
-<p>First, let&#8217;s start by setting up the gradle project. For this you would need the following structure.</p>
+<p>First, let&#8217;s start by setting up the gradle project. For this you would need the following directory structure.</p>
 </div>
 <div class="listingblock">
-<div class="title">Project structure</div>
+<div class="title">Directory structure</div>
 <div class="content">
 <pre>&gt;&gt; build.gradle <i class="conum" data-value="1"></i><b>(1)</b>
 &gt;&gt; gradle
@@ -331,7 +326,7 @@ Although no specific knowledge is required, it is always better to have a quick 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Except for the build.gradle, you can use the exact copy of all files <a href="http://www.github.com/tonymkhael/semantic-versioning">in this public repository</a>, as those files do not change much and they only exist to bootstrap your gradle setup.
+Besides the build.gradle, you can use the exact copy of all files <a href="http://www.github.com/tonymkhael/semantic-versioning">in this public repository</a>, as those files do not change much and they only exist to bootstrap your gradle setup.
 </td>
 </tr>
 </table>
@@ -344,8 +339,8 @@ Except for the build.gradle, you can use the exact copy of all files <a href="ht
 </td>
 <td class="content">
 It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you&#8217;re behind a proxy
-You will not find this file in this repo, since it is supposed to be injected by the build environment (CI/Dev environment..)
-However, here is a sample content that you should adapt in case you want to try out with this repo..
+You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)
+However, here is a sample content that you could adapt in case you want to try it out.
 </td>
 </tr>
 </table>
@@ -353,51 +348,51 @@ However, here is a sample content that you should adapt in case you want to try 
 <div class="listingblock">
 <div class="title">gradle.properties</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>#control daemon mode
-org.gradle.daemon=true
+<pre class="pygments highlight"><code data-lang="properties"><span style="color: #408080; font-style: italic">#control daemon mode</span>
+<span style="color: #7D9029">org.gradle.daemon</span><span style="color: #666666">=</span><span style="color: #BA2121">true</span>
 
-#used for gradle JVM
-systemProp.https.proxyHost=proxy
-systemProp.https.proxyPort=3128
-systemProp.http.proxyHost=proxy
-systemProp.http.proxyPort=3128
-systemProp.http.nonProxyHosts=*.domain.com|localhost
+<span style="color: #408080; font-style: italic">#used for gradle JVM</span>
+<span style="color: #7D9029">systemProp.https.proxyHost</span><span style="color: #666666">=</span><span style="color: #BA2121">proxy</span>
+<span style="color: #7D9029">systemProp.https.proxyPort</span><span style="color: #666666">=</span><span style="color: #BA2121">3128</span>
+<span style="color: #7D9029">systemProp.http.proxyHost</span><span style="color: #666666">=</span><span style="color: #BA2121">proxy</span>
+<span style="color: #7D9029">systemProp.http.proxyPort</span><span style="color: #666666">=</span><span style="color: #BA2121">3128</span>
+<span style="color: #7D9029">systemProp.http.nonProxyHosts</span><span style="color: #666666">=</span><span style="color: #BA2121">*.domain.com|localhost</span>
 
-#use that specific JDK
-org.gradle.java.home=C:\\myfavoritejdk\\
+<span style="color: #408080; font-style: italic">#use that specific JDK</span>
+<span style="color: #7D9029">org.gradle.java.home</span><span style="color: #666666">=</span><span style="color: #BA2121">C:\\myfavoritejdk\\</span>
 
-#used for the publishing
-nexusGroup=com.acme
-nexusHost=nexus-dev
-nexusRepo=myrepo
-nexusUser=user
-nexusPassword=password</code></pre>
+<span style="color: #408080; font-style: italic">#used for the publishing</span>
+<span style="color: #7D9029">nexusGroup</span><span style="color: #666666">=</span><span style="color: #BA2121">com.acme</span>
+<span style="color: #7D9029">nexusHost</span><span style="color: #666666">=</span><span style="color: #BA2121">nexus-dev</span>
+<span style="color: #7D9029">nexusRepo</span><span style="color: #666666">=</span><span style="color: #BA2121">myrepo</span>
+<span style="color: #7D9029">nexusUser</span><span style="color: #666666">=</span><span style="color: #BA2121">user</span>
+<span style="color: #7D9029">nexusPassword</span><span style="color: #666666">=</span><span style="color: #BA2121">password</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s make this a java project. we&#8217;ll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java</p>
+<p>Now let&#8217;s make this a java project. We&#8217;ll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">package com.acme.example;
+<pre class="pygments highlight"><code data-lang="java"><span style="color: #008000; font-weight: bold">package</span> com<span style="color: #666666">.</span><span style="color: #7D9029">acme</span><span style="color: #666666">.</span><span style="color: #7D9029">example</span><span style="color: #666666">;</span>
 
-public final class SemanticVersioning {
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">final</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">SemanticVersioning</span> <span style="color: #666666">{</span>
 
-  //tag::anchor[]
+  <span style="color: #408080; font-style: italic">//tag::anchor[]</span>
 
-  /**
-   * A sample for the javadoc
-   *
-   * @param args Tha arguments to this magnificient application
-   * @since 0.0.1
-   */
-  public static void main(String[] args) {
-    System.out.println("Hello Semantic versioning");
-  }
+  <span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">   * A sample for the javadoc</span>
+<span style="color: #408080; font-style: italic">   *</span>
+<span style="color: #408080; font-style: italic">   * @param args Tha arguments to this magnificient application</span>
+<span style="color: #408080; font-style: italic">   * @since 0.0.1</span>
+<span style="color: #408080; font-style: italic">   */</span>
+  <span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    System<span style="color: #666666">.</span><span style="color: #7D9029">out</span><span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Hello Semantic versioning&quot;</span><span style="color: #666666">);</span>
+  <span style="color: #666666">}</span>
 
-  //end::anchor[]
+  <span style="color: #408080; font-style: italic">//end::anchor[]</span>
 
-}</code></pre>
+<span style="color: #666666">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -406,14 +401,14 @@ public final class SemanticVersioning {
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>project.group = nexusGroup <i class="conum" data-value="1"></i><b>(1)</b>
-project.description = 'Semantic versioning'
+<pre class="pygments highlight"><code data-lang="groovy">project<span style="color: #666666">.</span><span style="color: #7D9029">group</span> <span style="color: #666666">=</span> nexusGroup <i class="conum" data-value="1"></i><b>(1)</b>
+project<span style="color: #666666">.</span><span style="color: #7D9029">description</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Semantic versioning&#39;</span>
 
-apply plugin: 'java' <i class="conum" data-value="2"></i><b>(2)</b>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;java&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
 
-repositories { <i class="conum" data-value="3"></i><b>(3)</b>
-    jcenter()
-}</code></pre>
+repositories <span style="color: #666666">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
+    jcenter<span style="color: #666666">()</span>
+<span style="color: #666666">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -434,31 +429,31 @@ repositories { <i class="conum" data-value="3"></i><b>(3)</b>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_building-the-project">2.2. Building the project</h3>
+<h3 id="_building_the_project">2.2. Building the project</h3>
 <div class="paragraph">
-<p>To build the project, all we need to done is invoke the gradle build task using</p>
+<p>To build the project, you have to invoke the gradle <strong>build</strong> task using</p>
 </div>
 <div class="listingblock">
 <div class="title">Building the project</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>+&gt; gradlew build
-Starting a new Gradle Daemon for this build (subsequent builds will be faster).
-Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT
-:compileJava
-:processResources UP-TO-DATE
-:classes
-:jar
-:assemble
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:check UP-TO-DATE
-:build
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">+&gt; gradlew build</span>
+<span style="color: #888888">Starting a new Gradle Daemon for this build (subsequent builds will be faster).</span>
+<span style="color: #888888">Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT</span>
+<span style="color: #888888">:compileJava</span>
+<span style="color: #888888">:processResources UP-TO-DATE</span>
+<span style="color: #888888">:classes</span>
+<span style="color: #888888">:jar</span>
+<span style="color: #888888">:assemble</span>
+<span style="color: #888888">:compileTestJava UP-TO-DATE</span>
+<span style="color: #888888">:processTestResources UP-TO-DATE</span>
+<span style="color: #888888">:testClasses UP-TO-DATE</span>
+<span style="color: #888888">:test UP-TO-DATE</span>
+<span style="color: #888888">:check UP-TO-DATE</span>
+<span style="color: #888888">:build</span>
 
-BUILD SUCCESSFUL
+<span style="color: #888888">BUILD SUCCESSFUL</span>
 
-Total time: 11.917 secs</code></pre>
+<span style="color: #888888">Total time: 11.917 secs</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -471,116 +466,116 @@ Total time: 11.917 secs</code></pre>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Instead of trying to build your .gitignore from scratch, you can use <a href="https://github.com/Netflix/gradle-template/blob/master/.gitignore">Netflix&#8217;s template</a> which covers pretty much everything
+Instead of trying to build your .gitignore from scratch, you can use <a href="https://github.com/Netflix/gradle-template/blob/master/.gitignore">Netflix&#8217;s template</a> which covers pretty much everything for a standard java project.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>If you need, at any time to look at the available tasks on your project you can use the tasks task.
+<p>If you need to look at the available tasks on your project you can use the <strong>tasks</strong> task.
 Here&#8217;s a sample usage with the output.</p>
 </div>
 <div class="listingblock">
 <div class="title">List gradle tasks</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>+&gt; gradlew tasks
-Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT
-:tasks
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">+&gt; gradlew tasks</span>
+<span style="color: #888888">Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT</span>
+<span style="color: #888888">:tasks</span>
 
-------------------------------------------------------------
-All tasks runnable from root project - Semantic versioning
-------------------------------------------------------------
+<span style="color: #888888">------------------------------------------------------------</span>
+<span style="color: #888888">All tasks runnable from root project - Semantic versioning</span>
+<span style="color: #888888">------------------------------------------------------------</span>
 
-Build tasks
------------
-assemble - Assembles the outputs of this project.
-build - Assembles and tests this project.
-buildDependents - Assembles and tests this project and all projects that depend on it.
-buildNeeded - Assembles and tests this project and all projects it depends on.
-classes - Assembles classes 'main'.
-clean - Deletes the build directory.
-jar - Assembles a jar archive containing the main classes.
-testClasses - Assembles classes 'test'.
+<span style="color: #888888">Build tasks</span>
+<span style="color: #888888">-----------</span>
+<span style="color: #888888">assemble - Assembles the outputs of this project.</span>
+<span style="color: #888888">build - Assembles and tests this project.</span>
+<span style="color: #888888">buildDependents - Assembles and tests this project and all projects that depend on it.</span>
+<span style="color: #888888">buildNeeded - Assembles and tests this project and all projects it depends on.</span>
+<span style="color: #888888">classes - Assembles classes &#39;main&#39;.</span>
+<span style="color: #888888">clean - Deletes the build directory.</span>
+<span style="color: #888888">jar - Assembles a jar archive containing the main classes.</span>
+<span style="color: #888888">testClasses - Assembles classes &#39;test&#39;.</span>
 
-Build Setup tasks
------------------
-init - Initializes a new Gradle build. [incubating]
+<span style="color: #888888">Build Setup tasks</span>
+<span style="color: #888888">-----------------</span>
+<span style="color: #888888">init - Initializes a new Gradle build. [incubating]</span>
 
-Documentation tasks
--------------------
-asciidoctor - Converts AsciiDoc files and copies the output files and related resources to the build directory.
-javadoc - Generates Javadoc API documentation for the main source code.
+<span style="color: #888888">Documentation tasks</span>
+<span style="color: #888888">-------------------</span>
+<span style="color: #888888">asciidoctor - Converts AsciiDoc files and copies the output files and related resources to the build directory.</span>
+<span style="color: #888888">javadoc - Generates Javadoc API documentation for the main source code.</span>
 
-Help tasks
-----------
-components - Displays the components produced by root project 'semantic-versioning'. [incubating]
-dependencies - Displays all dependencies declared in root project 'semantic-versioning'.
-dependencyInsight - Displays the insight into a specific dependency in root project 'semantic-versioning'.
-help - Displays a help message.
-model - Displays the configuration model of root project 'semantic-versioning'. [incubating]
-projects - Displays the sub-projects of root project 'semantic-versioning'.
-properties - Displays the properties of root project 'semantic-versioning'.
-tasks - Displays the tasks runnable from root project 'semantic-versioning'.
+<span style="color: #888888">Help tasks</span>
+<span style="color: #888888">----------</span>
+<span style="color: #888888">components - Displays the components produced by root project &#39;semantic-versioning&#39;. [incubating]</span>
+<span style="color: #888888">dependencies - Displays all dependencies declared in root project &#39;semantic-versioning&#39;.</span>
+<span style="color: #888888">dependencyInsight - Displays the insight into a specific dependency in root project &#39;semantic-versioning&#39;.</span>
+<span style="color: #888888">help - Displays a help message.</span>
+<span style="color: #888888">model - Displays the configuration model of root project &#39;semantic-versioning&#39;. [incubating]</span>
+<span style="color: #888888">projects - Displays the sub-projects of root project &#39;semantic-versioning&#39;.</span>
+<span style="color: #888888">properties - Displays the properties of root project &#39;semantic-versioning&#39;.</span>
+<span style="color: #888888">tasks - Displays the tasks runnable from root project &#39;semantic-versioning&#39;.</span>
 
-JRuby tasks
------------
-jrubyGenerateGradleRb - Generate a gradle.rb stub for executing Ruby binstubs
-jrubyPrepare - Pre-cache and prepare all dependencies (jars and gems)
-jrubyPrepareGems - Prepare the gems from the `gem` dependencies, extracts into jruby.installGemDir
-jrubyPrepareJars - Prepare the jar dependencies from the `gem` dependencies, collect them into
+<span style="color: #888888">JRuby tasks</span>
+<span style="color: #888888">-----------</span>
+<span style="color: #888888">jrubyGenerateGradleRb - Generate a gradle.rb stub for executing Ruby binstubs</span>
+<span style="color: #888888">jrubyPrepare - Pre-cache and prepare all dependencies (jars and gems)</span>
+<span style="color: #888888">jrubyPrepareGems - Prepare the gems from the `gem` dependencies, extracts into jruby.installGemDir</span>
+<span style="color: #888888">jrubyPrepareJars - Prepare the jar dependencies from the `gem` dependencies, collect them into</span>
 
-Nebula Release tasks
---------------------
-candidate
-devSnapshot
-final
-releaseCheck
-snapshot
+<span style="color: #888888">Nebula Release tasks</span>
+<span style="color: #888888">--------------------</span>
+<span style="color: #888888">candidate</span>
+<span style="color: #888888">devSnapshot</span>
+<span style="color: #888888">final</span>
+<span style="color: #888888">releaseCheck</span>
+<span style="color: #888888">snapshot</span>
 
-Upload tasks
-------------
-uploadArchives - Uploads all artifacts belonging to configuration ':archives'
+<span style="color: #888888">Upload tasks</span>
+<span style="color: #888888">------------</span>
+<span style="color: #888888">uploadArchives - Uploads all artifacts belonging to configuration &#39;:archives&#39;</span>
 
-Verification tasks
-------------------
-check - Runs all checks.
-test - Runs the unit tests.
+<span style="color: #888888">Verification tasks</span>
+<span style="color: #888888">------------------</span>
+<span style="color: #888888">check - Runs all checks.</span>
+<span style="color: #888888">test - Runs the unit tests.</span>
 
-Other tasks
------------
-generateHtml5
-install - Installs the 'archives' artifacts into the local Maven repository.
-release - Releases this project.
-wrapper
+<span style="color: #888888">Other tasks</span>
+<span style="color: #888888">-----------</span>
+<span style="color: #888888">generateHtml5</span>
+<span style="color: #888888">install - Installs the &#39;archives&#39; artifacts into the local Maven repository.</span>
+<span style="color: #888888">release - Releases this project.</span>
+<span style="color: #888888">wrapper</span>
 
-Rules
------
-Pattern: clean&lt;TaskName&gt;: Cleans the output files of a task.
-Pattern: build&lt;ConfigurationName&gt;: Assembles the artifacts of a configuration.
-Pattern: upload&lt;ConfigurationName&gt;: Assembles and uploads the artifacts belonging to a configuration.
+<span style="color: #888888">Rules</span>
+<span style="color: #888888">-----</span>
+<span style="color: #888888">Pattern: clean&lt;TaskName&gt;: Cleans the output files of a task.</span>
+<span style="color: #888888">Pattern: build&lt;ConfigurationName&gt;: Assembles the artifacts of a configuration.</span>
+<span style="color: #888888">Pattern: upload&lt;ConfigurationName&gt;: Assembles and uploads the artifacts belonging to a configuration.</span>
 
-To see all tasks and more detail, run gradlew tasks --all
+<span style="color: #888888">To see all tasks and more detail, run gradlew tasks --all</span>
 
-To see more detail about a task, run gradlew help --task &lt;task&gt;
+<span style="color: #888888">To see more detail about a task, run gradlew help --task &lt;task&gt;</span>
 
-BUILD SUCCESSFUL</code></pre>
+<span style="color: #888888">BUILD SUCCESSFUL</span></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_adding-javadoc-and-source-jars">2.3. Adding javadoc and source jars</h3>
+<h3 id="_adding_javadoc_and_source_jars">2.3. Adding javadoc and source jars</h3>
 <div class="paragraph">
 <p>There is nothing simpler than that when using Nebula tools (provided by NetFlix).
-Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow their standard approach</p>
+Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow this approach.</p>
 </div>
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>plugins {
-    id 'nebula.project' version '3.2.1' <i class="conum" data-value="1"></i><b>(1)</b>
-}
+<pre class="pygments highlight"><code data-lang="groovy">plugins <span style="color: #666666">{</span>
+    id <span style="color: #BA2121">&#39;nebula.project&#39;</span> version <span style="color: #BA2121">&#39;3.2.1&#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #666666">}</span>
 
-apply plugin: 'nebula.project' <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;nebula.project&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -620,18 +615,18 @@ apply plugin: 'nebula.project' <i class="conum" data-value="2"></i><b>(2)</b></c
 <div class="listingblock">
 <div class="title">Newly added tasks</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>Build tasks
------------
-assemble - Assembles the outputs of this project.
-build - Assembles and tests this project.
-buildDependents - Assembles and tests this project and all projects that depend on it.
-buildNeeded - Assembles and tests this project and all projects it depends on.
-classes - Assembles classes 'main'.
-clean - Deletes the build directory.
-jar - Assembles a jar archive containing the main classes.
-javadocJar <i class="conum" data-value="1"></i><b>(1)</b>
-sourceJar <i class="conum" data-value="2"></i><b>(2)</b>
-testClasses - Assembles classes 'test'.</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">Build tasks</span>
+<span style="color: #888888">-----------</span>
+<span style="color: #888888">assemble - Assembles the outputs of this project.</span>
+<span style="color: #888888">build - Assembles and tests this project.</span>
+<span style="color: #888888">buildDependents - Assembles and tests this project and all projects that depend on it.</span>
+<span style="color: #888888">buildNeeded - Assembles and tests this project and all projects it depends on.</span>
+<span style="color: #888888">classes - Assembles classes &#39;main&#39;.</span>
+<span style="color: #888888">clean - Deletes the build directory.</span>
+<span style="color: #888888">jar - Assembles a jar archive containing the main classes.</span>
+<span style="color: #888888">javadocJar </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #888888">sourceJar </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #888888">testClasses - Assembles classes &#39;test&#39;.</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -651,7 +646,7 @@ testClasses - Assembles classes 'test'.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_adding-some-cool-documentation">2.4. Adding some cool documentation</h3>
+<h3 id="_adding_some_cool_documentation">2.4. Adding some cool documentation</h3>
 <div class="paragraph">
 <p>Asciidoctor is a really useful tool when it comes to technical documentation in all its forms: Tutorials, User guides, HowTos, FAQs etc..
 It is yet another markdown format, enriched by many plugins that you are encouraged to explore, such as diagrams, math equations, tree view etc..
@@ -664,60 +659,60 @@ Here&#8217;s a snippet on how to use it..</p>
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>plugins {
-    id 'org.asciidoctor.convert' version '1.5.2' <i class="conum" data-value="1"></i><b>(1)</b>
-    id 'com.github.jruby-gradle.base' version '0.3.0'
-}
+<pre class="pygments highlight"><code data-lang="groovy">plugins <span style="color: #666666">{</span>
+    id <span style="color: #BA2121">&#39;org.asciidoctor.convert&#39;</span> version <span style="color: #BA2121">&#39;1.5.2&#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    id <span style="color: #BA2121">&#39;com.github.jruby-gradle.base&#39;</span> version <span style="color: #BA2121">&#39;0.3.0&#39;</span>
+<span style="color: #666666">}</span>
 
-dependencies {
-    gems 'rubygems:asciidoctor-diagram:1.3.0' <i class="conum" data-value="2"></i><b>(2)</b>
-    asciidoctor 'com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1'
-    asciidoctor 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8'
-}
+dependencies <span style="color: #666666">{</span>
+    gems <span style="color: #BA2121">&#39;rubygems:asciidoctor-diagram:1.3.0&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+    asciidoctor <span style="color: #BA2121">&#39;com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1&#39;</span>
+    asciidoctor <span style="color: #BA2121">&#39;org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8&#39;</span>
+<span style="color: #666666">}</span>
 
-apply plugin: 'com.github.jruby-gradle.base' <i class="conum" data-value="3"></i><b>(3)</b>
-apply plugin: 'org.asciidoctor.convert'
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;com.github.jruby-gradle.base&#39;</span> <i class="conum" data-value="3"></i><b>(3)</b>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;org.asciidoctor.convert&#39;</span>
 
-class AsciiDoctorDefault extends org.asciidoctor.gradle.AsciidoctorTask { <i class="conum" data-value="4"></i><b>(4)</b>
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">AsciiDoctorDefault</span> <span style="color: #008000; font-weight: bold">extends</span> org<span style="color: #666666">.</span><span style="color: #7D9029">asciidoctor</span><span style="color: #666666">.</span><span style="color: #7D9029">gradle</span><span style="color: #666666">.</span><span style="color: #7D9029">AsciidoctorTask</span> <span style="color: #666666">{</span> <i class="conum" data-value="4"></i><b>(4)</b>
 
-    AsciiDoctorDefault() {
+    AsciiDoctorDefault<span style="color: #666666">()</span> <span style="color: #666666">{</span>
 
-        resources {
-            from(sourceDir) {
-                include 'css/**'
-                include 'images/**'
-            }
-        }
+        resources <span style="color: #666666">{</span>
+            from<span style="color: #666666">(</span>sourceDir<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                include <span style="color: #BA2121">&#39;css/**&#39;</span>
+                include <span style="color: #BA2121">&#39;images/**&#39;</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">}</span>
 
-        requires 'asciidoctor-diagram'
+        requires <span style="color: #BA2121">&#39;asciidoctor-diagram&#39;</span>
 
-        attributes 'build-gradle': new File('build.gradle'),
-                'source-highlighter': 'highlightjs',
-                'highlightjs-theme': 'github',
-                'sourceDir': '../../main/java',
-                'rootDir': '../../../',
-                'imagesdir': 'images',
-                'imagesoutdir': 'images',
-                'setanchors': 'true',
-                'idprefix': '',
-                'idseparator': '-',
-                'docinfo1': 'true',
-                'docVersion': project.version.toString()
-    }
+        attributes <span style="color: #BA2121">&#39;build-gradle&#39;</span><span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">new</span> File<span style="color: #666666">(</span><span style="color: #BA2121">&#39;build.gradle&#39;</span><span style="color: #666666">),</span>
+                <span style="color: #BA2121">&#39;source-highlighter&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;highlightjs&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;highlightjs-theme&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;github&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;sourceDir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;../../main/java&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;rootDir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;../../../&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;imagesdir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;images&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;imagesoutdir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;images&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;setanchors&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;true&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;idprefix&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;idseparator&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;-&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;docinfo1&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;true&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;docVersion&#39;</span><span style="color: #666666">:</span> project<span style="color: #666666">.</span><span style="color: #7D9029">version</span><span style="color: #666666">.</span><span style="color: #7D9029">toString</span><span style="color: #666666">()</span>
+    <span style="color: #666666">}</span>
 
-}
+<span style="color: #666666">}</span>
 
-task(generateHtml5, type: AsciiDoctorDefault) { <i class="conum" data-value="5"></i><b>(5)</b>
+task<span style="color: #666666">(</span>generateHtml5<span style="color: #666666">,</span> <span style="color: #A0A000">type:</span> AsciiDoctorDefault<span style="color: #666666">)</span> <span style="color: #666666">{</span> <i class="conum" data-value="5"></i><b>(5)</b>
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends 'html5'
-}
+    gemPath jrubyPrepareGems<span style="color: #666666">.</span><span style="color: #7D9029">outputDir</span>
+    backends <span style="color: #BA2121">&#39;html5&#39;</span>
+<span style="color: #666666">}</span>
 
-task(generatePdf, type: AsciiDoctorDefault) { <i class="conum" data-value="6"></i><b>(6)</b>
+task<span style="color: #666666">(</span>generatePdf<span style="color: #666666">,</span> <span style="color: #A0A000">type:</span> AsciiDoctorDefault<span style="color: #666666">)</span> <span style="color: #666666">{</span> <i class="conum" data-value="6"></i><b>(6)</b>
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends 'pdf'
-}</code></pre>
+    gemPath jrubyPrepareGems<span style="color: #666666">.</span><span style="color: #7D9029">outputDir</span>
+    backends <span style="color: #BA2121">&#39;pdf&#39;</span>
+<span style="color: #666666">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -750,27 +745,27 @@ task(generatePdf, type: AsciiDoctorDefault) { <i class="conum" data-value="6"></
 </div>
 </div>
 <div class="sect2">
-<h3 id="_publishing-the-artifacts">2.5. Publishing the artifacts</h3>
+<h3 id="_publishing_the_artifacts">2.5. Publishing the artifacts</h3>
 <div class="paragraph">
 <p>One of the useful things nebula project plugin does, is add publishing support to maven repositories.</p>
 </div>
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>publishing { <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="pygments highlight"><code data-lang="groovy">publishing <span style="color: #666666">{</span> <i class="conum" data-value="1"></i><b>(1)</b>
 
-    repositories { <i class="conum" data-value="2"></i><b>(2)</b>
-        maven {
-            url "http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
+    repositories <span style="color: #666666">{</span> <i class="conum" data-value="2"></i><b>(2)</b>
+        maven <span style="color: #666666">{</span>
+            url <span style="color: #BA2121">&quot;http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith(&#39;-SNAPSHOT&#39;) ? &#39;snapshots&#39; : &#39;releases&#39;}&quot;</span>
             <i class="conum" data-value="3"></i><b>(3)</b>
-            credentials {
-                username "${nexusUser}"
-                password "${nexusPassword}"
-            }
-        }
-        mavenLocal()
-    }
-}</code></pre>
+            credentials <span style="color: #666666">{</span>
+                username <span style="color: #BA2121">&quot;${nexusUser}&quot;</span>
+                password <span style="color: #BA2121">&quot;${nexusPassword}&quot;</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">}</span>
+        mavenLocal<span style="color: #666666">()</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -791,7 +786,7 @@ task(generatePdf, type: AsciiDoctorDefault) { <i class="conum" data-value="6"></
 </div>
 </div>
 <div class="sect2">
-<h3 id="_semantic-versioning">2.6. Semantic versioning</h3>
+<h3 id="_semantic_versioning">2.6. Semantic versioning</h3>
 <div class="paragraph">
 <p>Now comes the real question on how to version our project, and how to define its release cycle.
 Again nebula comes to the rescue by providing the Netflix biased way via the nebula release plugin, which should be enough for whatever needs you have.</p>
@@ -810,18 +805,18 @@ With this in mind, a release is simply a tag on a specific commit that marks the
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>plugins {
-    id 'nebula.nebula-release' version '4.0.1' <i class="conum" data-value="1"></i><b>(1)</b>
-}
+<pre class="pygments highlight"><code data-lang="groovy">plugins <span style="color: #666666">{</span>
+    id <span style="color: #BA2121">&#39;nebula.nebula-release&#39;</span> version <span style="color: #BA2121">&#39;4.0.1&#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #666666">}</span>
 
-apply plugin: 'nebula.nebula-release' <i class="conum" data-value="2"></i><b>(2)</b>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;nebula.nebula-release&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
 
-release { <i class="conum" data-value="3"></i><b>(3)</b>
-    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
-    defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
-}
+release <span style="color: #666666">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
+    <span style="color: #408080; font-style: italic">// Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula&#39;s devSnapshot</span>
+    defaultVersionStrategy <span style="color: #666666">=</span> org<span style="color: #666666">.</span><span style="color: #7D9029">ajoberstar</span><span style="color: #666666">.</span><span style="color: #7D9029">gradle</span><span style="color: #666666">.</span><span style="color: #7D9029">git</span><span style="color: #666666">.</span><span style="color: #7D9029">release</span><span style="color: #666666">.</span><span style="color: #7D9029">opinion</span><span style="color: #666666">.</span><span style="color: #7D9029">Strategies</span><span style="color: #666666">.</span><span style="color: #7D9029">SNAPSHOT</span>
+<span style="color: #666666">}</span>
 
-tasks.release.finalizedBy tasks.publish <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+tasks<span style="color: #666666">.</span><span style="color: #7D9029">release</span><span style="color: #666666">.</span><span style="color: #7D9029">finalizedBy</span> tasks<span style="color: #666666">.</span><span style="color: #7D9029">publish</span> <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -850,14 +845,14 @@ tasks.release.finalizedBy tasks.publish <i class="conum" data-value="4"></i><b>(
 <div class="listingblock">
 <div class="title">View nebula release tasks</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>+&gt; gradlew tasks
-Nebula Release tasks
---------------------
-candidate <i class="conum" data-value="1"></i><b>(1)</b>
-devSnapshot
-final <i class="conum" data-value="2"></i><b>(2)</b>
-releaseCheck
-snapshot <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">+&gt; gradlew tasks</span>
+<span style="color: #888888">Nebula Release tasks</span>
+<span style="color: #888888">--------------------</span>
+<span style="color: #888888">candidate </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #888888">devSnapshot</span>
+<span style="color: #888888">final </span><i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #888888">releaseCheck</span>
+<span style="color: #888888">snapshot </span> <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -885,7 +880,7 @@ candidate and final tasks are a bit different, where they require no uncommited 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>git tag "v.0.0.1" // tags the current branch tip to have the 0.0.1 version.</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">git tag &quot;v.0.0.1&quot; // tags the current branch tip to have the 0.0.1 version.</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -897,9 +892,9 @@ candidate and final tasks are a bit different, where they require no uncommited 
 <div class="listingblock">
 <div class="title">Sample flow: Making some changes</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>+&gt; touch bla
-+&gt; git add bla
-+&gt; git commit -m "my bla change"</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">+&gt; touch bla</span>
+<span style="color: #888888">+&gt; git add bla</span>
+<span style="color: #888888">+&gt; git commit -m &quot;my bla change&quot;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -908,35 +903,35 @@ candidate and final tasks are a bit different, where they require no uncommited 
 <div class="listingblock">
 <div class="title">Sample flow: The release candidate</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>+&gt; gradlew candidate
-Inferred project: semantic-versioning, version: 0.1.0-rc.1
-Unable to determine the host name on this Windows instance
-:releaseCheck
-:candidate
-:prepare
-:compileJava
-:processResources UP-TO-DATE
-:classes
-:writeManifestProperties
-:jar
-:assemble
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:check UP-TO-DATE
-:build
-:release
-Tagging repository as v0.1.0-rc.1
-Pushing changes in [refs/heads/master, v0.1.0-rc.1] to origin
-:generatePomFileForNebulaPublication
-:javadoc
-:javadocJar
-:sourceJar
-:publishNebulaPublicationToMavenLocalRepository
-:publishNebulaPublicationToMavenRepository
-Upload http://myserver/content/repositories/myrepo-releases/com/acme/example/semantic-versioning/0.1.0-rc.1/semantic-versioning-0.1.0-rc.1.jar
-...</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">+&gt; gradlew candidate</span>
+<span style="color: #888888">Inferred project: semantic-versioning, version: 0.1.0-rc.1</span>
+<span style="color: #888888">Unable to determine the host name on this Windows instance</span>
+<span style="color: #888888">:releaseCheck</span>
+<span style="color: #888888">:candidate</span>
+<span style="color: #888888">:prepare</span>
+<span style="color: #888888">:compileJava</span>
+<span style="color: #888888">:processResources UP-TO-DATE</span>
+<span style="color: #888888">:classes</span>
+<span style="color: #888888">:writeManifestProperties</span>
+<span style="color: #888888">:jar</span>
+<span style="color: #888888">:assemble</span>
+<span style="color: #888888">:compileTestJava UP-TO-DATE</span>
+<span style="color: #888888">:processTestResources UP-TO-DATE</span>
+<span style="color: #888888">:testClasses UP-TO-DATE</span>
+<span style="color: #888888">:test UP-TO-DATE</span>
+<span style="color: #888888">:check UP-TO-DATE</span>
+<span style="color: #888888">:build</span>
+<span style="color: #888888">:release</span>
+<span style="color: #888888">Tagging repository as v0.1.0-rc.1</span>
+<span style="color: #888888">Pushing changes in [refs/heads/master, v0.1.0-rc.1] to origin</span>
+<span style="color: #888888">:generatePomFileForNebulaPublication</span>
+<span style="color: #888888">:javadoc</span>
+<span style="color: #888888">:javadocJar</span>
+<span style="color: #888888">:sourceJar</span>
+<span style="color: #888888">:publishNebulaPublicationToMavenLocalRepository</span>
+<span style="color: #888888">:publishNebulaPublicationToMavenRepository</span>
+<span style="color: #888888">Upload http://myserver/content/repositories/myrepo-releases/com/acme/example/semantic-versioning/0.1.0-rc.1/semantic-versioning-0.1.0-rc.1.jar</span>
+<span style="color: #888888">...</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -961,45 +956,45 @@ Upload http://myserver/content/repositories/myrepo-releases/com/acme/example/sem
 <div class="listingblock">
 <div class="title">Sample flow: The official release</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>+&gt; gradlew final
-Inferred project: semantic-versioning, version: 0.1.0
-Unable to determine the host name on this Windows instance
-:releaseCheck
-:final
-:prepare
-:compileJava UP-TO-DATE
-:processResources UP-TO-DATE
-:classes UP-TO-DATE
-:writeManifestProperties
-:jar
-:assemble
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:check UP-TO-DATE
-:build
-:release
-Tagging repository as v0.1.0
-Pushing changes in [refs/heads/master, v0.1.0] to origin
-:generatePomFileForNebulaPublication
-:javadoc
-:javadocJar
-:sourceJar
-:publishNebulaPublicationToMavenLocalRepository
-:publishNebulaPublicationToMavenRepository
-...</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">+&gt; gradlew final</span>
+<span style="color: #888888">Inferred project: semantic-versioning, version: 0.1.0</span>
+<span style="color: #888888">Unable to determine the host name on this Windows instance</span>
+<span style="color: #888888">:releaseCheck</span>
+<span style="color: #888888">:final</span>
+<span style="color: #888888">:prepare</span>
+<span style="color: #888888">:compileJava UP-TO-DATE</span>
+<span style="color: #888888">:processResources UP-TO-DATE</span>
+<span style="color: #888888">:classes UP-TO-DATE</span>
+<span style="color: #888888">:writeManifestProperties</span>
+<span style="color: #888888">:jar</span>
+<span style="color: #888888">:assemble</span>
+<span style="color: #888888">:compileTestJava UP-TO-DATE</span>
+<span style="color: #888888">:processTestResources UP-TO-DATE</span>
+<span style="color: #888888">:testClasses UP-TO-DATE</span>
+<span style="color: #888888">:test UP-TO-DATE</span>
+<span style="color: #888888">:check UP-TO-DATE</span>
+<span style="color: #888888">:build</span>
+<span style="color: #888888">:release</span>
+<span style="color: #888888">Tagging repository as v0.1.0</span>
+<span style="color: #888888">Pushing changes in [refs/heads/master, v0.1.0] to origin</span>
+<span style="color: #888888">:generatePomFileForNebulaPublication</span>
+<span style="color: #888888">:javadoc</span>
+<span style="color: #888888">:javadocJar</span>
+<span style="color: #888888">:sourceJar</span>
+<span style="color: #888888">:publishNebulaPublicationToMavenLocalRepository</span>
+<span style="color: #888888">:publishNebulaPublicationToMavenRepository</span>
+<span style="color: #888888">...</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts
+<p>Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.
 The next development version will be 0.1.1-SNAPSHOT</p>
 </div>
 <div class="listingblock">
 <div class="title">Viewing the next dev version</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>+&gt; gradlew tasks
-Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT</code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">+&gt; gradlew tasks</span>
+<span style="color: #888888">Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1007,8 +1002,8 @@ Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>gradlew &lt;snapshot|devSnapshot|candidate|final&gt; -Prelease.scope=&lt;major|minor|patch&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-gradlew &lt;candidate|final&gt; -Prelease.version=1.2.3 <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre class="pygments highlight"><code data-lang="console"><span style="color: #888888">gradlew &lt;snapshot|devSnapshot|candidate|final&gt; -Prelease.scope=&lt;major|minor|patch&gt; </span><i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #888888">gradlew &lt;candidate|final&gt; -Prelease.version=1.2.3 </span> <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1025,10 +1020,10 @@ gradlew &lt;candidate|final&gt; -Prelease.version=1.2.3 <i class="conum" data-va
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the-ci-part">2.7. The CI part</h3>
+<h3 id="_the_ci_part">2.7. The CI part</h3>
 <div class="paragraph">
 <p>Here we assume you have a jenkins server running somewhere, with the "new" pipelines scripts.
-We will be creating 2 jobs, 1 for building the project, another to handle the release part.</p>
+In general, you will need 2 jobs, one for building the project and another to handle the release.</p>
 </div>
 <div class="paragraph">
 <p>We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile
@@ -1037,28 +1032,28 @@ Here&#8217;s the content</p>
 <div class="listingblock">
 <div class="title">Jenkinsfile</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>node('master') { <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="pygments highlight"><code data-lang="groovy">node<span style="color: #666666">(</span><span style="color: #BA2121">&#39;master&#39;</span><span style="color: #666666">)</span> <span style="color: #666666">{</span> <i class="conum" data-value="1"></i><b>(1)</b>
 
-   // Mark the code checkout 'stage'....
-   stage 'Checkout'
+   <span style="color: #408080; font-style: italic">// Mark the code checkout &#39;stage&#39;....</span>
+   stage <span style="color: #BA2121">&#39;Checkout&#39;</span>
 
-   // Get the code from the Stash repository
+   <span style="color: #408080; font-style: italic">// Get the code from the Stash repository</span>
    checkout scm <i class="conum" data-value="2"></i><b>(2)</b>
 
-   // Mark the code build 'stage'....
-   stage 'Build'
+   <span style="color: #408080; font-style: italic">// Mark the code build &#39;stage&#39;....</span>
+   stage <span style="color: #BA2121">&#39;Build&#39;</span>
 
-   // Make sure script is runnable
-   sh "chmod a+x ./gradlew"
+   <span style="color: #408080; font-style: italic">// Make sure script is runnable</span>
+   sh <span style="color: #BA2121">&quot;chmod a+x ./gradlew&quot;</span>
 
-   // Run gradle build and deploy <i class="conum" data-value="3"></i><b>(3)</b>
-   wrap([$class: 'ConfigFileBuildWrapper', managedFiles: [[fileId: 'org.jenkinsci.plugins.configfiles.custom.CustomConfig1453803770046', replaceTokens: false, targetLocation: 'gradle.properties', variable: '']]]) {
-    sh "./gradlew snapshot generateHtml5 generatePdf --stacktrace"
-   }
+   <span style="color: #408080; font-style: italic">// Run gradle build and deploy </span><i class="conum" data-value="3"></i><b>(3)</b>
+   wrap<span style="color: #666666">([</span>$class<span style="color: #666666">:</span> <span style="color: #BA2121">&#39;ConfigFileBuildWrapper&#39;</span><span style="color: #666666">,</span> <span style="color: #A0A000">managedFiles:</span> <span style="color: #666666">[[</span><span style="color: #A0A000">fileId:</span> <span style="color: #BA2121">&#39;org.jenkinsci.plugins.configfiles.custom.CustomConfig1453803770046&#39;</span><span style="color: #666666">,</span> <span style="color: #A0A000">replaceTokens:</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">,</span> <span style="color: #A0A000">targetLocation:</span> <span style="color: #BA2121">&#39;gradle.properties&#39;</span><span style="color: #666666">,</span> <span style="color: #A0A000">variable:</span> <span style="color: #BA2121">&#39;&#39;</span><span style="color: #666666">]]])</span> <span style="color: #666666">{</span>
+    sh <span style="color: #BA2121">&quot;./gradlew snapshot generateHtml5 generatePdf --stacktrace&quot;</span>
+   <span style="color: #666666">}</span>
 
-   publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/asciidoc/html5', reportFiles: 'semantic-versioning.html', reportName: 'Documentation']) <i class="conum" data-value="4"></i><b>(4)</b>
+   publishHTML<span style="color: #666666">(</span><span style="color: #A0A000">target:</span> <span style="color: #666666">[</span><span style="color: #A0A000">allowMissing:</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">,</span> <span style="color: #A0A000">alwaysLinkToLastBuild:</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">,</span> <span style="color: #A0A000">keepAll:</span> <span style="color: #008000; font-weight: bold">false</span><span style="color: #666666">,</span> <span style="color: #A0A000">reportDir:</span> <span style="color: #BA2121">&#39;build/asciidoc/html5&#39;</span><span style="color: #666666">,</span> <span style="color: #A0A000">reportFiles:</span> <span style="color: #BA2121">&#39;semantic-versioning.html&#39;</span><span style="color: #666666">,</span> <span style="color: #A0A000">reportName:</span> <span style="color: #BA2121">&#39;Documentation&#39;</span><span style="color: #666666">])</span> <i class="conum" data-value="4"></i><b>(4)</b>
 
-}</code></pre>
+<span style="color: #666666">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1085,7 +1080,7 @@ Here&#8217;s the content</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_putting-it-all-together">3. Putting it all together</h2>
+<h2 id="_putting_it_all_together">3. Putting it all together</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>At this point, we have done the following:</p>
@@ -1132,143 +1127,143 @@ This tutorial focused on the technical aspects, but there are more to it:</p>
 <div class="listingblock">
 <div class="title">build.gradle</div>
 <div class="content">
-<pre class="highlightjs highlight"><code>//tag::nebula-release[]
-plugins {
-    id 'nebula.nebula-release' version '4.0.1' <i class="conum" data-value="1"></i><b>(1)</b>
-}
+<pre class="pygments highlight"><code data-lang="groovy"><span style="color: #408080; font-style: italic">//tag::nebula-release[]</span>
+plugins <span style="color: #666666">{</span>
+    id <span style="color: #BA2121">&#39;nebula.nebula-release&#39;</span> version <span style="color: #BA2121">&#39;4.0.1&#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #666666">}</span>
 
-//end::nebula-release[]
+<span style="color: #408080; font-style: italic">//end::nebula-release[]</span>
 
-//tag::asciidoctor[]
-plugins {
-    id 'org.asciidoctor.convert' version '1.5.2' <i class="conum" data-value="1"></i><b>(1)</b>
-    id 'com.github.jruby-gradle.base' version '0.3.0'
-}
+<span style="color: #408080; font-style: italic">//tag::asciidoctor[]</span>
+plugins <span style="color: #666666">{</span>
+    id <span style="color: #BA2121">&#39;org.asciidoctor.convert&#39;</span> version <span style="color: #BA2121">&#39;1.5.2&#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+    id <span style="color: #BA2121">&#39;com.github.jruby-gradle.base&#39;</span> version <span style="color: #BA2121">&#39;0.3.0&#39;</span>
+<span style="color: #666666">}</span>
 
-//end::asciidoctor[]
+<span style="color: #408080; font-style: italic">//end::asciidoctor[]</span>
 
-//tag::nebula-project[]
-plugins {
-    id 'nebula.project' version '3.2.1' <i class="conum" data-value="1"></i><b>(1)</b>
-}
+<span style="color: #408080; font-style: italic">//tag::nebula-project[]</span>
+plugins <span style="color: #666666">{</span>
+    id <span style="color: #BA2121">&#39;nebula.project&#39;</span> version <span style="color: #BA2121">&#39;3.2.1&#39;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #666666">}</span>
 
-//end::nebula-project[]
+<span style="color: #408080; font-style: italic">//end::nebula-project[]</span>
 
-//tag::java[]
-project.group = nexusGroup <i class="conum" data-value="1"></i><b>(1)</b>
-project.description = 'Semantic versioning'
+<span style="color: #408080; font-style: italic">//tag::java[]</span>
+project<span style="color: #666666">.</span><span style="color: #7D9029">group</span> <span style="color: #666666">=</span> nexusGroup <i class="conum" data-value="1"></i><b>(1)</b>
+project<span style="color: #666666">.</span><span style="color: #7D9029">description</span> <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;Semantic versioning&#39;</span>
 
-//end::java[]
+<span style="color: #408080; font-style: italic">//end::java[]</span>
 
-//tag::asciidoctor[]
-dependencies {
-    gems 'rubygems:asciidoctor-diagram:1.3.0' <i class="conum" data-value="2"></i><b>(2)</b>
-    asciidoctor 'com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1'
-    asciidoctor 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8'
-}
+<span style="color: #408080; font-style: italic">//tag::asciidoctor[]</span>
+dependencies <span style="color: #666666">{</span>
+    gems <span style="color: #BA2121">&#39;rubygems:asciidoctor-diagram:1.3.0&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+    asciidoctor <span style="color: #BA2121">&#39;com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1&#39;</span>
+    asciidoctor <span style="color: #BA2121">&#39;org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8&#39;</span>
+<span style="color: #666666">}</span>
 
-//end::asciidoctor[]
+<span style="color: #408080; font-style: italic">//end::asciidoctor[]</span>
 
-//tag::java[]
-apply plugin: 'java' <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #408080; font-style: italic">//tag::java[]</span>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;java&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
 
-//end::java[]
+<span style="color: #408080; font-style: italic">//end::java[]</span>
 
-//tag::nebula-project[]
-apply plugin: 'nebula.project' <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #408080; font-style: italic">//tag::nebula-project[]</span>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;nebula.project&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
 
-//end::nebula-project[]
+<span style="color: #408080; font-style: italic">//end::nebula-project[]</span>
 
-//tag::asciidoctor[]
-apply plugin: 'com.github.jruby-gradle.base' <i class="conum" data-value="3"></i><b>(3)</b>
-apply plugin: 'org.asciidoctor.convert'
+<span style="color: #408080; font-style: italic">//tag::asciidoctor[]</span>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;com.github.jruby-gradle.base&#39;</span> <i class="conum" data-value="3"></i><b>(3)</b>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;org.asciidoctor.convert&#39;</span>
 
-//end::asciidoctor[]
+<span style="color: #408080; font-style: italic">//end::asciidoctor[]</span>
 
-//tag::java[]
-repositories { <i class="conum" data-value="3"></i><b>(3)</b>
-    jcenter()
-}
+<span style="color: #408080; font-style: italic">//tag::java[]</span>
+repositories <span style="color: #666666">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
+    jcenter<span style="color: #666666">()</span>
+<span style="color: #666666">}</span>
 
-//end::java[]
+<span style="color: #408080; font-style: italic">//end::java[]</span>
 
-//tag::publishing[]
-publishing { <i class="conum" data-value="1"></i><b>(1)</b>
+<span style="color: #408080; font-style: italic">//tag::publishing[]</span>
+publishing <span style="color: #666666">{</span> <i class="conum" data-value="1"></i><b>(1)</b>
 
-    repositories { <i class="conum" data-value="2"></i><b>(2)</b>
-        maven {
-            url "http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
+    repositories <span style="color: #666666">{</span> <i class="conum" data-value="2"></i><b>(2)</b>
+        maven <span style="color: #666666">{</span>
+            url <span style="color: #BA2121">&quot;http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith(&#39;-SNAPSHOT&#39;) ? &#39;snapshots&#39; : &#39;releases&#39;}&quot;</span>
             <i class="conum" data-value="3"></i><b>(3)</b>
-            credentials {
-                username "${nexusUser}"
-                password "${nexusPassword}"
-            }
-        }
-        mavenLocal()
-    }
-}
+            credentials <span style="color: #666666">{</span>
+                username <span style="color: #BA2121">&quot;${nexusUser}&quot;</span>
+                password <span style="color: #BA2121">&quot;${nexusPassword}&quot;</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">}</span>
+        mavenLocal<span style="color: #666666">()</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
 
-//end::publishing[]
+<span style="color: #408080; font-style: italic">//end::publishing[]</span>
 
-//tag::nebula-release[]
-apply plugin: 'nebula.nebula-release' <i class="conum" data-value="2"></i><b>(2)</b>
+<span style="color: #408080; font-style: italic">//tag::nebula-release[]</span>
+apply <span style="color: #A0A000">plugin:</span> <span style="color: #BA2121">&#39;nebula.nebula-release&#39;</span> <i class="conum" data-value="2"></i><b>(2)</b>
 
-release { <i class="conum" data-value="3"></i><b>(3)</b>
-    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
-    defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
-}
+release <span style="color: #666666">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
+    <span style="color: #408080; font-style: italic">// Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula&#39;s devSnapshot</span>
+    defaultVersionStrategy <span style="color: #666666">=</span> org<span style="color: #666666">.</span><span style="color: #7D9029">ajoberstar</span><span style="color: #666666">.</span><span style="color: #7D9029">gradle</span><span style="color: #666666">.</span><span style="color: #7D9029">git</span><span style="color: #666666">.</span><span style="color: #7D9029">release</span><span style="color: #666666">.</span><span style="color: #7D9029">opinion</span><span style="color: #666666">.</span><span style="color: #7D9029">Strategies</span><span style="color: #666666">.</span><span style="color: #7D9029">SNAPSHOT</span>
+<span style="color: #666666">}</span>
 
-tasks.release.finalizedBy tasks.publish <i class="conum" data-value="4"></i><b>(4)</b>
+tasks<span style="color: #666666">.</span><span style="color: #7D9029">release</span><span style="color: #666666">.</span><span style="color: #7D9029">finalizedBy</span> tasks<span style="color: #666666">.</span><span style="color: #7D9029">publish</span> <i class="conum" data-value="4"></i><b>(4)</b>
 
-//end::nebula-release[]
+<span style="color: #408080; font-style: italic">//end::nebula-release[]</span>
 
-//tag::asciidoctor[]
-class AsciiDoctorDefault extends org.asciidoctor.gradle.AsciidoctorTask { <i class="conum" data-value="4"></i><b>(4)</b>
+<span style="color: #408080; font-style: italic">//tag::asciidoctor[]</span>
+<span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">AsciiDoctorDefault</span> <span style="color: #008000; font-weight: bold">extends</span> org<span style="color: #666666">.</span><span style="color: #7D9029">asciidoctor</span><span style="color: #666666">.</span><span style="color: #7D9029">gradle</span><span style="color: #666666">.</span><span style="color: #7D9029">AsciidoctorTask</span> <span style="color: #666666">{</span> <i class="conum" data-value="4"></i><b>(4)</b>
 
-    AsciiDoctorDefault() {
+    AsciiDoctorDefault<span style="color: #666666">()</span> <span style="color: #666666">{</span>
 
-        resources {
-            from(sourceDir) {
-                include 'css/**'
-                include 'images/**'
-            }
-        }
+        resources <span style="color: #666666">{</span>
+            from<span style="color: #666666">(</span>sourceDir<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+                include <span style="color: #BA2121">&#39;css/**&#39;</span>
+                include <span style="color: #BA2121">&#39;images/**&#39;</span>
+            <span style="color: #666666">}</span>
+        <span style="color: #666666">}</span>
 
-        requires 'asciidoctor-diagram'
+        requires <span style="color: #BA2121">&#39;asciidoctor-diagram&#39;</span>
 
-        attributes 'build-gradle': new File('build.gradle'),
-                'source-highlighter': 'highlightjs',
-                'highlightjs-theme': 'github',
-                'sourceDir': '../../main/java',
-                'rootDir': '../../../',
-                'imagesdir': 'images',
-                'imagesoutdir': 'images',
-                'setanchors': 'true',
-                'idprefix': '',
-                'idseparator': '-',
-                'docinfo1': 'true',
-                'docVersion': project.version.toString()
-    }
+        attributes <span style="color: #BA2121">&#39;build-gradle&#39;</span><span style="color: #666666">:</span> <span style="color: #008000; font-weight: bold">new</span> File<span style="color: #666666">(</span><span style="color: #BA2121">&#39;build.gradle&#39;</span><span style="color: #666666">),</span>
+                <span style="color: #BA2121">&#39;source-highlighter&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;highlightjs&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;highlightjs-theme&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;github&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;sourceDir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;../../main/java&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;rootDir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;../../../&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;imagesdir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;images&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;imagesoutdir&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;images&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;setanchors&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;true&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;idprefix&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;idseparator&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;-&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;docinfo1&#39;</span><span style="color: #666666">:</span> <span style="color: #BA2121">&#39;true&#39;</span><span style="color: #666666">,</span>
+                <span style="color: #BA2121">&#39;docVersion&#39;</span><span style="color: #666666">:</span> project<span style="color: #666666">.</span><span style="color: #7D9029">version</span><span style="color: #666666">.</span><span style="color: #7D9029">toString</span><span style="color: #666666">()</span>
+    <span style="color: #666666">}</span>
 
-}
+<span style="color: #666666">}</span>
 
-task(generateHtml5, type: AsciiDoctorDefault) { <i class="conum" data-value="5"></i><b>(5)</b>
+task<span style="color: #666666">(</span>generateHtml5<span style="color: #666666">,</span> <span style="color: #A0A000">type:</span> AsciiDoctorDefault<span style="color: #666666">)</span> <span style="color: #666666">{</span> <i class="conum" data-value="5"></i><b>(5)</b>
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends 'html5'
-}
+    gemPath jrubyPrepareGems<span style="color: #666666">.</span><span style="color: #7D9029">outputDir</span>
+    backends <span style="color: #BA2121">&#39;html5&#39;</span>
+<span style="color: #666666">}</span>
 
-task(generatePdf, type: AsciiDoctorDefault) { <i class="conum" data-value="6"></i><b>(6)</b>
+task<span style="color: #666666">(</span>generatePdf<span style="color: #666666">,</span> <span style="color: #A0A000">type:</span> AsciiDoctorDefault<span style="color: #666666">)</span> <span style="color: #666666">{</span> <i class="conum" data-value="6"></i><b>(6)</b>
     dependsOn jrubyPrepareGems
-    gemPath jrubyPrepareGems.outputDir
-    backends 'pdf'
-}
+    gemPath jrubyPrepareGems<span style="color: #666666">.</span><span style="color: #7D9029">outputDir</span>
+    backends <span style="color: #BA2121">&#39;pdf&#39;</span>
+<span style="color: #666666">}</span>
 
-//end::asciidoctor[]
+<span style="color: #408080; font-style: italic">//end::asciidoctor[]</span>
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.6'
-}</code></pre>
+task <span style="color: #0000FF">wrapper</span><span style="color: #666666">(</span><span style="color: #A0A000">type:</span> Wrapper<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+    gradleVersion <span style="color: #666666">=</span> <span style="color: #BA2121">&#39;2.6&#39;</span>
+<span style="color: #666666">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1361,7 +1356,7 @@ ga('send', 'pageview');
         
         
         
-        <a href="tony.mkhael@gmail.com">
+        <a href="mailto:tony.mkhael@gmail.com">
           <i class="fa fa-envelope" aria-hidden="true"></i>
         </a>
         
@@ -1369,7 +1364,7 @@ ga('send', 'pageview');
         
         
         
-        <a href="tonymkhael">
+        <a href="https://www.github.com/tonymkhael">
           <i class="fa fa-github" aria-hidden="true"></i>
         </a>
         
@@ -1377,7 +1372,7 @@ ga('send', 'pageview');
         
         
         
-        <a href="tonymkhael">
+        <a href="https://www.twitter.com/tonymkhael">
           <i class="fa fa-twitter" aria-hidden="true"></i>
         </a>
         
