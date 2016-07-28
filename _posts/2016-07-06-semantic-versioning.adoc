@@ -93,7 +93,7 @@ nexusPassword=password
 
 Now let's make this a java project. We'll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java
 
-[source,java]
+[source, java]
 ----
 include::{assetDir}/SemanticVersioning.java[]
 ----
@@ -318,7 +318,7 @@ With this in mind, a release is simply a tag on a specific commit that marks the
 
 Here's what you need to do in order to use nebula release plugin
 
-[source, console]
+[source, groovy]
 .build.gradle
 ----
 include::{assetDir}/build.gradle[tags=nebula-release]
