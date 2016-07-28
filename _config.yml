@@ -14,10 +14,50 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "tonymkhael.github.io" # the base hostname & protocol for your site
 author:
     name: Tony Mkhael
+    gravatar: 14d15a4a8d6f362e0a13ab8ca06e6e02 # md5 hash of your email address
     email: tony.mkhael@gmail.com
     github: tonymkhael
     twitter: tonymkhael
-github_username:  tonymkhael
+    linkedin:  https://www.linkedin.com/in/tonymkhael
+
+tagline: "Tony Mkhael"
 
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-asciidoc
+  - jekyll-paginate
+
+asciidoctor:
+  attributes:
+    idprefix: _
+    source-highlighter: highlightjs
+    pygments-css: style
+
+# Navigation (2nd level links supported)
+nav:
+  Blog:
+    - '/'
+    - { Categories: '/categories/' }
+    - { Tags: '/tags/' }
+  About:
+    - '/about/'
+  Github Project:
+    - 'http://tonymkhael.github.io/'
+
+# Where are tags and categories displayed
+tag_page: '/tags/'
+category_page: '/categories/'
+
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+paginate: 3
+paginate_path: '/page:num'
+permalink: pretty
+sass:
+  style: compressed
+  sass_dir: _scss
+mathjax: true # whether support mathjax
+google_analytics_token: '' # leave blank if you don't want google analytics
+disqus_short_name: 'tonymkhael' # leave blank if you don't want disqus
