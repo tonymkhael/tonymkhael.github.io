@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Semantic versioning &middot; Tony Mkhael
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG"> </script>
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });
+  </script>
+  
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <div class="sidebar-personal-info">
+      <div class="sidebar-personal-info-section">
+        <a href="http://gravatar.com/14d15a4a8d6f362e0a13ab8ca06e6e02">
+          <img src="http://www.gravatar.com/avatar/14d15a4a8d6f362e0a13ab8ca06e6e02?s=350" title="View on Gravatar" alt="View on Gravatar" />
+        </a>
+      </div>
+      <div class="sidebar-personal-info-section">
+        <p></p>
+      </div>
+      
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    
+      
+      
+      
+
+      
+
+      <span class="foldable">
+        <a class="sidebar-nav-item " href="/">
+          Blog
+        </a>
+
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/categories/">
+                Categories
+              </a>
+          
+        
+          
+            
+            
+            
+              <a class="sidebar-nav-item sidebar-nav-item-sub " href="/tags/">
+                Tags
+              </a>
+          
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="/about/">
+          About
+        </a>
+
+        
+      </span>
+
+    
+      
+      
+      
+
+      
+
+      <span class="">
+        <a class="sidebar-nav-item " href="http://tonymkhael.github.io/">
+          Github Project
+        </a>
+
+        
+      </span>
+
+    
+
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+    &copy; 2016 Tony Mkhael</a>
+    </p>
+  </div>
+
+  <div class="sidebar-item">
+    <p>
+    Powered by <a href="http://jekyllrb.com">jekyll</a> and <a href="http://lanyon.getpoole.com/">lanyon</a>
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home" title="Tony Mkhael">
+              <img class="masthead-logo" src="http://www.gravatar.com/avatar/14d15a4a8d6f362e0a13ab8ca06e6e02?s=350" title="Logo" alt="Logo">
+            </a>
+            <span>Tony Mkhael</span>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Semantic versioning</h1>
+  <span class="post-date">06 Jul 2016</span>
+   | 
+  
+    <a href="/tags/#git" class="post-tag">git</a>
+  
+    <a href="/tags/#nebula" class="post-tag">nebula</a>
+  
+    <a href="/tags/#netflix" class="post-tag">netflix</a>
+  
+    <a href="/tags/#jenkins" class="post-tag">jenkins</a>
+  
+    <a href="/tags/#semantic-versioning" class="post-tag">semantic-versioning</a>
+  
+    <a href="/tags/#gradle" class="post-tag">gradle</a>
+  
+  
+  <article>
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what-is-this-about">1. What is this about?</a></li>
+<li><a href="#_detailed-guide">2. Detailed guide</a>
+<ul class="sectlevel2">
+<li><a href="#_setting-up-your-project">2.1. Setting up your project</a></li>
+<li><a href="#_building-the-project">2.2. Building the project</a></li>
+<li><a href="#_adding-javadoc-and-source-jars">2.3. Adding javadoc and source jars</a></li>
+<li><a href="#_adding-some-cool-documentation">2.4. Adding some cool documentation</a></li>
+<li><a href="#_publishing-the-artifacts">2.5. Publishing the artifacts</a></li>
+<li><a href="#_semantic-versioning">2.6. Semantic versioning</a></li>
+<li><a href="#_the-ci-part">2.7. The CI part</a></li>
+</ul>
+</li>
+<li><a href="#_putting-it-all-together">3. Putting it all together</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_what-is-this-about">1. What is this about?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>if you&#8217;re unfamiliar with semantic versioning, please start reading <a href="http://semver.org/">Here</a>.
+The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.
+It will guide you in detail through all the steps needed to</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setup a project</p>
+</li>
+<li>
+<p>Building it using gradle</p>
+</li>
+<li>
+<p>Documenting using javadoc and asciidoctor</p>
+</li>
+<li>
+<p>Publishing to a nexus repository</p>
+</li>
+<li>
+<p>Handling versioning using nebula</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order
+to have a OSS compliant project. It contains useful snippets you will/should probably use variants of in your OSS project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_detailed-guide">2. Detailed guide</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this tutorial, we will interact with the below tools/libraries.
+Although no specific knowledge is required, it is always better to have a quick look around to see what&#8217;s behind each one.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.gradle.org">Gradle</a>: Highly flexible build tool</p>
+</li>
+<li>
+<p><a href="http://www.asciidoctor.org">Asciidoctor</a>: Toolset to generate cool documentation from pure text format</p>
+</li>
+<li>
+<p><a href="https://nebula-plugins.github.io/">Nebula</a>: Gradle plugins provided by NetFlix</p>
+</li>
+<li>
+<p><a href="http://www.jenkins-ci.org/">Jenkins CI</a>: Continuous delivery server</p>
+</li>
+<li>
+<p><a href="http://www.sonatype.org/nexus/">Nexus</a>: Maven repository server</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_setting-up-your-project">2.1. Setting up your project</h3>
+<div class="paragraph">
+<p>First, let&#8217;s start by setting up the gradle project. For this you would need the following structure.</p>
+</div>
+<div class="listingblock">
+<div class="title">Project structure</div>
+<div class="content">
+<pre>&gt;&gt; build.gradle <i class="conum" data-value="1"></i><b>(1)</b>
+&gt;&gt; gradle
+&gt;&gt;&gt; wrapper
+&gt;&gt;&gt;&gt; gradle-wrapper.properties <i class="conum" data-value="2"></i><b>(2)</b>
+&gt;&gt;&gt;&gt; gradle-wrapper.jar
+&gt;&gt; gradlew <i class="conum" data-value="3"></i><b>(3)</b>
+&gt;&gt; gradlew.bat</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The main gradle script for your project</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The gradle wrapper files to specify the gradle version to use</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The gradle command line scripts</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Except for the build.gradle, you can use the exact copy of all files <a href="http://www.github.com/tonymkhael/semantic-versioning">in this public repository</a>, as those files do not change much and they only exist to bootstrap your gradle setup.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you&#8217;re behind a proxy
+You will not find this file in this repo, since it is supposed to be injected by the build environment (CI/Dev environment..)
+However, here is a sample content that you should adapt in case you want to try out with this repo..
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">gradle.properties</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>#control daemon mode
+org.gradle.daemon=true
+
+#used for gradle JVM
+systemProp.https.proxyHost=proxy
+systemProp.https.proxyPort=3128
+systemProp.http.proxyHost=proxy
+systemProp.http.proxyPort=3128
+systemProp.http.nonProxyHosts=*.domain.com|localhost
+
+#use that specific JDK
+org.gradle.java.home=C:\\myfavoritejdk\\
+
+#used for the publishing
+nexusGroup=com.acme
+nexusHost=nexus-dev
+nexusRepo=myrepo
+nexusUser=user
+nexusPassword=password</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now let&#8217;s make this a java project. we&#8217;ll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">package com.acme.example;
+
+public final class SemanticVersioning {
+
+  //tag::anchor[]
+
+  /**
+   * A sample for the javadoc
+   *
+   * @param args Tha arguments to this magnificient application
+   * @since 0.0.1
+   */
+  public static void main(String[] args) {
+    System.out.println("Hello Semantic versioning");
+  }
+
+  //end::anchor[]
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This also has to be reflected in the gradle script as below</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>project.group = nexusGroup <i class="conum" data-value="1"></i><b>(1)</b>
+project.description = 'Semantic versioning'
+
+apply plugin: 'java' <i class="conum" data-value="2"></i><b>(2)</b>
+
+repositories { <i class="conum" data-value="3"></i><b>(3)</b>
+    jcenter()
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Assign a group id and a description for the project</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Apply the gradle java plugin</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Add jcenter as an artifact repository in case we need some useful libraries</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_building-the-project">2.2. Building the project</h3>
+<div class="paragraph">
+<p>To build the project, all we need to done is invoke the gradle build task using</p>
+</div>
+<div class="listingblock">
+<div class="title">Building the project</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>+&gt; gradlew build
+Starting a new Gradle Daemon for this build (subsequent builds will be faster).
+Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT
+:compileJava
+:processResources UP-TO-DATE
+:classes
+:jar
+:assemble
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test UP-TO-DATE
+:check UP-TO-DATE
+:build
+
+BUILD SUCCESSFUL
+
+Total time: 11.917 secs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The build artifacts are generated under the build directory.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Instead of trying to build your .gitignore from scratch, you can use <a href="https://github.com/Netflix/gradle-template/blob/master/.gitignore">Netflix&#8217;s template</a> which covers pretty much everything
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you need, at any time to look at the available tasks on your project you can use the tasks task.
+Here&#8217;s a sample usage with the output.</p>
+</div>
+<div class="listingblock">
+<div class="title">List gradle tasks</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>+&gt; gradlew tasks
+Inferred project: semantic-versioning, version: 0.0.2-SNAPSHOT
+:tasks
+
+------------------------------------------------------------
+All tasks runnable from root project - Semantic versioning
+------------------------------------------------------------
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles classes 'main'.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the main classes.
+testClasses - Assembles classes 'test'.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build. [incubating]
+
+Documentation tasks
+-------------------
+asciidoctor - Converts AsciiDoc files and copies the output files and related resources to the build directory.
+javadoc - Generates Javadoc API documentation for the main source code.
+
+Help tasks
+----------
+components - Displays the components produced by root project 'semantic-versioning'. [incubating]
+dependencies - Displays all dependencies declared in root project 'semantic-versioning'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'semantic-versioning'.
+help - Displays a help message.
+model - Displays the configuration model of root project 'semantic-versioning'. [incubating]
+projects - Displays the sub-projects of root project 'semantic-versioning'.
+properties - Displays the properties of root project 'semantic-versioning'.
+tasks - Displays the tasks runnable from root project 'semantic-versioning'.
+
+JRuby tasks
+-----------
+jrubyGenerateGradleRb - Generate a gradle.rb stub for executing Ruby binstubs
+jrubyPrepare - Pre-cache and prepare all dependencies (jars and gems)
+jrubyPrepareGems - Prepare the gems from the `gem` dependencies, extracts into jruby.installGemDir
+jrubyPrepareJars - Prepare the jar dependencies from the `gem` dependencies, collect them into
+
+Nebula Release tasks
+--------------------
+candidate
+devSnapshot
+final
+releaseCheck
+snapshot
+
+Upload tasks
+------------
+uploadArchives - Uploads all artifacts belonging to configuration ':archives'
+
+Verification tasks
+------------------
+check - Runs all checks.
+test - Runs the unit tests.
+
+Other tasks
+-----------
+generateHtml5
+install - Installs the 'archives' artifacts into the local Maven repository.
+release - Releases this project.
+wrapper
+
+Rules
+-----
+Pattern: clean&lt;TaskName&gt;: Cleans the output files of a task.
+Pattern: build&lt;ConfigurationName&gt;: Assembles the artifacts of a configuration.
+Pattern: upload&lt;ConfigurationName&gt;: Assembles and uploads the artifacts belonging to a configuration.
+
+To see all tasks and more detail, run gradlew tasks --all
+
+To see more detail about a task, run gradlew help --task &lt;task&gt;
+
+BUILD SUCCESSFUL</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding-javadoc-and-source-jars">2.3. Adding javadoc and source jars</h3>
+<div class="paragraph">
+<p>There is nothing simpler than that when using Nebula tools (provided by NetFlix).
+Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow their standard approach</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>plugins {
+    id 'nebula.project' version '3.2.1' <i class="conum" data-value="1"></i><b>(1)</b>
+}
+
+apply plugin: 'nebula.project' <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This instructs gradle to use the nebula project plugin</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Applies the nebula project plugin</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The nebula project plugin provides the following</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Builds Javadoc and Sources jars</p>
+</li>
+<li>
+<p>Record information about the build and stores it in the .jar, via gradle-info-plugin</p>
+</li>
+<li>
+<p>Easy specification of people involved in a project via gradle-contacts-plugin</p>
+</li>
+<li>
+<p>Doesn&#8217;t fail javadoc if there are none found</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you run gradlew tasks, you can now see the additional tasks in the build category:</p>
+</div>
+<div class="listingblock">
+<div class="title">Newly added tasks</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Assembles and tests this project.
+buildDependents - Assembles and tests this project and all projects that depend on it.
+buildNeeded - Assembles and tests this project and all projects it depends on.
+classes - Assembles classes 'main'.
+clean - Deletes the build directory.
+jar - Assembles a jar archive containing the main classes.
+javadocJar <i class="conum" data-value="1"></i><b>(1)</b>
+sourceJar <i class="conum" data-value="2"></i><b>(2)</b>
+testClasses - Assembles classes 'test'.</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The java doc jar tasks which creates the artifact-javadoc.jar</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The source jar tasks which creates the artifact-sources.jar</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Those new artifacts can be built by invoking gradlew javadocJar sourceJar build</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding-some-cool-documentation">2.4. Adding some cool documentation</h3>
+<div class="paragraph">
+<p>Asciidoctor is a really useful tool when it comes to technical documentation in all its forms: Tutorials, User guides, HowTos, FAQs etc..
+It is yet another markdown format, enriched by many plugins that you are encouraged to explore, such as diagrams, math equations, tree view etc..
+Many of these asciidoctor extensions are used to generate the documentation you are actually reading</p>
+</div>
+<div class="paragraph">
+<p>Gradle integrates nicely with Asciidoctor with the asciidoctor-gradle-plugin.
+Here&#8217;s a snippet on how to use it..</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>plugins {
+    id 'org.asciidoctor.convert' version '1.5.2' <i class="conum" data-value="1"></i><b>(1)</b>
+    id 'com.github.jruby-gradle.base' version '0.3.0'
+}
+
+dependencies {
+    gems 'rubygems:asciidoctor-diagram:1.3.0' <i class="conum" data-value="2"></i><b>(2)</b>
+    asciidoctor 'com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1'
+    asciidoctor 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8'
+}
+
+apply plugin: 'com.github.jruby-gradle.base' <i class="conum" data-value="3"></i><b>(3)</b>
+apply plugin: 'org.asciidoctor.convert'
+
+class AsciiDoctorDefault extends org.asciidoctor.gradle.AsciidoctorTask { <i class="conum" data-value="4"></i><b>(4)</b>
+
+    AsciiDoctorDefault() {
+
+        resources {
+            from(sourceDir) {
+                include 'css/**'
+                include 'images/**'
+            }
+        }
+
+        requires 'asciidoctor-diagram'
+
+        attributes 'build-gradle': new File('build.gradle'),
+                'source-highlighter': 'highlightjs',
+                'highlightjs-theme': 'github',
+                'sourceDir': '../../main/java',
+                'rootDir': '../../../',
+                'imagesdir': 'images',
+                'imagesoutdir': 'images',
+                'setanchors': 'true',
+                'idprefix': '',
+                'idseparator': '-',
+                'docinfo1': 'true',
+                'docVersion': project.version.toString()
+    }
+
+}
+
+task(generateHtml5, type: AsciiDoctorDefault) { <i class="conum" data-value="5"></i><b>(5)</b>
+    dependsOn jrubyPrepareGems
+    gemPath jrubyPrepareGems.outputDir
+    backends 'html5'
+}
+
+task(generatePdf, type: AsciiDoctorDefault) { <i class="conum" data-value="6"></i><b>(6)</b>
+    dependsOn jrubyPrepareGems
+    gemPath jrubyPrepareGems.outputDir
+    backends 'pdf'
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Add plugins asciidoctor and jruby (to allow using asciidoctor extensions written in ruby on the gradle jvm)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Add some asciidoctor extensions, such as diagrams and monotree</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Apply the plugins</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Define a base task extending the asciidoctor provided tasks to fill in some defaults</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Add a task to generate documentation with html5 backend</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Add a task to generate documentation with pdf backend</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_publishing-the-artifacts">2.5. Publishing the artifacts</h3>
+<div class="paragraph">
+<p>One of the useful things nebula project plugin does, is add publishing support to maven repositories.</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>publishing { <i class="conum" data-value="1"></i><b>(1)</b>
+
+    repositories { <i class="conum" data-value="2"></i><b>(2)</b>
+        maven {
+            url "http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
+            <i class="conum" data-value="3"></i><b>(3)</b>
+            credentials {
+                username "${nexusUser}"
+                password "${nexusPassword}"
+            }
+        }
+        mavenLocal()
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Configure the publishing (gradle maven-publish-plugin)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Configure some maven repositories for publishing</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Add a nexus repository hosted on myserver, suffixed by {versiontype}, with versiontype being either empty or "-SNAPSHOT" (more on that on the nebula section)</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_semantic-versioning">2.6. Semantic versioning</h3>
+<div class="paragraph">
+<p>Now comes the real question on how to version our project, and how to define its release cycle.
+Again nebula comes to the rescue by providing the Netflix biased way via the nebula release plugin, which should be enough for whatever needs you have.</p>
+</div>
+<div class="paragraph">
+<p>The way it works is really simple, especially compared to the traditional maven way with project versions cluttering in the pom.xml files everywhere, the maven-release-plugin
+which has to modify poms, commit them, push the changes.. but when it doesn&#8217;t work you must rollback.. what would you configure on a CI environment.. You see the point..</p>
+</div>
+<div class="paragraph">
+<p>Having the version tag in the sources is redundant with the SCM information. The version can be infered from the SCM commit (by traversing the tree).
+With this in mind, a release is simply a tag on a specific commit that marks the state of the versioned code at a certain commit (or point in time).</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s what you need to do in order to use nebula release plugin</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>plugins {
+    id 'nebula.nebula-release' version '4.0.1' <i class="conum" data-value="1"></i><b>(1)</b>
+}
+
+apply plugin: 'nebula.nebula-release' <i class="conum" data-value="2"></i><b>(2)</b>
+
+release { <i class="conum" data-value="3"></i><b>(3)</b>
+    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
+    defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
+}
+
+tasks.release.finalizedBy tasks.publish <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Add the nebula release plugin to the scope of our project</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Apply the plugin</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Configure the plugin in order to use -SNAPSHOT suffixes for snapshot versions to stick to the maven convention</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Automatically publish the artifacts whenever a "release" happpens</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In nebula&#8217;s terms, a release can be one of the below</p>
+</div>
+<div class="listingblock">
+<div class="title">View nebula release tasks</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>+&gt; gradlew tasks
+Nebula Release tasks
+--------------------
+candidate <i class="conum" data-value="1"></i><b>(1)</b>
+devSnapshot
+final <i class="conum" data-value="2"></i><b>(2)</b>
+releaseCheck
+snapshot <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Releasing a release candidate as a preview version of our project</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Releasing a version of our project</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>"Releasing" a snapshot version of our project</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>snapshot and devSnapshot tasks will not tag the repository. And with the finalize task we have, it will simply publish the latest snapshot to the repository.
+candidate and final tasks are a bit different, where they require no uncommited changes, and then tag the current commit with target release version</p>
+</div>
+<div class="paragraph">
+<p>To bootstrap this whole thing, all you need to do is tag the very first version manually using for example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>git tag "v.0.0.1" // tags the current branch tip to have the 0.0.1 version.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From here on, whenever you need to bump the version (i.e. release your product), you can use one of the tasks the nebula release plugin provides.</p>
+</div>
+<div class="paragraph">
+<p>As a concrete example, here we simulate a very basic flow:</p>
+</div>
+<div class="listingblock">
+<div class="title">Sample flow: Making some changes</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>+&gt; touch bla
++&gt; git add bla
++&gt; git commit -m "my bla change"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now some user really needs our bla changes, so we will make a release of our project!</p>
+</div>
+<div class="listingblock">
+<div class="title">Sample flow: The release candidate</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>+&gt; gradlew candidate
+Inferred project: semantic-versioning, version: 0.1.0-rc.1
+Unable to determine the host name on this Windows instance
+:releaseCheck
+:candidate
+:prepare
+:compileJava
+:processResources UP-TO-DATE
+:classes
+:writeManifestProperties
+:jar
+:assemble
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test UP-TO-DATE
+:check UP-TO-DATE
+:build
+:release
+Tagging repository as v0.1.0-rc.1
+Pushing changes in [refs/heads/master, v0.1.0-rc.1] to origin
+:generatePomFileForNebulaPublication
+:javadoc
+:javadocJar
+:sourceJar
+:publishNebulaPublicationToMavenLocalRepository
+:publishNebulaPublicationToMavenRepository
+Upload http://myserver/content/repositories/myrepo-releases/com/acme/example/semantic-versioning/0.1.0-rc.1/semantic-versioning-0.1.0-rc.1.jar
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What happened here? Well, simply the following</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The project is built (compiled, packaged with sources and javadoc etc..)</p>
+</li>
+<li>
+<p>The repository is tagged with v0.1.0-rc.1 and the tag is pushed to the remote git repository</p>
+</li>
+<li>
+<p>The artifacts (with the new RC version) are published to the configured maven repository</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now suppose the candidate is ready to be released, we can do it using</p>
+</div>
+<div class="listingblock">
+<div class="title">Sample flow: The official release</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>+&gt; gradlew final
+Inferred project: semantic-versioning, version: 0.1.0
+Unable to determine the host name on this Windows instance
+:releaseCheck
+:final
+:prepare
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:writeManifestProperties
+:jar
+:assemble
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test UP-TO-DATE
+:check UP-TO-DATE
+:build
+:release
+Tagging repository as v0.1.0
+Pushing changes in [refs/heads/master, v0.1.0] to origin
+:generatePomFileForNebulaPublication
+:javadoc
+:javadocJar
+:sourceJar
+:publishNebulaPublicationToMavenLocalRepository
+:publishNebulaPublicationToMavenRepository
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts
+The next development version will be 0.1.1-SNAPSHOT</p>
+</div>
+<div class="listingblock">
+<div class="title">Viewing the next dev version</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>+&gt; gradlew tasks
+Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can always manually bump the version, or force it when release using respectively</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>gradlew &lt;snapshot|devSnapshot|candidate|final&gt; -Prelease.scope=&lt;major|minor|patch&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+gradlew &lt;candidate|final&gt; -Prelease.version=1.2.3 <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Choose the release scope of the operation by specifying which part of the version to bump</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Force a release version instead of nebula&#8217;s scheme</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the-ci-part">2.7. The CI part</h3>
+<div class="paragraph">
+<p>Here we assume you have a jenkins server running somewhere, with the "new" pipelines scripts.
+We will be creating 2 jobs, 1 for building the project, another to handle the release part.</p>
+</div>
+<div class="paragraph">
+<p>We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile
+Here&#8217;s the content</p>
+</div>
+<div class="listingblock">
+<div class="title">Jenkinsfile</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>node('master') { <i class="conum" data-value="1"></i><b>(1)</b>
+
+   // Mark the code checkout 'stage'....
+   stage 'Checkout'
+
+   // Get the code from the Stash repository
+   checkout scm <i class="conum" data-value="2"></i><b>(2)</b>
+
+   // Mark the code build 'stage'....
+   stage 'Build'
+
+   // Make sure script is runnable
+   sh "chmod a+x ./gradlew"
+
+   // Run gradle build and deploy <i class="conum" data-value="3"></i><b>(3)</b>
+   wrap([$class: 'ConfigFileBuildWrapper', managedFiles: [[fileId: 'org.jenkinsci.plugins.configfiles.custom.CustomConfig1453803770046', replaceTokens: false, targetLocation: 'gradle.properties', variable: '']]]) {
+    sh "./gradlew snapshot generateHtml5 generatePdf --stacktrace"
+   }
+
+   publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'build/asciidoc/html5', reportFiles: 'semantic-versioning.html', reportName: 'Documentation']) <i class="conum" data-value="4"></i><b>(4)</b>
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Allocate the node master for the build</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Checkout the git repo (no repo is specified because it is infered by jenkins when using Jenkinsfile)</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Run the snapshot, generateHtml5 and generatePdf tasks, after injecting the gradle.properties from a configured file</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Publish the html5 documentation on jenkins</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_putting-it-all-together">3. Putting it all together</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At this point, we have done the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Created a java project using gradle</p>
+</li>
+<li>
+<p>Generated javadoc and a user guide</p>
+</li>
+<li>
+<p>Played around with versioning and release cycle</p>
+</li>
+<li>
+<p>Integrated with Jenkins pipelines</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All those parts are essential (but not sufficient) for any OSS project, of whatever size.
+This tutorial focused on the technical aspects, but there are more to it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Licensing</p>
+</li>
+<li>
+<p>Contributor guide</p>
+</li>
+<li>
+<p>..</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can have more on this on the Netflix nebula page <a href="https://nebula-plugins.github.io/">Here</a>.</p>
+</div>
+<div class="paragraph">
+<p>Here are the full contents of the build.gradle used.</p>
+</div>
+<div class="listingblock">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>//tag::nebula-release[]
+plugins {
+    id 'nebula.nebula-release' version '4.0.1' <i class="conum" data-value="1"></i><b>(1)</b>
+}
+
+//end::nebula-release[]
+
+//tag::asciidoctor[]
+plugins {
+    id 'org.asciidoctor.convert' version '1.5.2' <i class="conum" data-value="1"></i><b>(1)</b>
+    id 'com.github.jruby-gradle.base' version '0.3.0'
+}
+
+//end::asciidoctor[]
+
+//tag::nebula-project[]
+plugins {
+    id 'nebula.project' version '3.2.1' <i class="conum" data-value="1"></i><b>(1)</b>
+}
+
+//end::nebula-project[]
+
+//tag::java[]
+project.group = nexusGroup <i class="conum" data-value="1"></i><b>(1)</b>
+project.description = 'Semantic versioning'
+
+//end::java[]
+
+//tag::asciidoctor[]
+dependencies {
+    gems 'rubygems:asciidoctor-diagram:1.3.0' <i class="conum" data-value="2"></i><b>(2)</b>
+    asciidoctor 'com.github.allati.asciidoctor.monotree:asciidoctor-extension-monotree:0.0.1'
+    asciidoctor 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.8'
+}
+
+//end::asciidoctor[]
+
+//tag::java[]
+apply plugin: 'java' <i class="conum" data-value="2"></i><b>(2)</b>
+
+//end::java[]
+
+//tag::nebula-project[]
+apply plugin: 'nebula.project' <i class="conum" data-value="2"></i><b>(2)</b>
+
+//end::nebula-project[]
+
+//tag::asciidoctor[]
+apply plugin: 'com.github.jruby-gradle.base' <i class="conum" data-value="3"></i><b>(3)</b>
+apply plugin: 'org.asciidoctor.convert'
+
+//end::asciidoctor[]
+
+//tag::java[]
+repositories { <i class="conum" data-value="3"></i><b>(3)</b>
+    jcenter()
+}
+
+//end::java[]
+
+//tag::publishing[]
+publishing { <i class="conum" data-value="1"></i><b>(1)</b>
+
+    repositories { <i class="conum" data-value="2"></i><b>(2)</b>
+        maven {
+            url "http://${nexusHost}/content/repositories/${nexusRepo}-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
+            <i class="conum" data-value="3"></i><b>(3)</b>
+            credentials {
+                username "${nexusUser}"
+                password "${nexusPassword}"
+            }
+        }
+        mavenLocal()
+    }
+}
+
+//end::publishing[]
+
+//tag::nebula-release[]
+apply plugin: 'nebula.nebula-release' <i class="conum" data-value="2"></i><b>(2)</b>
+
+release { <i class="conum" data-value="3"></i><b>(3)</b>
+    // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
+    defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
+}
+
+tasks.release.finalizedBy tasks.publish <i class="conum" data-value="4"></i><b>(4)</b>
+
+//end::nebula-release[]
+
+//tag::asciidoctor[]
+class AsciiDoctorDefault extends org.asciidoctor.gradle.AsciidoctorTask { <i class="conum" data-value="4"></i><b>(4)</b>
+
+    AsciiDoctorDefault() {
+
+        resources {
+            from(sourceDir) {
+                include 'css/**'
+                include 'images/**'
+            }
+        }
+
+        requires 'asciidoctor-diagram'
+
+        attributes 'build-gradle': new File('build.gradle'),
+                'source-highlighter': 'highlightjs',
+                'highlightjs-theme': 'github',
+                'sourceDir': '../../main/java',
+                'rootDir': '../../../',
+                'imagesdir': 'images',
+                'imagesoutdir': 'images',
+                'setanchors': 'true',
+                'idprefix': '',
+                'idseparator': '-',
+                'docinfo1': 'true',
+                'docVersion': project.version.toString()
+    }
+
+}
+
+task(generateHtml5, type: AsciiDoctorDefault) { <i class="conum" data-value="5"></i><b>(5)</b>
+    dependsOn jrubyPrepareGems
+    gemPath jrubyPrepareGems.outputDir
+    backends 'html5'
+}
+
+task(generatePdf, type: AsciiDoctorDefault) { <i class="conum" data-value="6"></i><b>(6)</b>
+    dependsOn jrubyPrepareGems
+    gemPath jrubyPrepareGems.outputDir
+    backends 'pdf'
+}
+
+//end::asciidoctor[]
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find the full sources <a href="http://www.github.com/tonymkhael/semantic-versioning">in this public repository</a>.
+Thank you for making it this far, and hope this helps you in some way!</p>
+</div>
+</div>
+</div>
+  </article>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+  </ul>
+</div>
+
+
+<div class="comments">
+  <h2>Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+var disqus_config = function () {
+  this.page.url = 'tonymkhael.github.io/oss/2016/07/06/semantic-versioning/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/oss/2016/07/06/semantic-versioning'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() {
+  var d = document, s = d.createElement('script');
+  s.src = '//tonymkhael.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+})();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if (target === toggle) {
+            checkbox.checked = !checkbox.checked;
+            e.preventDefault();
+          } else if (checkbox.checked && !sidebar.contains(target)) {
+            /* click outside the sidebar when sidebar is open */
+            checkbox.checked = false;
+          }
+        }, false);
+      })(document);
+    </script>
+    
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '', 'auto');
+ga('send', 'pageview');
+    </script>
+    
+  </body>
+  
+  <script id="dsq-count-scr" src="//tonymkhael.disqus.com/count.js" async></script>
+  
+</html>
