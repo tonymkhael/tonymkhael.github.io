@@ -65,7 +65,7 @@ IMPORTANT: It is necessary to have a gradle.properties file in the project root 
 You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)
 However, here is a sample content that you could adapt in case you want to try it out.
 
-[source]
+[source, properties]
 .gradle.properties
 ----
 
@@ -100,7 +100,7 @@ include::{assetDir}/SemanticVersioning.java[]
 
 This also has to be reflected in the gradle script as below
 
-[source]
+[source, groovy]
 .build.gradle
 ----
 include::{assetDir}/build.gradle[tags=java]
@@ -113,7 +113,7 @@ include::{assetDir}/build.gradle[tags=java]
 
 To build the project, you have to invoke the gradle **build** task using
 
-[source]
+[source, console]
 .Building the project
 ----
 +> gradlew build
@@ -143,7 +143,7 @@ TIP: Instead of trying to build your .gitignore from scratch, you can use https:
 If you need to look at the available tasks on your project you can use the **tasks** task.
 Here's a sample usage with the output.
 
-[source]
+[source, console]
 .List gradle tasks
 ----
 +> gradlew tasks
@@ -234,7 +234,7 @@ BUILD SUCCESSFUL
 There is nothing simpler than that when using Nebula tools (provided by NetFlix).
 Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow this approach.
 
-[source]
+[source, groovy]
 .build.gradle
 ----
 include::{assetDir}/build.gradle[tags=nebula-project]
@@ -251,7 +251,7 @@ The nebula project plugin provides the following
 
 If you run gradlew tasks, you can now see the additional tasks in the build category:
 
-[source]
+[source, console]
 .Newly added tasks
 ----
 Build tasks
@@ -281,7 +281,7 @@ Many of these asciidoctor extensions are used to generate the documentation you 
 Gradle integrates nicely with Asciidoctor with the asciidoctor-gradle-plugin.
 Here's a snippet on how to use it..
 
-[source]
+[source, groovy]
 .build.gradle
 ----
 include::{assetDir}/build.gradle[tags=asciidoctor]
@@ -296,7 +296,7 @@ include::{assetDir}/build.gradle[tags=asciidoctor]
 === Publishing the artifacts
 
 One of the useful things nebula project plugin does, is add publishing support to maven repositories.
-[source]
+[source, groovy]
 .build.gradle
 ----
 include::{assetDir}/build.gradle[tags=publishing]
@@ -318,7 +318,7 @@ With this in mind, a release is simply a tag on a specific commit that marks the
 
 Here's what you need to do in order to use nebula release plugin
 
-[source]
+[source, console]
 .build.gradle
 ----
 include::{assetDir}/build.gradle[tags=nebula-release]
@@ -330,7 +330,7 @@ include::{assetDir}/build.gradle[tags=nebula-release]
 
 In nebula's terms, a release can be one of the below
 
-[source]
+[source, console]
 .View nebula release tasks
 ----
 +> gradlew tasks
@@ -351,7 +351,7 @@ candidate and final tasks are a bit different, where they require no uncommited 
 
 To bootstrap this whole thing, all you need to do is tag the very first version manually using for example
 
-[source]
+[source, console]
 ----
 git tag "v.0.0.1" // tags the current branch tip to have the 0.0.1 version.
 ----
@@ -360,7 +360,7 @@ From here on, whenever you need to bump the version (i.e. release your product),
 
 As a concrete example, here we simulate a very basic flow:
 
-[source]
+[source, console]
 .Sample flow: Making some changes
 ----
 +> touch bla
@@ -369,7 +369,7 @@ As a concrete example, here we simulate a very basic flow:
 ----
 
 Now some user really needs our bla changes, so we will make a release of our project!
-[source]
+[source, console]
 .Sample flow: The release candidate
 ----
 +> gradlew candidate
@@ -411,7 +411,7 @@ What happened here? Well, simply the following
 
 Now suppose the candidate is ready to be released, we can do it using
 
-[source]
+[source, console]
 .Sample flow: The official release
 ----
 +> gradlew final
@@ -447,7 +447,7 @@ Pushing changes in [refs/heads/master, v0.1.0] to origin
 Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.
 The next development version will be 0.1.1-SNAPSHOT
 
-[source]
+[source, console]
 .Viewing the next dev version
 ----
 +> gradlew tasks
@@ -456,7 +456,7 @@ Inferred project: semantic-versioning, version: 0.1.1-SNAPSHOT
 
 You can always manually bump the version, or force it when release using respectively
 
-[source]
+[source, console]
 ----
 gradlew <snapshot|devSnapshot|candidate|final> -Prelease.scope=<major|minor|patch> // <1>
 gradlew <candidate|final> -Prelease.version=1.2.3 // <2>
@@ -472,7 +472,7 @@ In general, you will need 2 jobs, one for building the project and another to ha
 We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile
 Here's the content
 
-[source]
+[source, groovy]
 .Jenkinsfile
 ----
 include::{assetDir}/Jenkinsfile[]
@@ -502,7 +502,7 @@ You can have more on this on the Netflix nebula page https://nebula-plugins.gith
 
 Here are the full contents of the build.gradle used.
 
-[source]
+[source, groovy]
 .build.gradle
 ----
 include::{assetDir}/build.gradle[]
