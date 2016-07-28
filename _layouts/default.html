@@ -13,10 +13,14 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
+            <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}" style="float:left;margin-right:20px">
               <img class="masthead-logo" src="http://www.gravatar.com/avatar/{{ site.author.gravatar }}?s=350" title="Logo" alt="Logo">
             </a>
-            <span>{{ site.tagline }}</span>
+            <div style="float:left">
+              <small style='color: #000000'>{{ site.author.name }}</small><br/>
+              <small>{{ site.author.description }}</small>
+            </div>
+            <div style="clear:both"/>
           </h3>
         </div>
       </div>
@@ -89,7 +93,7 @@ ga('send', 'pageview');
       </div>
       {% endif %}
       <div class="sidebar-personal-info-section">
-        <p>{{ site.author.description }}</p>
+        <p>{{ site.author.copyright }}</p>
       </div>
     </div>
   </div>

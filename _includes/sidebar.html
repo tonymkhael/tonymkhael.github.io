@@ -11,21 +11,24 @@
           <img src="http://www.gravatar.com/avatar/{{ site.author.gravatar }}?s=350" title="View on Gravatar" alt="View on Gravatar" />
         </a>
       </div>
-      <div class="sidebar-personal-info-section">
-        <p>{{ site.author.description }}</p>
-      </div>
       {% if site.author.contact %}
       {% assign len = site.author.contact | size %}
       {% assign current_index = 0 %}
-      <div class="sidebar-personal-info-section">
-        <p> Follow me:
+      <div class="sidebar-personal-info-section" style="font-size:1rem; text-align:center">
+        <p>
+        {% if site.author.feedburner != null %}
+
+          <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml">
+            <i class="fa fa-rss-square" aria-hidden="true"></i>
+          </a> |
+        {% endif %}
         {% for contact in site.author.contact %}
         {% assign iconname = contact[0] %}
         {% if contact[0] == 'email' %}
         {% assign iconname = 'envelope' %}
         {% endif %}
         <a href="{{ contact[1] }}">
-          <i class="fa fa-{{ iconname }}" aria-hidden="true"></i>
+          <i class="fa fa-{{ iconname }}" aria-hidden="true" style="font-size:1rem"></i>
         </a>
         {% assign current_index = current_index | plus: 1 %}
         {% if current_index != len %}|{% endif %}
@@ -71,13 +74,9 @@
 
   <div class="sidebar-item">
     <p>
-    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</a>
-    </p>
-  </div>
-
-  <div class="sidebar-item">
-    <p>
+    &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}<br/>
     Powered by <a href="http://jekyllrb.com">jekyll</a> and <a href="http://lanyon.getpoole.com/">lanyon</a>
     </p>
   </div>
+
 </div>

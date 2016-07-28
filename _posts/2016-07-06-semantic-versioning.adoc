@@ -6,34 +6,28 @@ categories: oss
 tags: git nebula netflix jenkins semantic-versioning gradle
 ---
 :sectnums:
-:toc: left
-:toclevels: 3
-:icons: font
-:iconfont-remote!:
-:iconfont-name: font-awesome-4.4.0/css/font-awesome.min
-:stylesdir: css
-:iconfont-cdn: https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css
 :assetDir: assets
 
 = OSS style project
 Tony Mkhael <tony.mkhael@gmail.com>
 {docVersion}
 
+{{ page.document | tocify_asciidoc: 3 }}
 
 == What is this about?
 
-if you're unfamiliar with semantic versioning, please start reading http://semver.org/[Here].
+if you're unfamiliar with semantic versioning, please start reading http://semver.org/[here].
 The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.
 It will guide you in detail through all the steps needed to
 
 . Setup a project
 . Building it using gradle
 . Documenting using javadoc and asciidoctor
-. Publishing to a nexus repository
-. Handling versioning using nebula
+. Publishing to a maven repository
+. Handling project versioning
 
-This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order
-to have a OSS compliant project. It contains useful snippets you will/should probably use variants of in your OSS project.
+This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.
+It contains useful snippets you can use (as is, or variants of them) in your OSS project.
 
 == Detailed guide
 
@@ -48,10 +42,10 @@ Although no specific knowledge is required, it is always better to have a quick 
 
 === Setting up your project
 
-First, let's start by setting up the gradle project. For this you would need the following structure.
+First, let's start by setting up the gradle project. For this you would need the following directory structure.
 
 [tree]
-.Project structure
+.Directory structure
 ----
 >> build.gradle <1>
 >> gradle
@@ -65,11 +59,11 @@ First, let's start by setting up the gradle project. For this you would need the
 <2> The gradle wrapper files to specify the gradle version to use
 <3> The gradle command line scripts
 
-TIP: Except for the build.gradle, you can use the exact copy of all files http://www.github.com/tonymkhael/semantic-versioning[in this public repository], as those files do not change much and they only exist to bootstrap your gradle setup.
+TIP: Besides the build.gradle, you can use the exact copy of all files http://www.github.com/tonymkhael/semantic-versioning[in this public repository], as those files do not change much and they only exist to bootstrap your gradle setup.
 
 IMPORTANT: It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you're behind a proxy
-You will not find this file in this repo, since it is supposed to be injected by the build environment (CI/Dev environment..)
-However, here is a sample content that you should adapt in case you want to try out with this repo..
+You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)
+However, here is a sample content that you could adapt in case you want to try it out.
 
 [source]
 .gradle.properties
@@ -97,7 +91,7 @@ nexusPassword=password
 
 ----
 
-Now let's make this a java project. we'll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java
+Now let's make this a java project. We'll add the following java class under src/main/java/com/acme/example/SemanticVersioning.java
 
 [source,java]
 ----
@@ -117,7 +111,7 @@ include::{assetDir}/build.gradle[tags=java]
 
 === Building the project
 
-To build the project, all we need to done is invoke the gradle build task using
+To build the project, you have to invoke the gradle **build** task using
 
 [source]
 .Building the project
@@ -144,9 +138,9 @@ Total time: 11.917 secs
 
 The build artifacts are generated under the build directory.
 
-TIP: Instead of trying to build your .gitignore from scratch, you can use https://github.com/Netflix/gradle-template/blob/master/.gitignore[Netflix's template] which covers pretty much everything
+TIP: Instead of trying to build your .gitignore from scratch, you can use https://github.com/Netflix/gradle-template/blob/master/.gitignore[Netflix's template] which covers pretty much everything for a standard java project.
 
-If you need, at any time to look at the available tasks on your project you can use the tasks task.
+If you need to look at the available tasks on your project you can use the **tasks** task.
 Here's a sample usage with the output.
 
 [source]
@@ -238,7 +232,7 @@ BUILD SUCCESSFUL
 === Adding javadoc and source jars
 
 There is nothing simpler than that when using Nebula tools (provided by NetFlix).
-Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow their standard approach
+Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow this approach.
 
 [source]
 .build.gradle
@@ -298,8 +292,6 @@ include::{assetDir}/build.gradle[tags=asciidoctor]
 <4> Define a base task extending the asciidoctor provided tasks to fill in some defaults
 <5> Add a task to generate documentation with html5 backend
 <6> Add a task to generate documentation with pdf backend
-
-
 
 === Publishing the artifacts
 
@@ -452,7 +444,7 @@ Pushing changes in [refs/heads/master, v0.1.0] to origin
 ...
 ----
 
-Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts
+Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.
 The next development version will be 0.1.1-SNAPSHOT
 
 [source]
@@ -475,7 +467,7 @@ gradlew <candidate|final> -Prelease.version=1.2.3 // <2>
 === The CI part
 
 Here we assume you have a jenkins server running somewhere, with the "new" pipelines scripts.
-We will be creating 2 jobs, 1 for building the project, another to handle the release part.
+In general, you will need 2 jobs, one for building the project and another to handle the release.
 
 We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile
 Here's the content
