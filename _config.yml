@@ -14,11 +14,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "tonymkhael.github.io" # the base hostname & protocol for your site
 author:
     name: Tony Mkhael
+    description: "&copy; Tony Mkhael"
     gravatar: 14d15a4a8d6f362e0a13ab8ca06e6e02 # md5 hash of your email address
-    email: tony.mkhael@gmail.com
-    github: tonymkhael
-    twitter: tonymkhael
-    linkedin:  https://www.linkedin.com/in/tonymkhael
+    feedburner: tonymkhael
+    contact:
+      email: tony.mkhael@gmail.com
+      github: tonymkhael
+      twitter: tonymkhael
+      linkedin:  https://www.linkedin.com/in/tonymkhael
 
 tagline: "Tony Mkhael"
 
