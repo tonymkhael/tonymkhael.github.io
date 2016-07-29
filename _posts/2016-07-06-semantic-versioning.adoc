@@ -5,14 +5,14 @@ date:   2016-07-06 19:27:29 +0200
 categories: oss
 tags: git nebula netflix jenkins semantic-versioning gradle
 ---
+:page-liquid:
 :sectnums:
 :assetDir: assets
+:toc:
 
 = OSS style project
 Tony Mkhael <tony.mkhael@gmail.com>
 {docVersion}
-
-{{ page.document | tocify_asciidoc: 3 }}
 
 == What is this about?
 
