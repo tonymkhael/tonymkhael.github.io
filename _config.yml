@@ -29,6 +29,7 @@ markdown: kramdown
 gems:
   - jekyll-asciidoc
   - jekyll-paginate
+  - jekyll-sitemap
 
 asciidoctor:
   attributes:
