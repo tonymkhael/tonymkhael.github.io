@@ -220,12 +220,23 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   
   
   <article>
-    <div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>{{ page.document | tocify_asciidoc: 3 }}</p>
-</div>
-</div>
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what_is_this_about">1. What is this about?</a></li>
+<li><a href="#_detailed_guide">2. Detailed guide</a>
+<ul class="sectlevel2">
+<li><a href="#_setting_up_your_project">2.1. Setting up your project</a></li>
+<li><a href="#_building_the_project">2.2. Building the project</a></li>
+<li><a href="#_adding_javadoc_and_source_jars">2.3. Adding javadoc and source jars</a></li>
+<li><a href="#_adding_some_cool_documentation">2.4. Adding some cool documentation</a></li>
+<li><a href="#_publishing_the_artifacts">2.5. Publishing the artifacts</a></li>
+<li><a href="#_semantic_versioning">2.6. Semantic versioning</a></li>
+<li><a href="#_the_ci_part">2.7. The CI part</a></li>
+</ul>
+</li>
+<li><a href="#_putting_it_all_together">3. Putting it all together</a></li>
+</ul>
 </div>
 <div class="sect1">
 <h2 id="_what_is_this_about">1. What is this about?</h2>

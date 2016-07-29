@@ -4,7 +4,7 @@
  <title>Tony Mkhael</title>
  <link href="tonymkhael.github.io/atom.xml" rel="self"/>
  <link href="tonymkhael.github.io/"/>
- <updated>2016-07-29T08:19:51+00:00</updated>
+ <updated>2016-07-29T12:06:03+00:00</updated>
  <id>tonymkhael.github.io</id>
  <author>
    <name>Tony Mkhael</name>
@@ -17,12 +17,23 @@
    <link href="tonymkhael.github.io/oss/2016/07/06/semantic-versioning/"/>
    <updated>2016-07-06T17:27:29+00:00</updated>
    <id>tonymkhael.github.io/oss/2016/07/06/semantic-versioning</id>
-   <content type="html">&lt;div id=&quot;preamble&quot;&gt;
-&lt;div class=&quot;sectionbody&quot;&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;{{ page.document | tocify_asciidoc: 3 }}&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+   <content type="html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
+&lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
+&lt;ul class=&quot;sectlevel1&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_what_is_this_about&quot;&gt;1. What is this about?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_detailed_guide&quot;&gt;2. Detailed guide&lt;/a&gt;
+&lt;ul class=&quot;sectlevel2&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#_setting_up_your_project&quot;&gt;2.1. Setting up your project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_building_the_project&quot;&gt;2.2. Building the project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_adding_javadoc_and_source_jars&quot;&gt;2.3. Adding javadoc and source jars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_adding_some_cool_documentation&quot;&gt;2.4. Adding some cool documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_publishing_the_artifacts&quot;&gt;2.5. Publishing the artifacts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_semantic_versioning&quot;&gt;2.6. Semantic versioning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_the_ci_part&quot;&gt;2.7. The CI part&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_putting_it_all_together&quot;&gt;3. Putting it all together&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
 &lt;h2 id=&quot;_what_is_this_about&quot;&gt;1. What is this about?&lt;/h2&gt;
