@@ -135,6 +135,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-asciidoc
+  jekyll-sitemap
   pygments.rb
 
 BUNDLED WITH
