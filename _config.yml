@@ -11,7 +11,7 @@ title: Tony Mkhael
 email: tony.mkhael@gmail.com
 description:
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "tonymkhael.github.io" # the base hostname & protocol for your site
+url: "https://tonymkhael.github.io" # the base hostname & protocol for your site
 author:
     name: Tony Mkhael
     description: "Simplicity is the ultimate form of sophistication"
