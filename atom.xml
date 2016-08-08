@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Tony Mkhael</title>
- <link href="tonymkhael.github.io/atom.xml" rel="self"/>
- <link href="tonymkhael.github.io/"/>
- <updated>2016-07-29T12:06:03+00:00</updated>
- <id>tonymkhael.github.io</id>
+ <link href="https://tonymkhael.github.io/atom.xml" rel="self"/>
+ <link href="https://tonymkhael.github.io/"/>
+ <updated>2016-08-08T09:53:35+00:00</updated>
+ <id>https://tonymkhael.github.io</id>
  <author>
    <name>Tony Mkhael</name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Semantic versioning</title>
-   <link href="tonymkhael.github.io/oss/2016/07/06/semantic-versioning/"/>
+   <link href="https://tonymkhael.github.io/oss/2016/07/06/semantic-versioning/"/>
    <updated>2016-07-06T17:27:29+00:00</updated>
-   <id>tonymkhael.github.io/oss/2016/07/06/semantic-versioning</id>
+   <id>https://tonymkhael.github.io/oss/2016/07/06/semantic-versioning</id>
    <content type="html">&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
