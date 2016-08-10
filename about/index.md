@@ -6,7 +6,7 @@ permalink: /about/
 
 <img src="portrait.png" width="25%" align="right" style="vertical-align:top">
 
-Hello. My name is Tony Mkhael. I'm a Lebanese (soon to be french :-)) software engineer living in Paris, with a strong passion for technology.
+Hello. My name is Tony Mkhael. I'm a software engineer living in Paris, with a strong passion for technology.
 
 ## Reaching out
 

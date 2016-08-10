@@ -28,6 +28,7 @@ It will guide you in detail through all the steps needed to
 
 This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.
 It contains useful snippets you can use (as is, or variants of them) in your OSS project.
+There's also quite a bunch of useful links at the end of the post that I encourage you to read.
 
 == Detailed guide
 
@@ -510,3 +511,15 @@ include::{assetDir}/build.gradle[]
 
 You can find the full sources http://www.github.com/tonymkhael/semantic-versioning[in this public repository].
 Thank you for making it this far, and hope this helps you in some way!
+
+== Useful links
+
+* Semantic versioning
+** The standard: http://semver.org
+** GitFlow & the branching model : http://nvie.com/posts/a-successful-git-branching-model
+* Neflix nebula
+** Blog: https://nebula-plugins.github.io
+** Sources: https://github.com/nebula-plugins
+* Gradle
+** Site: http://www.gradle.org
+** Differences with maven: https://gradle.org/maven_vs_gradle
