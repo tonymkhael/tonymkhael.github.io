@@ -4,7 +4,7 @@
  <title>Tony Mkhael</title>
  <link href="https://tonymkhael.github.io/atom.xml" rel="self"/>
  <link href="https://tonymkhael.github.io/"/>
- <updated>2016-08-08T09:53:35+00:00</updated>
+ <updated>2016-08-10T08:06:39+00:00</updated>
  <id>https://tonymkhael.github.io</id>
  <author>
    <name>Tony Mkhael</name>
@@ -33,6 +33,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#_putting_it_all_together&quot;&gt;3. Putting it all together&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_useful_links&quot;&gt;4. Useful links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
@@ -64,7 +65,8 @@ It will guide you in detail through all the steps needed to&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.
-It contains useful snippets you can use (as is, or variants of them) in your OSS project.&lt;/p&gt;
+It contains useful snippets you can use (as is, or variants of them) in your OSS project.
+There&amp;#8217;s also quite a bunch of useful links at the end of the post that I encourage you to read.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1077,6 +1079,54 @@ task &lt;span style=&quot;color: #0000FF&quot;&gt;wrapper&lt;/span&gt;&lt;span s
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;You can find the full sources &lt;a href=&quot;http://www.github.com/tonymkhael/semantic-versioning&quot;&gt;in this public repository&lt;/a&gt;.
 Thank you for making it this far, and hope this helps you in some way!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;_useful_links&quot;&gt;4. Useful links&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Semantic versioning&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The standard: &lt;a href=&quot;http://semver.org&quot; class=&quot;bare&quot;&gt;http://semver.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GitFlow &amp;amp; the branching model : &lt;a href=&quot;http://nvie.com/posts/a-successful-git-branching-model&quot; class=&quot;bare&quot;&gt;http://nvie.com/posts/a-successful-git-branching-model&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Neflix nebula&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Blog: &lt;a href=&quot;https://nebula-plugins.github.io&quot; class=&quot;bare&quot;&gt;https://nebula-plugins.github.io&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sources: &lt;a href=&quot;https://github.com/nebula-plugins&quot; class=&quot;bare&quot;&gt;https://github.com/nebula-plugins&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Gradle&lt;/p&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Site: &lt;a href=&quot;http://www.gradle.org&quot; class=&quot;bare&quot;&gt;http://www.gradle.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Differences with maven: &lt;a href=&quot;https://gradle.org/maven_vs_gradle&quot; class=&quot;bare&quot;&gt;https://gradle.org/maven_vs_gradle&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
