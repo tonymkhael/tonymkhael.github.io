@@ -5,9 +5,9 @@
     <description></description>
     <link>https://tonymkhael.github.io/</link>
     <atom:link href="https://tonymkhael.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Aug 2016 08:06:39 +0000</pubDate>
-    <lastBuildDate>Wed, 10 Aug 2016 08:06:39 +0000</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <pubDate>Sat, 24 Dec 2016 00:20:15 +0000</pubDate>
+    <lastBuildDate>Sat, 24 Dec 2016 00:20:15 +0000</lastBuildDate>
+    <generator>Jekyll v3.3.0</generator>
     
       <item>
         <title>Semantic versioning</title>
@@ -34,8 +34,8 @@
 &lt;h2 id=&quot;_what_is_this_about&quot;&gt;1. What is this about?&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;if you&amp;#8217;re unfamiliar with semantic versioning, please start reading &lt;a href=&quot;http://semver.org/&quot;&gt;here&lt;/a&gt;.
-The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.
+&lt;p&gt;if you&amp;#8217;re unfamiliar with semantic versioning, please start reading &lt;a href=&quot;http://semver.org/&quot;&gt;here&lt;/a&gt;.&lt;br&gt;
+The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.&lt;br&gt;
 It will guide you in detail through all the steps needed to&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;olist arabic&quot;&gt;
@@ -58,8 +58,8 @@ It will guide you in detail through all the steps needed to&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.
-It contains useful snippets you can use (as is, or variants of them) in your OSS project.
+&lt;p&gt;This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.&lt;br&gt;
+It contains useful snippets you can use (as is, or variants of them) in your OSS project.&lt;br&gt;
 There&amp;#8217;s also quite a bunch of useful links at the end of the post that I encourage you to read.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -68,7 +68,7 @@ There&amp;#8217;s also quite a bunch of useful links at the end of the post that
 &lt;h2 id=&quot;_detailed_guide&quot;&gt;2. Detailed guide&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;In this tutorial, we will interact with the below tools/libraries.
+&lt;p&gt;In this tutorial, we will interact with the below tools/libraries.&lt;br&gt;
 Although no specific knowledge is required, it is always better to have a quick look around to see what&amp;#8217;s behind each one.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;ulist&quot;&gt;
@@ -142,8 +142,8 @@ Besides the build.gradle, you can use the exact copy of all files &lt;a href=&qu
 &lt;i class=&quot;fa icon-important&quot; title=&quot;Important&quot;&gt;&lt;/i&gt;
 &lt;/td&gt;
 &lt;td class=&quot;content&quot;&gt;
-It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you&amp;#8217;re behind a proxy
-You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)
+It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you&amp;#8217;re behind a proxy&lt;br&gt;
+You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)&lt;br&gt;
 However, here is a sample content that you could adapt in case you want to try it out.
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -178,7 +178,7 @@ However, here is a sample content that you could adapt in case you want to try i
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
 &lt;div class=&quot;content&quot;&gt;
-&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;package&lt;/span&gt; com&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;acme&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&quot;color: #7D9029&quot;&gt;example&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;;&lt;/span&gt;
+&lt;pre class=&quot;pygments highlight&quot;&gt;&lt;code data-lang=&quot;java&quot;&gt;&lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;package&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold&quot;&gt;com.acme.example&lt;/span&gt;&lt;span style=&quot;color: #666666&quot;&gt;;&lt;/span&gt;
 
 &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;final&lt;/span&gt; &lt;span style=&quot;color: #008000; font-weight: bold&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #0000FF; font-weight: bold&quot;&gt;SemanticVersioning&lt;/span&gt; &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt;
 
@@ -276,7 +276,7 @@ Instead of trying to build your .gitignore from scratch, you can use &lt;a href=
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;If you need to look at the available tasks on your project you can use the &lt;strong&gt;tasks&lt;/strong&gt; task.
+&lt;p&gt;If you need to look at the available tasks on your project you can use the &lt;strong&gt;tasks&lt;/strong&gt; task.&lt;br&gt;
 Here&amp;#8217;s a sample usage with the output.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -369,7 +369,7 @@ Here&amp;#8217;s a sample usage with the output.&lt;/p&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_adding_javadoc_and_source_jars&quot;&gt;2.3. Adding javadoc and source jars&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;There is nothing simpler than that when using Nebula tools (provided by NetFlix).
+&lt;p&gt;There is nothing simpler than that when using Nebula tools (provided by NetFlix).&lt;br&gt;
 Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow this approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -452,12 +452,12 @@ apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_adding_some_cool_documentation&quot;&gt;2.4. Adding some cool documentation&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Asciidoctor is a really useful tool when it comes to technical documentation in all its forms: Tutorials, User guides, HowTos, FAQs etc..
-It is yet another markdown format, enriched by many plugins that you are encouraged to explore, such as diagrams, math equations, tree view etc..
+&lt;p&gt;Asciidoctor is a really useful tool when it comes to technical documentation in all its forms: Tutorials, User guides, HowTos, FAQs etc..&lt;br&gt;
+It is yet another markdown format, enriched by many plugins that you are encouraged to explore, such as diagrams, math equations, tree view etc..&lt;br&gt;
 Many of these asciidoctor extensions are used to generate the documentation you are actually reading&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Gradle integrates nicely with Asciidoctor with the asciidoctor-gradle-plugin.
+&lt;p&gt;Gradle integrates nicely with Asciidoctor with the asciidoctor-gradle-plugin.&lt;br&gt;
 Here&amp;#8217;s a snippet on how to use it..&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -592,15 +592,15 @@ task&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;generatePdf&lt;sp
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_semantic_versioning&quot;&gt;2.6. Semantic versioning&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Now comes the real question on how to version our project, and how to define its release cycle.
+&lt;p&gt;Now comes the real question on how to version our project, and how to define its release cycle.&lt;br&gt;
 Again nebula comes to the rescue by providing the Netflix biased way via the nebula release plugin, which should be enough for whatever needs you have.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The way it works is really simple, especially compared to the traditional maven way with project versions cluttering in the pom.xml files everywhere, the maven-release-plugin
+&lt;p&gt;The way it works is really simple, especially compared to the traditional maven way with project versions cluttering in the pom.xml files everywhere, the maven-release-plugin&lt;br&gt;
 which has to modify poms, commit them, push the changes.. but when it doesn&amp;#8217;t work you must rollback.. what would you configure on a CI environment.. You see the point..&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Having the version tag in the sources is redundant with the SCM information. The version can be infered from the SCM commit (by traversing the tree).
+&lt;p&gt;Having the version tag in the sources is redundant with the SCM information. The version can be infered from the SCM commit (by traversing the tree).&lt;br&gt;
 With this in mind, a release is simply a tag on a specific commit that marks the state of the versioned code at a certain commit (or point in time).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -676,7 +676,7 @@ tasks&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;snapshot and devSnapshot tasks will not tag the repository. And with the finalize task we have, it will simply publish the latest snapshot to the repository.
+&lt;p&gt;snapshot and devSnapshot tasks will not tag the repository. And with the finalize task we have, it will simply publish the latest snapshot to the repository.&lt;br&gt;
 candidate and final tasks are a bit different, where they require no uncommited changes, and then tag the current commit with target release version&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -791,7 +791,7 @@ candidate and final tasks are a bit different, where they require no uncommited 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.
+&lt;p&gt;Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.&lt;br&gt;
 The next development version will be 0.1.1-SNAPSHOT&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -826,11 +826,11 @@ The next development version will be 0.1.1-SNAPSHOT&lt;/p&gt;
 &lt;div class=&quot;sect2&quot;&gt;
 &lt;h3 id=&quot;_the_ci_part&quot;&gt;2.7. The CI part&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Here we assume you have a jenkins server running somewhere, with the &quot;new&quot; pipelines scripts.
+&lt;p&gt;Here we assume you have a jenkins server running somewhere, with the &quot;new&quot; pipelines scripts.&lt;br&gt;
 In general, you will need 2 jobs, one for building the project and another to handle the release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile
+&lt;p&gt;We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile&lt;br&gt;
 Here&amp;#8217;s the content&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -906,7 +906,7 @@ Here&amp;#8217;s the content&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;All those parts are essential (but not sufficient) for any OSS project, of whatever size.
+&lt;p&gt;All those parts are essential (but not sufficient) for any OSS project, of whatever size.&lt;br&gt;
 This tutorial focused on the technical aspects, but there are more to it:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;ulist&quot;&gt;
@@ -1071,7 +1071,7 @@ task &lt;span style=&quot;color: #0000FF&quot;&gt;wrapper&lt;/span&gt;&lt;span s
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;You can find the full sources &lt;a href=&quot;http://www.github.com/tonymkhael/semantic-versioning&quot;&gt;in this public repository&lt;/a&gt;.
+&lt;p&gt;You can find the full sources &lt;a href=&quot;http://www.github.com/tonymkhael/semantic-versioning&quot;&gt;in this public repository&lt;/a&gt;.&lt;br&gt;
 Thank you for making it this far, and hope this helps you in some way!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
