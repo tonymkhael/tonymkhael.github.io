@@ -5,38 +5,118 @@
     <description></description>
     <link>https://tonymkhael.github.io/</link>
     <atom:link href="https://tonymkhael.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Dec 2016 00:20:15 +0000</pubDate>
-    <lastBuildDate>Sat, 24 Dec 2016 00:20:15 +0000</lastBuildDate>
-    <generator>Jekyll v3.3.0</generator>
+    <pubDate>Wed, 28 Dec 2016 16:29:13 +0000</pubDate>
+    <lastBuildDate>Wed, 28 Dec 2016 16:29:13 +0000</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
     
       <item>
-        <title>Semantic versioning</title>
+        <title>DisplayLink &amp; Windows: A terrible adventure</title>
+        <description>&lt;p&gt;I’ll show you how to setup your USB monitor in replace mode, using a very hacky trick to avoid having the usb driver
+drain all of your cpu resources.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;a-solution-to-which-problem&quot;&gt;A solution to which problem?&lt;/h1&gt;
+
+&lt;p&gt;If you find yourself in the following conditions, the solution presented below is adapted for you:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;You have a USB monitor that you want to use in replace mode i.e. as your main display, instead of your laptop’s.&lt;/li&gt;
+  &lt;li&gt;Your PC is running a recent build of windows 10.&lt;/li&gt;
+  &lt;li&gt;Having (1 &amp;amp; 2), some &lt;code class=&quot;highlighter-rouge&quot;&gt;WUDFHOST.exe&lt;/code&gt; process is constantly draining your CPU resources (40%).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;First, let me tell you what this process is, and why it is draining so much CPU.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WUDFHOST.exe&lt;/code&gt; is a windows generic process that hosts driver code, i.e. the thing that makes use of your hardware, and your USB
+monitor in the described circumstances.&lt;/li&gt;
+  &lt;li&gt;The reason why this driver is consuming so much of your PC resources is that, when your laptop lid is closed, it will render to your screen
+only using CPU resources (your GPU will be completely idle, a complete shame).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are tons of posts that you can find on &lt;a href=&quot;http://www.displaylink.com&quot;&gt;DisplayLink (The makers of USB graphics drivers)&lt;/a&gt;, and on some windows forums where
+lots of users nag that their mouse is lagging or similar problems related to performance. The guys at DisplayLink and Windows are supposedly working together
+to have better support for USB graphics on Windows, but I have tested combinations of DisplayLink drivers ranging from 7.8.x till 8.1.alpha, and all of those exhibit
+performance problems. The only combination that worked for me was 7.9.x, without the “recent” windows updates. So this will configratuin break whenever you update either windows
+or DisplayLink, and is therefore not sustainable. To make things worse, the 7.x DisplayLink drivers are no longer compatible with recent versions of Windows.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-solution-make-your-laptop-lid-think-it-is-a-hard-disk-volume&quot;&gt;The solution: Make your laptop lid think it is a hard disk volume&lt;/h1&gt;
+
+&lt;p&gt;Yes, It is this weird, and this hacky!
+I found parts of this solution somewhere deep inside some forums (that I can no longer find to give credit to).&lt;/p&gt;
+
+&lt;p&gt;The solution is as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open Device Manager.&lt;/li&gt;
+  &lt;li&gt;Select your lid driver (somewhere under System devices category), and chose to “update driver software”&lt;/li&gt;
+  &lt;li&gt;When asked from where the driver should be updated, make sure you chose from a list of drivers.&lt;/li&gt;
+  &lt;li&gt;Search for &lt;code class=&quot;highlighter-rouge&quot;&gt;Volume Manager&lt;/code&gt; driver, and confirm the changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This will make Windows avoid turning off your laptop monitor, even when the lid is closed (Because it now thinks it is a hard drive :)).
+With that in place, rendering will still be done by your graphics card, and your CPU will no longer be devoured by the DisplayLink driver.&lt;/p&gt;
+
+&lt;h1 id=&quot;morals&quot;&gt;Morals&lt;/h1&gt;
+
+&lt;p&gt;This solution, as ugly as it may look or sound, actually works.
+What I have learned from this is the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Do not purchase a USB monitor, the tech is still not really mature. It is a waste of time &amp;amp; money.&lt;/li&gt;
+  &lt;li&gt;If you reallly need this setup (In my case, my laptop screen was burning my retina), make sure you buy a screen with VGA or HDMI input&lt;/li&gt;
+  &lt;li&gt;Sometimes things can magically work the way you want to by using some black magic, try to avoid those situations :)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 27 Dec 2016 11:34:02 +0000</pubDate>
+        <link>https://tonymkhael.github.io/system/2016/12/27/displaylink/</link>
+        <guid isPermaLink="true">https://tonymkhael.github.io/system/2016/12/27/displaylink/</guid>
+        
+        <category>DisplayLink</category>
+        
+        <category>Windows</category>
+        
+        <category>Acer</category>
+        
+        <category>WUDFHost.exe</category>
+        
+        <category>performance</category>
+        
+        
+        <category>system</category>
+        
+      </item>
+    
+      <item>
+        <title>Semantic versioning with Gradle and Nebula</title>
         <description>&lt;div id=&quot;toc&quot; class=&quot;toc&quot;&gt;
 &lt;div id=&quot;toctitle&quot;&gt;Table of Contents&lt;/div&gt;
 &lt;ul class=&quot;sectlevel1&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_what_is_this_about&quot;&gt;1. What is this about?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_detailed_guide&quot;&gt;2. Detailed guide&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;#_detailed_guide&quot;&gt;1. Detailed guide&lt;/a&gt;
 &lt;ul class=&quot;sectlevel2&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#_setting_up_your_project&quot;&gt;2.1. Setting up your project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_building_the_project&quot;&gt;2.2. Building the project&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_adding_javadoc_and_source_jars&quot;&gt;2.3. Adding javadoc and source jars&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_adding_some_cool_documentation&quot;&gt;2.4. Adding some cool documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_publishing_the_artifacts&quot;&gt;2.5. Publishing the artifacts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_semantic_versioning&quot;&gt;2.6. Semantic versioning&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_the_ci_part&quot;&gt;2.7. The CI part&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_setting_up_your_project&quot;&gt;1.1. Setting up your project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_building_the_project&quot;&gt;1.2. Building the project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_adding_javadoc_and_source_jars&quot;&gt;1.3. Adding javadoc and source jars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_adding_some_cool_documentation&quot;&gt;1.4. Adding some cool documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_publishing_the_artifacts&quot;&gt;1.5. Publishing the artifacts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_semantic_versioning&quot;&gt;1.6. Semantic versioning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_the_ci_part&quot;&gt;1.7. The CI part&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_putting_it_all_together&quot;&gt;3. Putting it all together&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#_useful_links&quot;&gt;4. Useful links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_putting_it_all_together&quot;&gt;2. Putting it all together&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#_useful_links&quot;&gt;3. Useful links&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-&lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_what_is_this_about&quot;&gt;1. What is this about?&lt;/h2&gt;
+&lt;div id=&quot;preamble&quot;&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;if you&amp;#8217;re unfamiliar with semantic versioning, please start reading &lt;a href=&quot;http://semver.org/&quot;&gt;here&lt;/a&gt;.&lt;br&gt;
-The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.&lt;br&gt;
-It will guide you in detail through all the steps needed to&lt;/p&gt;
+&lt;p&gt;If you&amp;#8217;re unfamiliar with semantic versioning, please start reading &lt;a href=&quot;http://semver.org/&quot;&gt;here&lt;/a&gt;.
+The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;!--more--&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;It will guide you in detail through all the steps needed to&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;olist arabic&quot;&gt;
 &lt;ol class=&quot;arabic&quot;&gt;
@@ -58,17 +138,17 @@ It will guide you in detail through all the steps needed to&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.&lt;br&gt;
-It contains useful snippets you can use (as is, or variants of them) in your OSS project.&lt;br&gt;
+&lt;p&gt;This is not about general guidelines or so, but merely a simple tutorial on how to put all the available bricks together in order to have a OSS compliant project.
+It contains useful snippets you can use (as is, or variants of them) in your OSS project.
 There&amp;#8217;s also quite a bunch of useful links at the end of the post that I encourage you to read.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_detailed_guide&quot;&gt;2. Detailed guide&lt;/h2&gt;
+&lt;h2 id=&quot;_detailed_guide&quot;&gt;1. Detailed guide&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;In this tutorial, we will interact with the below tools/libraries.&lt;br&gt;
+&lt;p&gt;In this tutorial, we will interact with the below tools/libraries.
 Although no specific knowledge is required, it is always better to have a quick look around to see what&amp;#8217;s behind each one.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;ulist&quot;&gt;
@@ -91,7 +171,7 @@ Although no specific knowledge is required, it is always better to have a quick 
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_setting_up_your_project&quot;&gt;2.1. Setting up your project&lt;/h3&gt;
+&lt;h3 id=&quot;_setting_up_your_project&quot;&gt;1.1. Setting up your project&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;First, let&amp;#8217;s start by setting up the gradle project. For this you would need the following directory structure.&lt;/p&gt;
 &lt;/div&gt;
@@ -142,8 +222,8 @@ Besides the build.gradle, you can use the exact copy of all files &lt;a href=&qu
 &lt;i class=&quot;fa icon-important&quot; title=&quot;Important&quot;&gt;&lt;/i&gt;
 &lt;/td&gt;
 &lt;td class=&quot;content&quot;&gt;
-It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you&amp;#8217;re behind a proxy&lt;br&gt;
-You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)&lt;br&gt;
+It is necessary to have a gradle.properties file in the project root to be able to run some gradle tasks i.e. publish. You can also make it work if you&amp;#8217;re behind a proxy
+You will not find this file in this repository, since it is supposed to be injected by the environment (CI/Dev environment..)
 However, here is a sample content that you could adapt in case you want to try it out.
 &lt;/td&gt;
 &lt;/tr&gt;
@@ -233,7 +313,7 @@ repositories &lt;span style=&quot;color: #666666&quot;&gt;{&lt;/span&gt; &lt;i c
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_building_the_project&quot;&gt;2.2. Building the project&lt;/h3&gt;
+&lt;h3 id=&quot;_building_the_project&quot;&gt;1.2. Building the project&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;To build the project, you have to invoke the gradle &lt;strong&gt;build&lt;/strong&gt; task using&lt;/p&gt;
 &lt;/div&gt;
@@ -276,7 +356,7 @@ Instead of trying to build your .gitignore from scratch, you can use &lt;a href=
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;If you need to look at the available tasks on your project you can use the &lt;strong&gt;tasks&lt;/strong&gt; task.&lt;br&gt;
+&lt;p&gt;If you need to look at the available tasks on your project you can use the &lt;strong&gt;tasks&lt;/strong&gt; task.
 Here&amp;#8217;s a sample usage with the output.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -367,9 +447,9 @@ Here&amp;#8217;s a sample usage with the output.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_adding_javadoc_and_source_jars&quot;&gt;2.3. Adding javadoc and source jars&lt;/h3&gt;
+&lt;h3 id=&quot;_adding_javadoc_and_source_jars&quot;&gt;1.3. Adding javadoc and source jars&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;There is nothing simpler than that when using Nebula tools (provided by NetFlix).&lt;br&gt;
+&lt;p&gt;There is nothing simpler than that when using Nebula tools (provided by NetFlix).
 Nebula consists of a set of plugins that are opinionated with the Netflix style, but should work really well for you when you follow this approach.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -450,14 +530,14 @@ apply &lt;span style=&quot;color: #A0A000&quot;&gt;plugin:&lt;/span&gt; &lt;span
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_adding_some_cool_documentation&quot;&gt;2.4. Adding some cool documentation&lt;/h3&gt;
+&lt;h3 id=&quot;_adding_some_cool_documentation&quot;&gt;1.4. Adding some cool documentation&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Asciidoctor is a really useful tool when it comes to technical documentation in all its forms: Tutorials, User guides, HowTos, FAQs etc..&lt;br&gt;
-It is yet another markdown format, enriched by many plugins that you are encouraged to explore, such as diagrams, math equations, tree view etc..&lt;br&gt;
+&lt;p&gt;Asciidoctor is a really useful tool when it comes to technical documentation in all its forms: Tutorials, User guides, HowTos, FAQs etc..
+It is yet another markdown format, enriched by many plugins that you are encouraged to explore, such as diagrams, math equations, tree view etc..
 Many of these asciidoctor extensions are used to generate the documentation you are actually reading&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Gradle integrates nicely with Asciidoctor with the asciidoctor-gradle-plugin.&lt;br&gt;
+&lt;p&gt;Gradle integrates nicely with Asciidoctor with the asciidoctor-gradle-plugin.
 Here&amp;#8217;s a snippet on how to use it..&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -549,7 +629,7 @@ task&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;generatePdf&lt;sp
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_publishing_the_artifacts&quot;&gt;2.5. Publishing the artifacts&lt;/h3&gt;
+&lt;h3 id=&quot;_publishing_the_artifacts&quot;&gt;1.5. Publishing the artifacts&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;One of the useful things nebula project plugin does, is add publishing support to maven repositories.&lt;/p&gt;
 &lt;/div&gt;
@@ -590,17 +670,17 @@ task&lt;span style=&quot;color: #666666&quot;&gt;(&lt;/span&gt;generatePdf&lt;sp
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_semantic_versioning&quot;&gt;2.6. Semantic versioning&lt;/h3&gt;
+&lt;h3 id=&quot;_semantic_versioning&quot;&gt;1.6. Semantic versioning&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Now comes the real question on how to version our project, and how to define its release cycle.&lt;br&gt;
+&lt;p&gt;Now comes the real question on how to version our project, and how to define its release cycle.
 Again nebula comes to the rescue by providing the Netflix biased way via the nebula release plugin, which should be enough for whatever needs you have.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The way it works is really simple, especially compared to the traditional maven way with project versions cluttering in the pom.xml files everywhere, the maven-release-plugin&lt;br&gt;
+&lt;p&gt;The way it works is really simple, especially compared to the traditional maven way with project versions cluttering in the pom.xml files everywhere, the maven-release-plugin
 which has to modify poms, commit them, push the changes.. but when it doesn&amp;#8217;t work you must rollback.. what would you configure on a CI environment.. You see the point..&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Having the version tag in the sources is redundant with the SCM information. The version can be infered from the SCM commit (by traversing the tree).&lt;br&gt;
+&lt;p&gt;Having the version tag in the sources is redundant with the SCM information. The version can be infered from the SCM commit (by traversing the tree).
 With this in mind, a release is simply a tag on a specific commit that marks the state of the versioned code at a certain commit (or point in time).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -676,7 +756,7 @@ tasks&lt;span style=&quot;color: #666666&quot;&gt;.&lt;/span&gt;&lt;span style=&
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;snapshot and devSnapshot tasks will not tag the repository. And with the finalize task we have, it will simply publish the latest snapshot to the repository.&lt;br&gt;
+&lt;p&gt;snapshot and devSnapshot tasks will not tag the repository. And with the finalize task we have, it will simply publish the latest snapshot to the repository.
 candidate and final tasks are a bit different, where they require no uncommited changes, and then tag the current commit with target release version&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
@@ -791,7 +871,7 @@ candidate and final tasks are a bit different, where they require no uncommited 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.&lt;br&gt;
+&lt;p&gt;Again, the same operations occur, this time tagging the scm repository with v0.1.0 and publishing the artifacts.
 The next development version will be 0.1.1-SNAPSHOT&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -824,13 +904,13 @@ The next development version will be 0.1.1-SNAPSHOT&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect2&quot;&gt;
-&lt;h3 id=&quot;_the_ci_part&quot;&gt;2.7. The CI part&lt;/h3&gt;
+&lt;h3 id=&quot;_the_ci_part&quot;&gt;1.7. The CI part&lt;/h3&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Here we assume you have a jenkins server running somewhere, with the &quot;new&quot; pipelines scripts.&lt;br&gt;
+&lt;p&gt;Here we assume you have a jenkins server running somewhere, with the &quot;new&quot; pipelines scripts.
 In general, you will need 2 jobs, one for building the project and another to handle the release.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile&lt;br&gt;
+&lt;p&gt;We will create a jenkins pipeline, and the Jenkinsfile describing the build steps is in the repo under ./Jenkinsfile
 Here&amp;#8217;s the content&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;listingblock&quot;&gt;
@@ -884,7 +964,7 @@ Here&amp;#8217;s the content&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_putting_it_all_together&quot;&gt;3. Putting it all together&lt;/h2&gt;
+&lt;h2 id=&quot;_putting_it_all_together&quot;&gt;2. Putting it all together&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;At this point, we have done the following:&lt;/p&gt;
@@ -906,7 +986,7 @@ Here&amp;#8217;s the content&lt;/p&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;All those parts are essential (but not sufficient) for any OSS project, of whatever size.&lt;br&gt;
+&lt;p&gt;All those parts are essential (but not sufficient) for any OSS project, of whatever size.
 This tutorial focused on the technical aspects, but there are more to it:&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;ulist&quot;&gt;
@@ -1071,13 +1151,13 @@ task &lt;span style=&quot;color: #0000FF&quot;&gt;wrapper&lt;/span&gt;&lt;span s
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;You can find the full sources &lt;a href=&quot;http://www.github.com/tonymkhael/semantic-versioning&quot;&gt;in this public repository&lt;/a&gt;.&lt;br&gt;
+&lt;p&gt;You can find the full sources &lt;a href=&quot;http://www.github.com/tonymkhael/semantic-versioning&quot;&gt;in this public repository&lt;/a&gt;.
 Thank you for making it this far, and hope this helps you in some way!&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sect1&quot;&gt;
-&lt;h2 id=&quot;_useful_links&quot;&gt;4. Useful links&lt;/h2&gt;
+&lt;h2 id=&quot;_useful_links&quot;&gt;3. Useful links&lt;/h2&gt;
 &lt;div class=&quot;sectionbody&quot;&gt;
 &lt;div class=&quot;ulist&quot;&gt;
 &lt;ul&gt;
