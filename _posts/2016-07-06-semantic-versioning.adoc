@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "Semantic versioning"
+title:  "Semantic versioning with Gradle and Nebula"
 date:   2016-07-06 19:27:29 +0200
 categories: oss
 tags: git nebula netflix jenkins semantic-versioning gradle
+excerpt_separator: <!--more-->
 ---
 :page-liquid:
 :sectnums:
@@ -14,10 +15,13 @@ tags: git nebula netflix jenkins semantic-versioning gradle
 Tony Mkhael <tony.mkhael@gmail.com>
 {docVersion}
 
-== What is this about?
-
-if you're unfamiliar with semantic versioning, please start reading http://semver.org/[here].
+If you're unfamiliar with semantic versioning, please start reading http://semver.org/[here].
 The rest of the document will focus on how to effectively use semantic versioning for your OSS projects.
+
+++++
+<!--more-->
+++++
+
 It will guide you in detail through all the steps needed to
 
 . Setup a project
