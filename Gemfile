@@ -5,5 +5,6 @@ group :jekyll_plugins do
   gem 'jekyll-paginate'
   gem 'jekyll-asciidoc'
   gem 'jekyll-sitemap'
+  gem 'jemoji'
   gem 'pygments.rb'
 end

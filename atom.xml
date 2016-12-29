@@ -4,7 +4,7 @@
  <title>Tony Mkhael</title>
  <link href="https://tonymkhael.github.io/atom.xml" rel="self"/>
  <link href="https://tonymkhael.github.io/"/>
- <updated>2016-12-28T16:29:13+00:00</updated>
+ <updated>2016-12-29T09:16:47+00:00</updated>
  <id>https://tonymkhael.github.io</id>
  <author>
    <name>Tony Mkhael</name>
@@ -44,8 +44,9 @@ only using CPU resources (your GPU will be completely idle, a complete shame).&l
 &lt;p&gt;There are tons of posts that you can find on &lt;a href=&quot;http://www.displaylink.com&quot;&gt;DisplayLink (The makers of USB graphics drivers)&lt;/a&gt;, and on some windows forums where
 lots of users nag that their mouse is lagging or similar problems related to performance. The guys at DisplayLink and Windows are supposedly working together
 to have better support for USB graphics on Windows, but I have tested combinations of DisplayLink drivers ranging from 7.8.x till 8.1.alpha, and all of those exhibit
-performance problems. The only combination that worked for me was 7.9.x, without the “recent” windows updates. So this will configratuin break whenever you update either windows
-or DisplayLink, and is therefore not sustainable. To make things worse, the 7.x DisplayLink drivers are no longer compatible with recent versions of Windows.&lt;/p&gt;
+performance problems. The only combination that worked for me was 7.9.x, without the “recent” windows updates.
+So this configuration will break whenever you update either windows or DisplayLink, and is therefore not sustainable.
+Furthermore, the 7.x DisplayLink drivers are no longer compatible with recent versions of Windows.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-solution-make-your-laptop-lid-think-it-is-a-hard-disk-volume&quot;&gt;The solution: Make your laptop lid think it is a hard disk volume&lt;/h1&gt;
 
@@ -56,12 +57,12 @@ I found parts of this solution somewhere deep inside some forums (that I can no 
 
 &lt;ol&gt;
   &lt;li&gt;Open Device Manager.&lt;/li&gt;
-  &lt;li&gt;Select your lid driver (somewhere under System devices category), and chose to “update driver software”&lt;/li&gt;
+  &lt;li&gt;Select your lid driver (somewhere under System devices category), and chose to “update driver software”.&lt;/li&gt;
   &lt;li&gt;When asked from where the driver should be updated, make sure you chose from a list of drivers.&lt;/li&gt;
   &lt;li&gt;Search for &lt;code class=&quot;highlighter-rouge&quot;&gt;Volume Manager&lt;/code&gt; driver, and confirm the changes.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;This will make Windows avoid turning off your laptop monitor, even when the lid is closed (Because it now thinks it is a hard drive :)).
+&lt;p&gt;This will make Windows avoid turning off your laptop monitor, even when the lid is closed (Because it now thinks it is a hard drive :smile:).
 With that in place, rendering will still be done by your graphics card, and your CPU will no longer be devoured by the DisplayLink driver.&lt;/p&gt;
 
 &lt;h1 id=&quot;morals&quot;&gt;Morals&lt;/h1&gt;
@@ -71,8 +72,8 @@ What I have learned from this is the following:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Do not purchase a USB monitor, the tech is still not really mature. It is a waste of time &amp;amp; money.&lt;/li&gt;
-  &lt;li&gt;If you reallly need this setup (In my case, my laptop screen was burning my retina), make sure you buy a screen with VGA or HDMI input&lt;/li&gt;
-  &lt;li&gt;Sometimes things can magically work the way you want to by using some black magic, try to avoid those situations :)&lt;/li&gt;
+  &lt;li&gt;If you reallly need this setup (In my case, my laptop screen was burning my retina), make sure you buy a screen with VGA or HDMI input.&lt;/li&gt;
+  &lt;li&gt;Sometimes things can magically work the way you want to by using some black magic, try to avoid those situations :smile:&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>

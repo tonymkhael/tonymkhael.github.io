@@ -6,14 +6,14 @@
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="google-site-verification" content="27eoyciOXE0aIduK9XeEwO7AoIfNIoXIg9evvxIO6yg" />
+  <meta name="google-site-verification" content="27eoyciOXE0aIduK9XeEwO7AoIfNIoXIg9evvxIO6yg">
 
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
     
-      DisplayLink & Windows: A terrible adventure &middot; Tony Mkhael
+      DisplayLink &amp; Windows: A terrible adventure · Tony Mkhael
     
   </title>
 
@@ -52,7 +52,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
   <div class="sidebar-item">
     <div class="sidebar-personal-info">
       <div class="sidebar-personal-info-section">
-          <img src="https://www.gravatar.com/avatar/14d15a4a8d6f362e0a13ab8ca06e6e02?s=350" title="View on Gravatar" alt="View on Gravatar" />
+          <img src="https://www.gravatar.com/avatar/14d15a4a8d6f362e0a13ab8ca06e6e02?s=350" title="View on Gravatar" alt="View on Gravatar">
       </div>
       
       
@@ -174,7 +174,7 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
 
   <div class="sidebar-item">
     <p>
-    &copy; 2016 Tony Mkhael<br/>
+    © 2016 Tony Mkhael<br>
     Powered by <a href="http://jekyllrb.com">jekyll</a> and <a href="http://lanyon.getpoole.com/">lanyon</a>
     </p>
   </div>
@@ -188,21 +188,21 @@ MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], proces
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home" title="Tony Mkhael" style="float:left;margin-right:20px">
+            <a href="/" title="Home" style="float:left;margin-right:20px">
               <img class="masthead-logo" src="https://www.gravatar.com/avatar/14d15a4a8d6f362e0a13ab8ca06e6e02?s=350" title="Logo" alt="Logo">
             </a>
             <div style="float:left">
-              <small style='color: #000000'>Tony Mkhael</small><br/>
+              <small style="color: #000000">Tony Mkhael</small><br>
               <small>Simplicity is the ultimate form of sophistication</small>
             </div>
-            <div style="clear:both"/>
+            <div style="clear:both"></div>
           </h3>
         </div>
       </div>
 
       <div class="container content">
         <div class="post">
-  <h1 class="post-title">DisplayLink & Windows: A terrible adventure</h1>
+  <h1 class="post-title">DisplayLink &amp; Windows: A terrible adventure</h1>
   <span class="post-date">27 Dec 2016</span>
    |
   
@@ -236,7 +236,8 @@ drain all of your cpu resources.</p>
 <p>First, let me tell you what this process is, and why it is draining so much CPU.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">WUDFHOST.exe</code> is a windows generic process that hosts driver code, i.e. the thing that makes use of your hardware, and your USB
+  <li>
+<code class="highlighter-rouge">WUDFHOST.exe</code> is a windows generic process that hosts driver code, i.e. the thing that makes use of your hardware, and your USB
 monitor in the described circumstances.</li>
   <li>The reason why this driver is consuming so much of your PC resources is that, when your laptop lid is closed, it will render to your screen
 only using CPU resources (your GPU will be completely idle, a complete shame).</li>
@@ -245,8 +246,9 @@ only using CPU resources (your GPU will be completely idle, a complete shame).</
 <p>There are tons of posts that you can find on <a href="http://www.displaylink.com">DisplayLink (The makers of USB graphics drivers)</a>, and on some windows forums where
 lots of users nag that their mouse is lagging or similar problems related to performance. The guys at DisplayLink and Windows are supposedly working together
 to have better support for USB graphics on Windows, but I have tested combinations of DisplayLink drivers ranging from 7.8.x till 8.1.alpha, and all of those exhibit
-performance problems. The only combination that worked for me was 7.9.x, without the “recent” windows updates. So this will configratuin break whenever you update either windows
-or DisplayLink, and is therefore not sustainable. To make things worse, the 7.x DisplayLink drivers are no longer compatible with recent versions of Windows.</p>
+performance problems. The only combination that worked for me was 7.9.x, without the “recent” windows updates.
+So this configuration will break whenever you update either windows or DisplayLink, and is therefore not sustainable.
+Furthermore, the 7.x DisplayLink drivers are no longer compatible with recent versions of Windows.</p>
 
 <h1 id="the-solution-make-your-laptop-lid-think-it-is-a-hard-disk-volume">The solution: Make your laptop lid think it is a hard disk volume</h1>
 
@@ -257,12 +259,12 @@ I found parts of this solution somewhere deep inside some forums (that I can no 
 
 <ol>
   <li>Open Device Manager.</li>
-  <li>Select your lid driver (somewhere under System devices category), and chose to “update driver software”</li>
+  <li>Select your lid driver (somewhere under System devices category), and chose to “update driver software”.</li>
   <li>When asked from where the driver should be updated, make sure you chose from a list of drivers.</li>
   <li>Search for <code class="highlighter-rouge">Volume Manager</code> driver, and confirm the changes.</li>
 </ol>
 
-<p>This will make Windows avoid turning off your laptop monitor, even when the lid is closed (Because it now thinks it is a hard drive :)).
+<p>This will make Windows avoid turning off your laptop monitor, even when the lid is closed (Because it now thinks it is a hard drive <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle">).
 With that in place, rendering will still be done by your graphics card, and your CPU will no longer be devoured by the DisplayLink driver.</p>
 
 <h1 id="morals">Morals</h1>
@@ -272,8 +274,9 @@ What I have learned from this is the following:</p>
 
 <ul>
   <li>Do not purchase a USB monitor, the tech is still not really mature. It is a waste of time &amp; money.</li>
-  <li>If you reallly need this setup (In my case, my laptop screen was burning my retina), make sure you buy a screen with VGA or HDMI input</li>
-  <li>Sometimes things can magically work the way you want to by using some black magic, try to avoid those situations :)</li>
+  <li>If you reallly need this setup (In my case, my laptop screen was burning my retina), make sure you buy a screen with VGA or HDMI input.</li>
+  <li>Sometimes things can magically work the way you want to by using some black magic, try to avoid those situations <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle">
+</li>
 </ul>
 
   </article>
@@ -305,7 +308,7 @@ What I have learned from this is the following:</p>
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'https://https://tonymkhael.github.io/system/2016/12/27/displaylink/'; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.url = 'https://tonymkhael.github.io/system/2016/12/27/displaylink/'; // Replace PAGE_URL with your page's canonical URL variable
   this.page.identifier = '/system/2016/12/27/displaylink'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 (function() {
@@ -315,7 +318,8 @@ var disqus_config = function () {
   (d.head || d.body).appendChild(s);
 })();
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
 </div>
 
 
@@ -407,7 +411,7 @@ ga('send', 'pageview');
       </div>
       
       <div class="sidebar-personal-info-section">
-        <p>&copy; Tony Mkhael</p>
+        <p>© Tony Mkhael</p>
       </div>
     </div>
   </div>
