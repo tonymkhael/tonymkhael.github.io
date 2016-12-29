@@ -30,3 +30,10 @@ $overlay-sidebar: false;
 $font-serif: "PT Serif", Georgia, "Times New Roman", serif;
 $font-sans: "PT Sans", Helvetica, Arial, sans-serif;
 $font-font-awesome: FontAwesome;
+
+img.emoji {
+    display: inline;
+    height: 1em;
+    width: 1em;
+    margin-bottom: 0.25em;
+}

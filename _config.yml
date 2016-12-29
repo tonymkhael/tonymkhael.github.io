@@ -30,6 +30,7 @@ gems:
   - jekyll-asciidoc
   - jekyll-paginate
   - jekyll-sitemap
+  - jemoji
 
 asciidoctor:
   attributes:
