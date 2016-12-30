@@ -315,11 +315,22 @@ tbody tr:nth-child(odd) th {
 .masthead-title a {
   color: #505050;
 }
-.masthead-title span {
-  font-size: 64px;
+.masthead-title .name {
+  font-size: 16px;
   font-weight: 400;
   color: #000000;
   letter-spacing: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.masthead-title .moto {
+  font-size: 10px;
+  font-weight: 400;
+  color: #666666;
+  letter-spacing: 0;
+  text-align: left;
+  overflow-wrap: normal;
 }
 
 
